@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace Stickman.Obstacles.Editors
+namespace Stickman.Levels.Editors
 {
-    [CustomEditor(typeof(Obstacle))]
-    public class ObstacleEditor : Editor
+    [CustomEditor(typeof(Level))]
+    public class LevelEditor : Editor
     {
-        private Obstacle mObstacleEdited;
+        /*private Obstacle mObstacleEdited;
 
         private void OnEnable() => mObstacleEdited = (Obstacle) target;
 
@@ -18,6 +18,6 @@ namespace Stickman.Obstacles.Editors
             {
                 mObstacleEdited.ComputeBounds();
             }
-        }
+        }*/
     }
 }
