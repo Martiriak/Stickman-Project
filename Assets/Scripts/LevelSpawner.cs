@@ -1,12 +1,12 @@
 using UnityEngine;
-//using Stickman.PlayArea;
 
 namespace Stickman.Levels.Spawner
 {
+    [RequireComponent(typeof(LevelSpawnerContext))]
     public class LevelSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject[] mLevelsPool;
-        //[SerializeField] private 
+        private LevelSpawnerContext mContextForLevels;
 
         private void Awake()
         {
@@ -14,12 +14,15 @@ namespace Stickman.Levels.Spawner
             if (mLevelsPool.Length == 0)
                 Debug.LogError("Aoo! Che ostacoli dovrei spawnare scusa?");
 #endif
+            mContextForLevels = GetComponent<LevelSpawnerContext>();
+
             SpawnNewLevel();
         }
 
         private void SpawnNewLevel()
         {
             var level = Instantiate(mLevelsPool[0], transform.position, Quaternion.identity).GetComponent<Level>();
+            mContextForLevels.ProvideContext(level);
             level.EnteringScreenFinished += SpawnNewLevel;
         }
     }
