@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Stickman.Levels.EndTrigger
 {
+    /// <summary>
+    /// It interacts with the play view trigger, notifying when it enters
+    /// and exits said view.
+    /// </summary>
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
     public class LevelEndTrigger : MonoBehaviour
@@ -20,6 +24,10 @@ namespace Stickman.Levels.EndTrigger
             if (!rb.isKinematic)
                 Debug.LogError("IN BUILD FINALE DEVI METTERMI IL RIGIDBODY KINEMATIC!");
             rb.isKinematic = true;
+            if (rb.useGravity)
+                Debug.LogError("IN BUILD FINALE DEVI TOGLIERMI LA GRAVITA'!");
+            rb.useGravity = false;
+
             Collider col = GetComponent<Collider>();
             if (!col.isTrigger)
                 Debug.LogError("IN BUILD FINALE DEVI METTERMI IL COLLIDER TRIGGER!");

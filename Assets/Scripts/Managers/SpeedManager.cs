@@ -2,13 +2,21 @@ using UnityEngine;
 
 namespace Stickman.Managers.Speed
 {
+    /// <summary>
+    /// Controls the speed of the game and its evolution.
+    /// </summary>
     public class SpeedManager : MonoBehaviour
     {
+        [Tooltip("The time after which the speed stops changing.")]
         [SerializeField] private float m_maxSpeedTimestamp = 10f;
+        [Tooltip("The starting speed of the game.")]
         [SerializeField] private float m_minSpeed = 1f;
+        [Tooltip("The final speed of the game.")]
         [SerializeField] private float m_maxSpeed = 10f;
+        [Tooltip("Describes the evolution of the speed throughout the game: from min to max, until max timestamp.")]
         [SerializeField] private AnimationCurve m_speedCurve;
 
+        // Caches maxSpeed - minSpeed.
         private float c_speedLimitsIntervalLenght;
         private void Awake() => c_speedLimitsIntervalLenght = m_maxSpeed - m_minSpeed;
 

@@ -31,9 +31,14 @@ namespace Stickman.PlayArea
 
             // Sets the trigger settings.
             BoxCollider playAreaTrigger = GetComponent<BoxCollider>();
-            playAreaTrigger.isTrigger = true;
             playAreaTrigger.center = viewportCenter;
             playAreaTrigger.size = playAreaSize;
+
+#if UNITY_EDITOR
+            if (!playAreaTrigger.isTrigger)
+                Debug.LogError("RICORDATI DI METTERE COME TRIGGER IL COLLIDER DELL'AREA DI GIOCO!");
+            playAreaTrigger.isTrigger = true;
+#endif
 
             // Places the spawner, respecting the x padding but not the y padding.
             mSpawner.position = new Vector3(max.x, min.y + mPlayAreaPadding, 0f);
