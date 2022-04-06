@@ -1,4 +1,5 @@
 using UnityEngine;
+using Stickman.Damageables;
 
 namespace Stickman.Players.SwordsmanUtilities
 {
@@ -28,7 +29,7 @@ namespace Stickman.Players.SwordsmanUtilities
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<IDamageable>()?.HandleHit();
         }
     }
 }

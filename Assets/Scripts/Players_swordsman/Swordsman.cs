@@ -20,9 +20,7 @@ namespace Stickman.Players
         private bool m_isInAir = false;
         private bool m_isSwinging = false;
         private bool m_isCrashingDown = false;
-
         private bool m_justJumped = false;
-
         private IEnumerator c_animationCoroutine = null;
 
 
@@ -70,8 +68,6 @@ namespace Stickman.Players
 
                 if (m_justJumped)
                     c_rb.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
-
-                // Input in giù == slide, magari in futuro
             }
             else
             {
@@ -91,6 +87,7 @@ namespace Stickman.Players
             m_justJumped = false;
         }
 
+        // MEGA TEMP.
         private IEnumerator SwingAnimation()
         {
             Debug.Log("Swing!");
