@@ -26,9 +26,19 @@ namespace Stickman.Players
 
         public void RegenLives(uint amount = 1)
         {
+            Debug.Log("Healed!");
             m_currentLives += (int) amount;
             if (m_currentLives > m_maxLives)
                 m_currentLives = m_maxLives;
+        }
+
+        public void SetInvulnerabilityTime(float invTime)
+        {
+            if (c_invulnerabilityCoroutine != null)
+                StopCoroutine(c_invulnerabilityCoroutine);
+
+            c_invulnerabilityCoroutine = InvulnerabilityTimer(invTime);
+            StartCoroutine(c_invulnerabilityCoroutine);
         }
 
 
@@ -71,18 +81,18 @@ namespace Stickman.Players
             if (c_invulnerabilityCoroutine != null)
                 StopCoroutine(c_invulnerabilityCoroutine);
 
-            c_invulnerabilityCoroutine = InvulnerabilityTimer();
+            c_invulnerabilityCoroutine = InvulnerabilityTimer(m_invulnerabilityTime);
             StartCoroutine(c_invulnerabilityCoroutine);
         }
 
 
-        private IEnumerator InvulnerabilityTimer()
+        private IEnumerator InvulnerabilityTimer(float invTime)
         {
             m_isInvulnerable = true;
             OnInvulnerability?.Invoke(true);
 
             float elapsedTime = 0f;
-            while (elapsedTime < m_invulnerabilityTime)
+            while (elapsedTime < invTime)
             {
                 yield return null;
                 elapsedTime += Time.deltaTime;
