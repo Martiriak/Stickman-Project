@@ -4,9 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
   - Death
   - Platform
+  - Cloud
+  - Fan
+  - Obstacle
+  - Floor
+  - Grind
+  - GrindTrigger
   layers:
   - Default
   - TransparentFX
