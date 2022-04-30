@@ -41,7 +41,7 @@ namespace Stickman.Levels.Spawner
 
             GameObject prefabLevelGameObj = m_levelsPool[chosenLevelIndex].Object.gameObject;
 
-            Level level = Instantiate(prefabLevelGameObj, transform.position, Quaternion.identity).GetComponent<Level>();
+            Level level = Instantiate(prefabLevelGameObj, transform).GetComponent<Level>();
             m_contextForLevels.ProvideContext(level);
             level.EnteringScreenFinished += SpawnNewLevel;
         }

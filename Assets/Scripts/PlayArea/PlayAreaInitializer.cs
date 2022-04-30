@@ -11,7 +11,8 @@ namespace Stickman.PlayArea
         [Space]
         [Tooltip("It will be positioned to the bottom-right corner of the screen.")]
         [SerializeField] private Transform mSpawner;
-
+        [SerializeField] private Transform mSpawner2;
+        [SerializeField] private Transform mSpawner3;
         private void Awake()
         {
             // Obtains the bottom-left (min) and the top-right (max) corners
@@ -23,8 +24,7 @@ namespace Stickman.PlayArea
 
             // Adds some padding, so that obstacles spawn and die slight more offscreen.
             min.x -= mPlayAreaPadding; min.y -= mPlayAreaPadding;
-            max.x += mPlayAreaPadding; max.x += mPlayAreaPadding;
-
+            max.x += mPlayAreaPadding; max.y += mPlayAreaPadding;
             // Obtains center and size of play area.
             Vector3 viewportCenter = mViewport.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, cameraDistanceToGamePlane));
             Vector3 playAreaSize = max - min; playAreaSize.z = 1f;
@@ -42,6 +42,10 @@ namespace Stickman.PlayArea
 
             // Places the spawner, respecting the x padding but not the y padding.
             mSpawner.position = new Vector3(max.x, min.y + mPlayAreaPadding, 0f);
+            if(mSpawner2 != null)
+                mSpawner2.position = new Vector3(max.x, max.y - mPlayAreaPadding, 0f);
+            if(mSpawner3 != null)
+                mSpawner3.position = new Vector3(max.x, viewportCenter.y, 0f);
         }
 
         private void OnValidate()
