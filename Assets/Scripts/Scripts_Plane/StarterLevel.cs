@@ -12,8 +12,8 @@ namespace Stickman
         [SerializeField] private SpeedManager mSpeedManager;
         private float currentSpeed;
 
-        [Tooltip("Allows the Level to know when it enters and exits the play view.")]
-        [SerializeField] private LevelEndTrigger mEndLevelTrigger;
+        [SerializeField]
+         private LevelEndTrigger mEndLevelTrigger;
         
         void Awake()
         {

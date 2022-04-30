@@ -7,6 +7,9 @@ TagManager:
   - Cloud
   - Fan
   - Obstacle
+  - Floor
+  - Grind
+  - GrindTrigger
   layers:
   - Default
   - TransparentFX
