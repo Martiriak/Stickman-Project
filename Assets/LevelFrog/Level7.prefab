@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8840252543097319047}
   - component: {fileID: 931171850512721427}
   - component: {fileID: 7851645110414742978}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155334039881345377}
   - component: {fileID: 8993733444322167136}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Level7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -609,7 +609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3790549226778531385}
   - component: {fileID: 6154471474479152679}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,6 +710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireOn (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
 --- !u!4 &3830497165093824128 stripped
@@ -784,6 +788,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireOn
       objectReference: {fileID: 0}
+    - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
 --- !u!4 &2245678280870911905 stripped
@@ -854,6 +862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireOn (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
 --- !u!1001 &4986306304708017955
@@ -918,6 +930,10 @@ PrefabInstance:
     - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
       propertyPath: m_Name
       value: FireOn (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
@@ -984,6 +1000,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireOn (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
 --- !u!1001 &6215646724582401238
@@ -1040,6 +1060,10 @@ PrefabInstance:
     - target: {fileID: 3365792590473934843, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
       propertyPath: m_Name
       value: End Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365792590473934843, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
@@ -1121,6 +1145,10 @@ PrefabInstance:
     - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
       propertyPath: m_Name
       value: FireOn (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8687213196750123596, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5e3178ed9259744ab59c48878ed3509, type: 3}

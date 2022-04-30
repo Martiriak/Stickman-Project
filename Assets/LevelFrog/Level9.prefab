@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8840252543097319047}
   - component: {fileID: 931171850512721427}
   - component: {fileID: 7851645110414742978}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -987,7 +987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155334039881345377}
   - component: {fileID: 8993733444322167136}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Level9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1033,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3790549226778531385}
   - component: {fileID: 6154471474479152679}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,6 +1121,10 @@ PrefabInstance:
     - target: {fileID: 3365792590473934843, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
       propertyPath: m_Name
       value: End Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365792590473934843, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}

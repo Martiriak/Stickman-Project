@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8840252543097319047}
   - component: {fileID: 931171850512721427}
   - component: {fileID: 7851645110414742978}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Tilemap
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 962636691694951881}
   - component: {fileID: 2610417327294665023}
   - component: {fileID: 7407754801481705093}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Off (1)
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   - component: {fileID: 6762543879286604734}
   - component: {fileID: 1325781275418480435}
   - component: {fileID: 9121112531052607775}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Off
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -817,7 +817,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155334039881345377}
   - component: {fileID: 8993733444322167136}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Level6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -865,7 +865,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3790549226778531385}
   - component: {fileID: 6154471474479152679}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -953,6 +953,10 @@ PrefabInstance:
     - target: {fileID: 3365792590473934843, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
       propertyPath: m_Name
       value: End Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365792590473934843, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47a974e37bb5b9847be47552c9bf39d9, type: 3}
