@@ -401,6 +401,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 85009aa4c0c846142bdaaf57516e0514, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: d99eb1d9d34cbc24bb27ff01f81784d8, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 16
     m_Data: {fileID: -2855676163392102926, guid: 413986c4a668c374d8de72a47621b531, type: 3}
@@ -408,6 +410,8 @@ Tilemap:
     m_Data: {fileID: 1959242234642493429, guid: 413986c4a668c374d8de72a47621b531, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 3960460497668127647, guid: 413986c4a668c374d8de72a47621b531, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 18
     m_Data:
@@ -1034,6 +1038,8 @@ MonoBehaviour:
   mPlayAreaPadding: 0.4
   mViewport: {fileID: 1678065251}
   mSpawner: {fileID: 549893352}
+  mSpawner2: {fileID: 0}
+  mSpawner3: {fileID: 0}
 --- !u!65 &1521613973
 BoxCollider:
   m_ObjectHideFlags: 0

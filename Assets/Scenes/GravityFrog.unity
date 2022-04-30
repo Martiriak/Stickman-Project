@@ -156,7 +156,7 @@ MonoBehaviour:
   mPlayAreaPadding: 0.4
   mViewport: {fileID: 963194227}
   mSpawner: {fileID: 1242250351}
-  mSpawner2: {fileID: 654768530}
+  mSpawner2: {fileID: 0}
   mSpawner3: {fileID: 0}
 --- !u!4 &25679586
 Transform:
@@ -855,7 +855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1464853757}
-  - component: {fileID: 1464853756}
+  - component: {fileID: 1464853758}
   m_Layer: 0
   m_Name: TemporaryLevel
   m_TagString: Untagged
@@ -863,20 +863,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1464853756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1464853755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05e35ffc5a5fae4cade09965041d9f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mSpeedManager: {fileID: 1839151778}
-  mEndLevelTrigger: {fileID: 1943694539}
 --- !u!4 &1464853757
 Transform:
   m_ObjectHideFlags: 0
@@ -892,6 +878,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1464853758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464853755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c98d019d52c76349b4739cc27d917b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mSpeedManager: {fileID: 1839151778}
+  mEndLevelTrigger: {fileID: 1943694539}
 --- !u!1 &1546531212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1313,10 @@ PrefabInstance:
     - target: {fileID: 8840252543097319047, guid: 43a1f4cd54de81444858004b5cab8969, type: 3}
       propertyPath: m_Tiles.Array.data[33].second.m_TileSpriteIndex
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8993733444322167136, guid: 43a1f4cd54de81444858004b5cab8969, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43a1f4cd54de81444858004b5cab8969, type: 3}
@@ -1750,7 +1754,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
