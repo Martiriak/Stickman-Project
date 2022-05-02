@@ -7,6 +7,7 @@ namespace Stickman
 {
     public class SkatePlayer : MonoBehaviour
     {
+        enum SkateState {LANDED , JUMPING , CANGRIND}
         private Rigidbody2D m_rig;
         [SerializeField]
         private float m_maxJumpForce = 10f;
@@ -14,11 +15,16 @@ namespace Stickman
         private float m_accumulatedJumpForce = 0f;
         [SerializeField]
         private float m_doubleJumpForce = 5f;
-        private bool m_landed = false;
+        [SerializeField]
+        private GameObject m_grindSparkling;
+        [SerializeField]
+        private GrindTrigger currentGrind = null;
         private bool m_hasDoubleJumped = false;
+        private bool m_landed = false;
         private bool m_canGrind = false;
 
-        public Action GrindOn, GrindOff;
+        private SkateState m_playerState = SkateState.JUMPING;
+
         void Awake()
         {
             m_rig = gameObject.GetComponent<Rigidbody2D>();
@@ -26,18 +32,37 @@ namespace Stickman
 
         void Update()
         {
-            if(!m_canGrind){
-                if(m_landed)
-                    SkateJump();
-                else
+           switch (m_playerState) {
+               case SkateState.JUMPING:
+                    gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                     DoubleJump();
-            }
+                    break;
+                case SkateState.LANDED:
+                    gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                    SkateJump();
+                    break;
+                case SkateState.CANGRIND:
+                    gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                    Grind();
+                    break;
+           }
+
+           /*if(!m_canGrind){
+               if(m_landed)
+                    SkateJump();
+                else    
+                    DoubleJump();
+           }
+           if(m_canGrind)
+                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            else
+                gameObject.GetComponent<SpriteRenderer>().color = Color.red;*/
         }
 
         private void SkateJump(){
             if(Input.GetButton("Fire1")){
                 m_accumulatedJumpForce += Time.deltaTime*10;
-                Debug.Log("JUMP!");
+                //Debug.Log("JUMP!");
             }
             else{
                 if(m_accumulatedJumpForce >= m_maxJumpForce)
@@ -53,10 +78,18 @@ namespace Stickman
                 if(!m_hasDoubleJumped){
                     m_rig.AddForce( Vector2.up * m_doubleJumpForce , ForceMode2D.Impulse);
                     m_hasDoubleJumped = true;
-                    Debug.Log("DOUBLEJUMP!");
+                   // Debug.Log("DOUBLEJUMP!");
                 }
         }
+
+        private void Grind(){
+            if(Input.GetButton("Fire1"))
+                if(currentGrind!=null)
+                    currentGrind.ActivateGrinds();
+        }
+
         private void Landing(){
+            m_playerState = SkateState.LANDED;
             m_landed = true;
             m_hasDoubleJumped = false;
             m_canGrind = false;
@@ -64,31 +97,45 @@ namespace Stickman
 
 
         private void OnCollisionEnter2D(Collision2D other){
-            if(other.gameObject.CompareTag("Floor")||other.gameObject.CompareTag("Grind"))
+            if(other.gameObject.CompareTag("Floor"))
                 Landing();
+            if(other.gameObject.CompareTag("Grind")){
+                m_grindSparkling.SetActive(true);
+                Landing();
+            }
         }
 
         private void OnCollisionExit2D(Collision2D other){
             if(other.gameObject.CompareTag("Floor"))
                 m_landed = false;
+                m_playerState = SkateState.JUMPING;
             if(other.gameObject.CompareTag("Grind")){
-                GrindOff?.Invoke();
+                m_playerState = SkateState.JUMPING;
                 m_landed = false;
+                m_grindSparkling.SetActive(false);
             }
         }
 
         private void OnTriggerEnter2D(Collider2D other){
-            if(other.CompareTag("GrindTrigger"))
-                m_canGrind = true;
-        } 
-
-        private void OnTriggerStay2D(Collider2D other)
-        {
-            if(other.gameObject.CompareTag("GrindTrigger")){
-                if(Input.GetButton("Fire1"))
-                   GrindOn?.Invoke();
+            if(other.CompareTag("GrindTrigger")){
+               currentGrind = other.gameObject.GetComponent<GrindTrigger>();
+               m_playerState = SkateState.CANGRIND;   
+               //m_canGrind = true;   
             }
         }
+        private void OnTriggerExit2D(Collider2D other){
+            if(other.CompareTag("GrindTrigger")){
+                currentGrind = null;
+                m_playerState = SkateState.JUMPING;   
+               //m_canGrind = false;   
+            }
+        }
+
+      /*  private void OnTriggerStay2D(Collider2D other){
+            if(other.CompareTag("GrindTrigger"))
+                if(Input.GetButton("Fire1"))
+                    other.gameObject.GetComponent<GrindTrigger>().ActivateGrinds();  
+        }*/
 
     }
 }

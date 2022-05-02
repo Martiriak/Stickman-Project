@@ -16,15 +16,15 @@ namespace Stickman
         // Start is called before the first frame update
         void Awake()
         {
-            m_player = GameObject.Find("Player");
+           /* m_player = GameObject.Find("Player");
             m_player.GetComponent<SkatePlayer>().GrindOn += ActivateGrinds;
-            m_player.GetComponent<SkatePlayer>().GrindOff += DeactivateGrinds;
+            m_player.GetComponent<SkatePlayer>().GrindOff += DeactivateGrinds;*/
             m_grindCollider = m_grindTile.GetComponent<BoxCollider2D>();
             m_grindTrigger = gameObject.GetComponent<BoxCollider2D>();
         }
 
 
-        private void ActivateGrinds(){
+        public void ActivateGrinds(){
             if(m_grindTrigger != null && m_grindCollider!= null){
                 m_grindTrigger.enabled =false; 
                 m_grindCollider.enabled = true;
