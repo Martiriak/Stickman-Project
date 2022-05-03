@@ -19,6 +19,9 @@ namespace Stickman
         private GameObject m_grindSparkling;
         [SerializeField]
         private GrindTrigger currentGrind = null;
+
+        [SerializeField]
+        private Transform m_startingPos = null;
         private bool m_hasDoubleJumped = false;
         private bool m_landed = false;
         private bool m_canGrind = false;
@@ -34,15 +37,15 @@ namespace Stickman
         {
            switch (m_playerState) {
                case SkateState.JUMPING:
-                    gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                    //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                     DoubleJump();
                     break;
                 case SkateState.LANDED:
-                    gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                   // gameObject.GetComponent<SpriteRenderer>().color = Color.green;
                     SkateJump();
                     break;
                 case SkateState.CANGRIND:
-                    gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                    //gameObject.GetComponent<SpriteRenderer>().color = Color.black;
                     Grind();
                     break;
            }
@@ -95,6 +98,24 @@ namespace Stickman
             m_canGrind = false;
         }
 
+        IEnumerator Respawn(){
+            m_playerState = SkateState.JUMPING;
+            gameObject.transform.position = m_startingPos.position;
+            m_rig.bodyType = RigidbodyType2D.Static;
+            StartCoroutine(Blink());
+            yield return new WaitForSeconds(1.5f);
+            m_rig.bodyType = RigidbodyType2D.Dynamic;
+        }
+
+        IEnumerator Blink(){
+            for(int i=0 ; i<4 ; i++){
+                yield return new WaitForSeconds(0.1f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                yield return new WaitForSeconds(0.1f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+        }
+
 
         private void OnCollisionEnter2D(Collision2D other){
             if(other.gameObject.CompareTag("Floor"))
@@ -121,6 +142,12 @@ namespace Stickman
                currentGrind = other.gameObject.GetComponent<GrindTrigger>();
                m_playerState = SkateState.CANGRIND;   
                //m_canGrind = true;   
+            }
+            if(other.CompareTag("KillZone")){
+                StartCoroutine(Respawn());
+            }
+            if(other.CompareTag("Obstacle")){
+                StartCoroutine(Blink());
             }
         }
         private void OnTriggerExit2D(Collider2D other){
