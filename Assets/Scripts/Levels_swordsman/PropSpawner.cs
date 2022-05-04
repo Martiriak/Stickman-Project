@@ -14,7 +14,7 @@ namespace Stickman
         {
             c_propsWeightTotal = 0f;
             for (int i = 0; i < m_propsPool.Length; ++i)
-                c_propsWeightTotal += m_propsPool[i].Weight;
+                c_propsWeightTotal += m_propsPool[i].SpawnProbWeight;
         }
 
         private void Start()
@@ -44,7 +44,7 @@ namespace Stickman
             int currentProp;
             for (currentProp = 0; currentProp < m_propsPool.Length - 1; ++currentProp)
             {
-                weightCheck += m_propsPool[currentProp].Weight / c_propsWeightTotal;
+                weightCheck += m_propsPool[currentProp].SpawnProbWeight / c_propsWeightTotal;
                 if (weightCheck > randomThreshold)
                     return currentProp;
             }

@@ -26,9 +26,12 @@ namespace Stickman.Levels
 
         public void AssignContext(LevelContext context) => mContext = context;
 
+        public Vector3 GetEndLevelPosition() => mEndLevelTrigger.transform.position;
 
         private void Awake()
         {
+            FixEndLevelPosition();
+
             mEndLevelTrigger.EnteringScreen += () =>
             {
                 EnteringScreenFinished?.Invoke();
@@ -39,6 +42,13 @@ namespace Stickman.Levels
                 //ExitingScreenFinished?.Invoke();
                 Destroy(gameObject);
             };
+
+
+            void FixEndLevelPosition()
+            {
+                float oldX = mEndLevelTrigger.transform.localPosition.x;
+                mEndLevelTrigger.transform.localPosition = new Vector3(oldX, 0f, 0f);
+            }
         }
 
         private void Update()

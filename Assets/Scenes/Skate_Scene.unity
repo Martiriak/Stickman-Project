@@ -581,7 +581,7 @@ GameObject:
   - component: {fileID: 446872945}
   - component: {fileID: 446872949}
   - component: {fileID: 446872950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -700,7 +700,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_minJumpForce: 2
   m_maxJumpForce: 10
-  m_accumulatedJumpForce: 0
   m_doubleJumpForce: 5
   m_grindSparkling: {fileID: 589791063}
   currentGrind: {fileID: 0}
@@ -779,13 +778,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsPool:
   - Object: {fileID: 6037243852033956611, guid: 1f200688fb51f0b4d9071bac7e1db766, type: 3}
-    Weight: 25
+    SpawnProbWeight: 1
+    LevelSlotWeight: 5
   - Object: {fileID: 6037243852033956611, guid: 6f345794914358e4aa3cd3e3c25676df, type: 3}
-    Weight: 25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 9355f96af49a6d5429d5460b6ee76930, type: 3}
-    Weight: 25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 48ca7014e5f836842998cec00414f7eb, type: 3}
-    Weight: 25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
+  m_minSlots: 2
+  m_maxSlots: 3
+  m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!114 &549893354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,7 +890,7 @@ GameObject:
   - component: {fileID: 589791064}
   - component: {fileID: 589791066}
   - component: {fileID: 589791065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrindSparkling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6040,26 +6046,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxSpeedTimestamp: 10
-  m_minSpeed: 5
-  m_maxSpeed: 7
+  m_minSpeed: 1
+  m_maxSpeed: 20
   m_speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0

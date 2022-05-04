@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9897314, g: 0.52100897, b: 0.3396706, a: 1}
+  m_IndirectSpecularColor: {r: 0.9833792, g: 0.52134705, b: 0.34159264, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,19 +169,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsPool:
   - Object: {fileID: 6037243852033956611, guid: 075724d8fc4f5f142a74f56a6758b99a, type: 3}
-    Weight: 0.06
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: a38cbe96d24b9f048905621795f68685, type: 3}
-    Weight: 0.06
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 62fdb66d5f6e9ca40aeb9f3c82881039, type: 3}
-    Weight: 0.06
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: b19219e2e7fa0744388173f67f89765c, type: 3}
-    Weight: 0.25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: e113f477c8c6c0c43a317e1302cf6964, type: 3}
-    Weight: 0.06
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 3cbc65dcd40db9547b2fd528f998eb32, type: 3}
-    Weight: 0.25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: ba8cc9fcf9d2ce840b2db8aa616ebaf6, type: 3}
-    Weight: 0.25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
+  m_minSlots: 20
+  m_maxSlots: 50
 --- !u!114 &67310002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,6 +940,8 @@ MonoBehaviour:
   mPlayAreaPadding: 0.4
   mViewport: {fileID: 479327939}
   mSpawner: {fileID: 67310000}
+  mSpawner2: {fileID: 0}
+  mSpawner3: {fileID: 0}
 --- !u!1 &1098110969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1092,7 @@ GameObject:
   - component: {fileID: 1198494893}
   - component: {fileID: 1198494894}
   - component: {fileID: 1198494895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}

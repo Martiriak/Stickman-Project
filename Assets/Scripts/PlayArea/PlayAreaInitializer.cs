@@ -13,6 +13,7 @@ namespace Stickman.PlayArea
         [SerializeField] private Transform mSpawner;
         [SerializeField] private Transform mSpawner2;
         [SerializeField] private Transform mSpawner3;
+
         private void Awake()
         {
             // Obtains the bottom-left (min) and the top-right (max) corners
