@@ -10,9 +10,9 @@ namespace Stickman
         enum SkateState {LANDED , JUMPING , CANGRIND}
         private Rigidbody2D m_rig;
         [SerializeField]
-        private float m_maxJumpForce = 10f;
+        private float m_minJumpForce = 2f;
         [SerializeField]
-        private float m_accumulatedJumpForce = 0f;
+        private float m_maxJumpForce = 10f;
         [SerializeField]
         private float m_doubleJumpForce = 5f;
         [SerializeField]
@@ -22,6 +22,7 @@ namespace Stickman
 
         [SerializeField]
         private Transform m_startingPos = null;
+        private float m_accumulatedJumpForce;
         private bool m_hasDoubleJumped = false;
         private bool m_landed = false;
         private bool m_canGrind = false;
@@ -31,6 +32,7 @@ namespace Stickman
         void Awake()
         {
             m_rig = gameObject.GetComponent<Rigidbody2D>();
+            m_accumulatedJumpForce = m_minJumpForce;
         }
 
         void Update()
@@ -67,18 +69,19 @@ namespace Stickman
                 m_accumulatedJumpForce += Time.deltaTime*10;
                 //Debug.Log("JUMP!");
             }
-            else{
+            if (Input.GetButtonUp("Fire1")){
                 if(m_accumulatedJumpForce >= m_maxJumpForce)
                     m_rig.AddForce( Vector2.up * m_maxJumpForce , ForceMode2D.Impulse);
                 else
                     m_rig.AddForce( Vector2.up * m_accumulatedJumpForce , ForceMode2D.Impulse);
-                m_accumulatedJumpForce = 0f;
+                m_accumulatedJumpForce = m_minJumpForce;
             }
         }
 
         private void DoubleJump(){
             if(Input.GetButton("Fire1"))
                 if(!m_hasDoubleJumped){
+                    m_rig.velocity = Vector3.zero;
                     m_rig.AddForce( Vector2.up * m_doubleJumpForce , ForceMode2D.Impulse);
                     m_hasDoubleJumped = true;
                    // Debug.Log("DOUBLEJUMP!");
@@ -86,7 +89,7 @@ namespace Stickman
         }
 
         private void Grind(){
-            if(Input.GetButton("Fire1"))
+            if(Input.GetButtonUp("Fire1"))
                 if(currentGrind!=null)
                     currentGrind.ActivateGrinds();
         }
@@ -100,6 +103,7 @@ namespace Stickman
 
         IEnumerator Respawn(){
             m_playerState = SkateState.JUMPING;
+            m_hasDoubleJumped = false;
             gameObject.transform.position = m_startingPos.position;
             m_rig.bodyType = RigidbodyType2D.Static;
             StartCoroutine(Blink());
@@ -158,11 +162,17 @@ namespace Stickman
             }
         }
 
-      /*  private void OnTriggerStay2D(Collider2D other){
-            if(other.CompareTag("GrindTrigger"))
-                if(Input.GetButton("Fire1"))
-                    other.gameObject.GetComponent<GrindTrigger>().ActivateGrinds();  
-        }*/
+        /*  private void OnTriggerStay2D(Collider2D other){
+              if(other.CompareTag("GrindTrigger"))
+                  if(Input.GetButton("Fire1"))
+                      other.gameObject.GetComponent<GrindTrigger>().ActivateGrinds();  
+          }*/
 
+
+        private void OnValidate()
+        {
+            if (m_minJumpForce > m_maxJumpForce)
+                m_minJumpForce = m_maxJumpForce;
+        }
     }
 }
