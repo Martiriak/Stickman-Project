@@ -2,20 +2,21 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace Stickman
 {
     public class GameGUI : MonoBehaviour
     {
-        public Text timeTxt;
-        public Text lifesTxt;
+        public TextMeshProUGUI timeTxt;
+        public TextMeshProUGUI lifesTxt;
         [SerializeField]
         private int lifes = 6;
         private float time;
         // Start is called before the first frame update
         void Start()
         {
-            lifesTxt.text = $"X {(int)lifes}";
+            lifesTxt.text = lifes.ToString();
         }
 
         // Update is called once per frame
@@ -24,7 +25,7 @@ namespace Stickman
             if (lifes > 0)
             {
                 time += Time.deltaTime;
-                timeTxt.text = $"{time.ToString("F2")}";
+                timeTxt.text = time.ToString("F2");
             }
         }
 
@@ -32,7 +33,7 @@ namespace Stickman
         {
             if (lifes > 0)
                 --lifes;
-            lifesTxt.text = $"X {(int)lifes}";
+            lifesTxt.text = lifes.ToString();
         }
 
         public int getLifes(){

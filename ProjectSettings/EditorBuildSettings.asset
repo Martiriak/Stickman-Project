@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GravityFrog.unity
+    guid: 898f6c4746554144e984ef96ff8261d1
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2649439de1ac54e47919370ddf394f91
   m_configObjects: {}
