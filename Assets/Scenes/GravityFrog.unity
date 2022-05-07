@@ -394,7 +394,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -793,9 +793,25 @@ PrefabInstance:
       propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1152918451, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1261952937, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756311528, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756311528, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756311528, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2050022645, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_fontSize
@@ -823,7 +839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503929, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503929, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_AnchorMax.x
