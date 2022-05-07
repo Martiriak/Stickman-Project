@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: bb22e9cd7a3f50c41aa55c47dd8c2975
+guid: 028cce151c1e6454294de9a2197395d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3863635566180601805
-    second: Idle (36x30)_0
+      213: -8022036859212284075
+    second: IdleSkate (324x36)_0
   - first:
-      213: -8165535363853985774
-    second: Idle (36x30)_1
+      213: 7775066884791865689
+    second: IdleSkate (324x36)_1
   - first:
-      213: 7862987919487705919
-    second: Idle (36x30)_2
+      213: -4921897411601628662
+    second: IdleSkate (324x36)_2
   - first:
-      213: -543282799792870788
-    second: Idle (36x30)_3
+      213: 7590118041413672967
+    second: IdleSkate (324x36)_3
   - first:
-      213: -3614944191346336372
-    second: Idle (36x30)_4
+      213: 6264172876530184207
+    second: IdleSkate (324x36)_4
   - first:
-      213: -4457439581400458947
-    second: Idle (36x30)_5
+      213: 6874347802004160257
+    second: IdleSkate (324x36)_5
   - first:
-      213: 7893082067117620602
-    second: Idle (36x30)_6
+      213: 5984250912842230186
+    second: IdleSkate (324x36)_6
   - first:
-      213: -6080118730266957380
-    second: Idle (36x30)_7
+      213: 9203759843787932425
+    second: IdleSkate (324x36)_7
   - first:
-      213: 868231032649035853
-    second: Idle (36x30)_8
+      213: -3577029267069893128
+    second: IdleSkate (324x36)_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -59,7 +59,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -88,14 +88,14 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -107,7 +107,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -119,7 +119,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,7 +131,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,13 +142,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle (36x30)_0
+      name: IdleSkate (324x36)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +156,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af1b6882ae5b1074496a256d33abdb1d
-      internalID: 3863635566180601805
+      spriteID: 55fbf87aafffba090800000000000000
+      internalID: -8022036859212284075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_1
+      name: IdleSkate (324x36)_1
       rect:
         serializedVersion: 2
         x: 36
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a677adaf5c5fefb44ab0d77c29d60107
-      internalID: -8165535363853985774
+      spriteID: 9511cec332696eb60800000000000000
+      internalID: 7775066884791865689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_2
+      name: IdleSkate (324x36)_2
       rect:
         serializedVersion: 2
         x: 72
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8bdece2df39ea64aaeffa5fc3ebe41a
-      internalID: 7862987919487705919
+      spriteID: a020298a168e1bbb0800000000000000
+      internalID: -4921897411601628662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_3
+      name: IdleSkate (324x36)_3
       rect:
         serializedVersion: 2
         x: 108
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 105a94e2ddeb2694b807bc319f63192f
-      internalID: -543282799792870788
+      spriteID: 700eebdf424855960800000000000000
+      internalID: 7590118041413672967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_4
+      name: IdleSkate (324x36)_4
       rect:
         serializedVersion: 2
         x: 144
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d15d82ca911bbc74591248e68c2e0864
-      internalID: -3614944191346336372
+      spriteID: f00f73dca00dee650800000000000000
+      internalID: 6264172876530184207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_5
+      name: IdleSkate (324x36)_5
       rect:
         serializedVersion: 2
         x: 180
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ccda67feb67ffc4c966e1e410dfd8e8
-      internalID: -4457439581400458947
+      spriteID: 10ff1f077e6966f50800000000000000
+      internalID: 6874347802004160257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_6
+      name: IdleSkate (324x36)_6
       rect:
         serializedVersion: 2
         x: 216
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a0f17bb7d097ab4387cfa6d62d952b3
-      internalID: 7893082067117620602
+      spriteID: aa9a4c2df745c0350800000000000000
+      internalID: 5984250912842230186
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_7
+      name: IdleSkate (324x36)_7
       rect:
         serializedVersion: 2
         x: 252
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -303,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5cdaa54a26a3db4bb61927dae4ae556
-      internalID: -6080118730266957380
+      spriteID: 9030cf670d25abf70800000000000000
+      internalID: 9203759843787932425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (36x30)_8
+      name: IdleSkate (324x36)_8
       rect:
         serializedVersion: 2
         x: 288
         y: 0
         width: 36
-        height: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,8 +324,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 146f7246483ad704d8654feccbfdb7d9
-      internalID: 868231032649035853
+      spriteID: 8f58f1165d6db5ec0800000000000000
+      internalID: -3577029267069893128
       vertices: []
       indices: 
       edges: []

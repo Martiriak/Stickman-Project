@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9833792, g: 0.52134705, b: 0.34159264, a: 1}
+  m_IndirectSpecularColor: {r: 0.9897314, g: 0.52100897, b: 0.3396706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,11 +186,15 @@ MonoBehaviour:
   - Object: {fileID: 6037243852033956611, guid: 3cbc65dcd40db9547b2fd528f998eb32, type: 3}
     SpawnProbWeight: 0
     LevelSlotWeight: 1
+  - Object: {fileID: 6037243852033956611, guid: cddb4bb42749faa43adc3eb05bab71a8, type: 3}
+    SpawnProbWeight: 10
+    LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: ba8cc9fcf9d2ce840b2db8aa616ebaf6, type: 3}
     SpawnProbWeight: 0
     LevelSlotWeight: 1
   m_minSlots: 20
   m_maxSlots: 50
+  m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!114 &67310002
 MonoBehaviour:
   m_ObjectHideFlags: 0
