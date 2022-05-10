@@ -1,3 +1,4 @@
+using System; // C# Actions
 using UnityEngine;
 using Stickman.WeightWrapper;
 using Random = UnityEngine.Random;
@@ -26,6 +27,14 @@ namespace Stickman.Levels.Spawner
         // The cached sum of all the probabilities weights.
         private float c_levelsWeightTotal;
 
+
+        /*  private bool haha = false;
+            public bool Haha => haha;
+        Stessa cosa sotto.
+        */
+        public bool HasFinishedSpawning { get; private set; } = false;
+        
+
         private void Awake()
         {
 #if UNITY_EDITOR
@@ -50,11 +59,15 @@ namespace Stickman.Levels.Spawner
         {
             int numberOfSlots = Random.Range(m_minSlots, m_maxSlots);
 
+            // Spawna tutti i livelli...
             while (numberOfSlots > 0)
                 numberOfSlots -= SpawnNewLevel();
 
+            // Spawna l'ultimo livello, il portale.
             Level level = Instantiate(m_finalLevelPrefab, m_nextLevelPosition, transform.rotation).GetComponent<Level>();
             m_contextForLevels.ProvideContext(level);
+
+            HasFinishedSpawning = true;
         }
 
         private int SpawnNewLevel()
