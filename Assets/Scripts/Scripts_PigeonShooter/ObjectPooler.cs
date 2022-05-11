@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace pigeonShooter
 {
+    /// <summary>
+    /// Script responsible for pooling gameobjects.
+    /// Pooled objects need to inherit from IPooledObject & can be instantiated 
+    /// calling: ObjectPooler.Instance.SpawnFromPool("name", pos, rot);
+    /// </summary>
     public class ObjectPooler : MonoBehaviour
     {
         //public static ObjectPooler Instance { get; private set; }

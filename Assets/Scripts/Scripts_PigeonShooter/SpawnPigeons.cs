@@ -8,10 +8,10 @@ namespace pigeonShooter
     {
         public GameObject pigeonPrefab;
 
-        private float maxXPos = 10f; // hard-coded boundaries of max-min spawn pos
-        private float minXPos = -1f;
-        private float maxYPos = 6f;
-        private float minYPos = 0f;
+        private float maxXPos = 9.5f; // hard-coded boundaries of max-min spawn pos
+        private float minXPos = -3f;
+        private float maxYPos = 5.5f;
+        private float minYPos = -2f;
 
         private float xPos;
         private float yPos;
@@ -55,7 +55,7 @@ namespace pigeonShooter
                     xPos = UnityEngine.Random.Range(minXPos, maxXPos);
                 }
                 Instantiate(pigeonPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.2f);
             }
         }
     }

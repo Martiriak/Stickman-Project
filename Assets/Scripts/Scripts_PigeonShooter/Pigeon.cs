@@ -4,6 +4,11 @@ using UnityEngine;
 
 namespace pigeonShooter
 {
+    /// <summary>
+    /// Script attached to Pigeon enemy.
+    /// Pigeon moves towards player. 
+    /// When hit by bullet dies, spawning PigeonFall & particle effect.
+    /// </summary>
     public class Pigeon : MonoBehaviour
     {
         private int life = 1;
@@ -15,11 +20,11 @@ namespace pigeonShooter
         private GameObject pigeonFeathers;
 
         private Transform targetPlayer;
-        private float speed = 4f;
+        private float speed = 5f;
 
         private void Awake()
         {
-            targetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>(); // better to change it with "Player"
+            targetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>();
         }
 
         void FixedUpdate()

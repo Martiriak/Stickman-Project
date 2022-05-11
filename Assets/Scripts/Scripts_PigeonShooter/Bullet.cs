@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace pigeonShooter
 {
+    /// <summary>
+    /// Script attached to Bullet.
+    /// Disables bullet after some time.
+    /// </summary>
     public class Bullet : MonoBehaviour, IPooledObject
     {
         public void OnObjectSpawn()
@@ -14,7 +18,7 @@ namespace pigeonShooter
 
         IEnumerator DisableBullet()
         {
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(1);
             gameObject.SetActive(false);
         }
     }

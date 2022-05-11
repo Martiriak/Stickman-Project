@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace pigeonShooter
 {
+    /// <summary>
+    /// Script attached to empty gameobject. 
+    /// When area of screen touched, turns gun and spawns bullet.
+    /// </summary>
     public class PointAndShoot : MonoBehaviour
     {
         public GameObject gun;
@@ -18,7 +22,7 @@ namespace pigeonShooter
         void Start()
         {
             objectPooler = ObjectPooler.Instance;
-            myCamera = GameObject.Find("Main Camera").GetComponent<Camera>(); // Change to find with tag ...
+            myCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         }
 
         void Update()
