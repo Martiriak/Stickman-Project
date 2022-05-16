@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Bazisti.Singletons.AudioManager;
-using Bazisti.Player.Fish;
+//using Bazisti.Singletons.AudioManager;
+//using Bazisti.Player.Fish;
 
 namespace Bazisti.Singletons.GameManager
 {
@@ -25,8 +25,8 @@ namespace Bazisti.Singletons.GameManager
         float _elapsedTime;
 
         IEnumerator _timeCounterCoroutine;
-        FishController _player;
-        Spawner _spawner;
+        //FishController _player;
+        //Spawner _spawner;
         Scene _gameOverScene;
         #endregion
 
@@ -56,19 +56,19 @@ namespace Bazisti.Singletons.GameManager
 
                 if (_elapsedTime > workingHFrequency)
                 {
-                    _player.SetHungerDecayRate(hungerIncrementStep, true);
+                    //_player.SetHungerDecayRate(hungerIncrementStep, true);
                     workingHFrequency += hungerIncrementFrequency;
                 }
 
                 if (false && _elapsedTime > workingLFrequency)
                 {
-                    _spawner.LostFishFrequency = _spawner.LostFishFrequency + lostFishIncrementStep;
+                   // _spawner.LostFishFrequency = _spawner.LostFishFrequency + lostFishIncrementStep;
                     workingLFrequency += lostFishIncrementFrequency;
                 }
 
                 if (_elapsedTime > workingFFrequency)
                 {
-                    _spawner.FoodFrequency = _spawner.FoodFrequency + foodIncrementStep;
+                   // _spawner.FoodFrequency = _spawner.FoodFrequency + foodIncrementStep;
                     workingFFrequency += foodIncrementFrequency;
                 }
             }
@@ -78,8 +78,8 @@ namespace Bazisti.Singletons.GameManager
         {
             if (scene.name == "Main")
             {   
-                _player = GameObject.FindWithTag("Player").GetComponent<FishController>();
-                _spawner = GameObject.FindWithTag("Spawner").GetComponent<Spawner>();
+              //  _player = GameObject.FindWithTag("Player").GetComponent<FishController>();
+              //  _spawner = GameObject.FindWithTag("Spawner").GetComponent<Spawner>();
 
                 _timeCounterCoroutine = TimeCounter();
                 StartCoroutine(_timeCounterCoroutine);
@@ -97,7 +97,7 @@ namespace Bazisti.Singletons.GameManager
 
             SceneManager.LoadScene("Main");
             SceneManager.LoadScene("UI", LoadSceneMode.Additive);
-            AudioManager.AudioManager.Instance.Play("Background");
+          //  AudioManager.AudioManager.Instance.Play("Background");
         }
 
         public void GameOver(bool hasWon)
@@ -110,11 +110,11 @@ namespace Bazisti.Singletons.GameManager
 
             SceneManager.UnloadSceneAsync("UI");
 
-            AudioManager.AudioManager.Instance.Play("GameOver");
-            Destroy(_player.gameObject);
-            Destroy(_spawner.gameObject);
-            _player = null;
-            _spawner = null;
+           // AudioManager.AudioManager.Instance.Play("GameOver");
+           // Destroy(_player.gameObject);
+           // Destroy(_spawner.gameObject);
+           // _player = null;
+           // _spawner = null;
 
 
             HasWon = hasWon;
