@@ -12,24 +12,41 @@ namespace pigeonShooter
     public class Pigeon : MonoBehaviour
     {
         private int life = 1;
-        //private int attack = 1;
 
-        [SerializeField]
-        private GameObject pigeonFall;
-        [SerializeField]
-        private GameObject pigeonFeathers;
+        [SerializeField] private GameObject pigeonFall;
+        [SerializeField] private GameObject pigeonFeathers;
 
         private Transform targetPlayer;
-        private float speed = 5f;
+        private float speed = 4f;
+        private float dashSpeed = 12f;
+        private Vector3 dashVector;
+        bool isDashing;
+        bool isSurvived;
+        bool isAttacking;
 
         private void Awake()
         {
             targetPlayer = GameObject.FindWithTag("Player").GetComponent<Transform>();
         }
 
+        public void Start()
+        {
+            Destroy(this.gameObject, 8); // bird dies after 8 sec
+            isDashing = false; isSurvived = false; isAttacking = false;
+            // ANIMATION: idle
+        }
+
         void FixedUpdate()
         {
-            MoveTowardsPlayer();
+            
+            if ((this.transform.position - targetPlayer.position).magnitude > 2.9f && isDashing == false)
+            {
+                MoveTowardsPlayer();
+            }
+            else
+            {
+                DashTroughPlayer();
+            }
         }
 
         void MoveTowardsPlayer()
@@ -38,10 +55,45 @@ namespace pigeonShooter
             transform.Translate(direction * Time.fixedDeltaTime * speed);
         }
 
+        void DashTroughPlayer()
+        {
+            if (!isDashing)
+            {
+                // ANIMATION: dash
+                dashVector = (targetPlayer.position - this.transform.position).normalized;
+                isDashing = true;
+            }
+
+            if (this.transform.position.x > targetPlayer.position.x)
+            {
+                transform.Translate(dashVector * Time.fixedDeltaTime * dashSpeed);
+            }
+            else if (!isAttacking)
+            {
+                isAttacking = true;
+                // DEAL DAMAGE TO PLAYER
+            }
+            else if ((this.transform.position - targetPlayer.position).magnitude < 1.3f)
+            {
+                transform.Translate(dashVector * Time.fixedDeltaTime * dashSpeed);
+            }
+            else
+            {
+                transform.Translate((Vector3.left + Vector3.up).normalized * Time.fixedDeltaTime * speed);
+                if (!isSurvived)
+                {
+                    isSurvived = true;
+                    // ANIMATION: idle
+                }
+            }
+
+
+        }
+
         void TakeDamage()
         {
             life -= 1;
-            if (life <= 0)
+            if (life <= 0 && !isDashing)
             {
                 //Instantiate(pigeonFall, this.transform.position, Quaternion.identity);
                 ObjectPooler.Instance.SpawnFromPool("PigeonFall", this.transform.position, Quaternion.identity);
@@ -55,7 +107,6 @@ namespace pigeonShooter
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
-                //Destroy(other); //destroy bullet?
                 TakeDamage();
             }
         }

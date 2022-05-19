@@ -18,7 +18,7 @@ namespace pigeonShooter
         [SerializeField] private float bg2SpeedRed;
         [SerializeField] private float bg3SpeedRed;
         [Space]
-        public float offset;
+        public float backgroundMovementOffset;
         private Vector3 min; //bottom left corner of viewport box
         private Vector3 max; //bottom right corner of viewport box
 
@@ -35,7 +35,7 @@ namespace pigeonShooter
         {
             if (bg1.transform.position.x < min.x * 2)
             {
-                bg1.transform.position = new Vector3(max.x * 2 + offset, (max.y + min.y / 2) - 1f);
+                bg1.transform.position = new Vector3(max.x * 2 + backgroundMovementOffset, (max.y + min.y / 2) - 1f);
             }
             else
             {
@@ -45,7 +45,7 @@ namespace pigeonShooter
 
             if (bg2.transform.position.x < min.x * 2)
             {
-                bg2.transform.position = new Vector3(max.x * 2 + offset, (max.y + min.y / 2) - 1f);
+                bg2.transform.position = new Vector3(max.x * 2 + backgroundMovementOffset, (max.y + min.y / 2) - 1f);
             }
             else
             {
@@ -54,17 +54,12 @@ namespace pigeonShooter
 
             if (bg3.transform.position.x < min.x * 2)
             {
-                bg3.transform.position = new Vector3(max.x * 2 + offset, (max.y + min.y / 2) - 1f);
+                bg3.transform.position = new Vector3(max.x * 2 + backgroundMovementOffset, (max.y + min.y / 2) - 1f);
             }
             else
             {
                 bg3.transform.position += new Vector3(-groundSpeed * bg3SpeedRed * Time.deltaTime, 0);
             }
-
-            
-            
-            
-
             
         }
 

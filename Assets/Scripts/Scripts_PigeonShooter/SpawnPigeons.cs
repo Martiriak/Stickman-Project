@@ -8,17 +8,35 @@ namespace pigeonShooter
     {
         public GameObject pigeonPrefab;
 
-        private float maxXPos = 9.5f; // hard-coded boundaries of max-min spawn pos
-        private float minXPos = -3f;
-        private float maxYPos = 5.5f;
-        private float minYPos = -2f;
-
+        [SerializeField] private Camera mViewport;
+        private float screenAreaPadding = 0.35f;
+        private Vector3 min; //bottom left corner of viewport box
+        private Vector3 max; //bottom right corner of viewport box
         private float xPos;
         private float yPos;
+        private ObjectPooler objectPooler;
+
 
         private void Start()
         {
+            GetScreenBorders();
             StartPigeonSpawn();
+            objectPooler = ObjectPooler.Instance;
+        }
+
+        private void GetScreenBorders() /// Would be better to call a PlayAreaInitializer GetCorners method ... Tell Alessandro!!!
+        {
+            // Obtain bottom-left (min) and the top-right (max) corners of viewport box
+            float cameraDistanceToGamePlane = Mathf.Abs(mViewport.transform.position.z);
+            min = mViewport.ViewportToWorldPoint(new Vector3(0f, 0f, cameraDistanceToGamePlane));
+            max = mViewport.ViewportToWorldPoint(new Vector3(1f, 1f, cameraDistanceToGamePlane));
+            min.z = 0f; max.z = 0f;
+            // Adds some padding
+            min.x -= screenAreaPadding; min.y -= screenAreaPadding;
+            max.x += screenAreaPadding; max.y += screenAreaPadding;
+            // Obtains center and size of play area.
+            Vector3 viewportCenter = mViewport.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, cameraDistanceToGamePlane));
+            Vector3 playAreaSize = max - min; playAreaSize.z = 1f;
         }
 
         public void StartPigeonSpawn()
@@ -40,24 +58,34 @@ namespace pigeonShooter
 
         IEnumerator PigeonSpawn()
         {
+            float minX; float minY;
+            minX = max.x - ((max.x - min.x) * 0.7f);
+            minY = max.y - ((max.y - min.y) * 0.8f);
+
             while (true)
             {
                 if (UnityEngine.Random.value > 0.5f) // with prob 50%
                 {
                     // spawn pigeon with x fixed (in front of player) and rand y
-                    xPos = maxXPos;
-                    yPos = UnityEngine.Random.Range(minYPos, maxYPos);
+                    //xPos = maxXPos;
+                    //yPos = UnityEngine.Random.Range(minYPos, maxYPos);
+                    xPos = max.x;
+                    yPos = UnityEngine.Random.Range(minY, max.y);
                 }
                 else
                 {
                     // spawn pigeon with y fixed (on top of player) and rand x
-                    yPos = maxYPos;
-                    xPos = UnityEngine.Random.Range(minXPos, maxXPos);
+                    //yPos = maxYPos;
+                    //xPos = UnityEngine.Random.Range(minXPos, maxXPos);
+                    yPos = max.y;
+                    xPos = UnityEngine.Random.Range(minX, max.x);
                 }
                 Instantiate(pigeonPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
-                yield return new WaitForSeconds(0.2f);
+                //ObjectPooler.Instance.SpawnFromPool("PigeonPoolName", new Vector3(xPos, yPos, 0), Quaternion.identity);
+                yield return new WaitForSeconds(0.3f);
             }
         }
+
     }
 }
 

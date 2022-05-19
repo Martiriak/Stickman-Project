@@ -13,7 +13,7 @@ namespace pigeonShooter
         public void OnObjectSpawn()
         {
             //Destroy(gameObject, 1);
-            StartCoroutine(DisableBullet());
+            //StartCoroutine(DisableBullet());
         }
 
         IEnumerator DisableBullet()

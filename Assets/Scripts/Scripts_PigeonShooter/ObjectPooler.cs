@@ -29,15 +29,15 @@ namespace pigeonShooter
 
         private void Awake()
         {
-            //if (Instance == null)
-            //{
-            //    DontDestroyOnLoad(gameObject);
-            //    Instance = this;
-            //}
-            //else
-            //{
-            //    Destroy(gameObject);
-            //}
+            if (Instance == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             Instance = this;
         }
 
@@ -62,7 +62,7 @@ namespace pigeonShooter
 
         public GameObject SpawnFromPool(string tag, Vector3 position, Quaternion rotation)
         {
-            if (! poolDictionary.ContainsKey(tag))
+            if (!poolDictionary.ContainsKey(tag))
             {
                 Debug.LogError("Pool with tag " + tag + " doesn't exist");
                 return null;
