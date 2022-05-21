@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2649439de1ac54e47919370ddf394f91
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: 8a5ef8636f9511b47ad8f17bdc0bca8b
+  - enabled: 1
+    path: Assets/Scenes/GravityFrog.unity
+    guid: 898f6c4746554144e984ef96ff8261d1
+  - enabled: 1
+    path: Assets/Scenes/PigeonShooter.unity
+    guid: 049e51dd4ed5e2a4b8448be2253683e2
+  - enabled: 1
+    path: Assets/Scenes/Plane_Scene.unity
+    guid: bb41bbcf03bb8d54e939878c7ab3e74a
+  - enabled: 1
+    path: Assets/Scenes/Skate_Scene.unity
+    guid: fa78acbf5ac91fd40bd0be0fdfa59726
+  - enabled: 1
+    path: Assets/Scenes/Swordsman Scene.unity
+    guid: b93bf2a0fce585f4abf7a88963a04224
   m_configObjects: {}
