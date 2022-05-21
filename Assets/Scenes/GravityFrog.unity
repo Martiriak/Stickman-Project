@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 77715b8b6b248994891d3ccad1ad330b, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44600135, g: 0.624972, b: 0.72263163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -230,7 +230,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsPool:
   - Object: {fileID: 3974481625408135969, guid: 738018e8ea18bae46b33cf1fb1507af0, type: 3}
-    Weight: 0.6
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
+  m_minSlots: 20
+  m_maxSlots: 50
+  m_finalLevelPrefab: {fileID: 0}
 --- !u!4 &600252631
 Transform:
   m_ObjectHideFlags: 0
@@ -243,7 +247,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!1 &654768527
 GameObject:
@@ -289,6 +293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_levelsPool: []
+  m_minSlots: 20
+  m_maxSlots: 50
+  m_finalLevelPrefab: {fileID: 0}
 --- !u!4 &654768530
 Transform:
   m_ObjectHideFlags: 0
@@ -394,7 +401,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -524,27 +531,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsPool:
   - Object: {fileID: 8993733444322167136, guid: 1e376f6a633bfd9469f118a4e811372c, type: 3}
-    Weight: 0.6
+    SpawnProbWeight: 1
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: c97272853c5f9f347bd5e7a34a6d4d82, type: 3}
-    Weight: 0.6
+    SpawnProbWeight: 2
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: 3b5f72bbaeda04642b9ec7783169adfa, type: 3}
-    Weight: 0.6
+    SpawnProbWeight: 3
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: dfb9bc2a4e99e094bb4ea3218379e14b, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 4
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: e321466b49ffc384b93e0b75bcce4b37, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 5
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: 53ae3a93467879440aca325c6cb76390, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 6
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: b729d59523b3bc446b71054adee785b7, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 7
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: 24aa2bc23536a084a9e5242ee67fc6fb, type: 3}
-    Weight: 0.2
+    SpawnProbWeight: 8
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: d529c69ca05bf184d8ee86fde897aa6d, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 9
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: 5b3325b0131d26d42a46ec7c48e869d0, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 10
+    LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: d1b4638e4aab94043928d9fc25f7324d, type: 3}
-    Weight: 0.3
+    SpawnProbWeight: 11
+    LevelSlotWeight: 1
+  m_minSlots: 20
+  m_maxSlots: 50
+  m_finalLevelPrefab: {fileID: 6012735780272281297, guid: e60b8f9e070baba40930e80ee4af2bf4, type: 3}
 --- !u!4 &1242250351
 Transform:
   m_ObjectHideFlags: 0
@@ -689,7 +710,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839151777
 GameObject:
@@ -839,7 +860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503929, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503929, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_AnchorMax.x
@@ -924,7 +945,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1686979069697926836, guid: c5f84bcefced82847a063524425688b1, type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1686979069697926836, guid: c5f84bcefced82847a063524425688b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -993,7 +1014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740574570852602703, guid: 385f9d53cc6c9f840ba764b33a25a77f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1740574570852602703, guid: 385f9d53cc6c9f840ba764b33a25a77f, type: 3}
       propertyPath: m_LocalPosition.x
