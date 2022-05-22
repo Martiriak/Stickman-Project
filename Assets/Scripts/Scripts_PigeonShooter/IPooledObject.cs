@@ -1,6 +1,10 @@
 using UnityEngine;
 
-public interface IPooledObject
+namespace pigeonShooter
 {
-    void OnObjectSpawn();
+    public interface IPooledObject
+    {
+        void OnObjectSpawn();
+    }
 }
+
