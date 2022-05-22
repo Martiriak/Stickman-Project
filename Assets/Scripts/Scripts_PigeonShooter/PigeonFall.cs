@@ -15,10 +15,10 @@ namespace pigeonShooter
         public void OnObjectSpawn()
         {
             //Destroy(gameObject, 1);
-            StartCoroutine(DisableBullet());
+            StartCoroutine(DisablePigeonFall());
         }
 
-        IEnumerator DisableBullet()
+        IEnumerator DisablePigeonFall()
         {
             yield return new WaitForSeconds(5);
             gameObject.SetActive(false);

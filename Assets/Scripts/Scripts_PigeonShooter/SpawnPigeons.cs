@@ -82,7 +82,7 @@ namespace pigeonShooter
                 }
                 Instantiate(pigeonPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
                 //ObjectPooler.Instance.SpawnFromPool("PigeonPoolName", new Vector3(xPos, yPos, 0), Quaternion.identity);
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
