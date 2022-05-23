@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -358,7 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a083caf4789a934681474c6fbda0ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpeedManager: {fileID: 537181540}
 --- !u!114 &481497033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,15 +372,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsPool:
   - Object: {fileID: 3974481625408135969, guid: fc0cd2006b5708c48bc9606ca5357e3e, type: 3}
-    Weight: 3
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 42929990156e90040ad2126c4459815f, type: 3}
-    Weight: 0.4
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 6ba84d5772cdbd44db222bca88f72bed, type: 3}
-    Weight: 0.25
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 38fae17ce815dd649a13d37b9571d3a2, type: 3}
-    Weight: 0.2
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 161bdf3344a4ab94b8a0781abb2d7a5d, type: 3}
-    Weight: 0.15
+    SpawnProbWeight: 0
+    LevelSlotWeight: 1
+  m_minSlots: 4
+  m_maxSlots: 5
+  m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!4 &481497034
 Transform:
   m_ObjectHideFlags: 0
@@ -512,6 +519,8 @@ MonoBehaviour:
   mPlayAreaPadding: 0.4
   mViewport: {fileID: 158613062}
   mSpawner: {fileID: 481497034}
+  mSpawner2: {fileID: 0}
+  mSpawner3: {fileID: 0}
 --- !u!4 &1403087961
 Transform:
   m_ObjectHideFlags: 0

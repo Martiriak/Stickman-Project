@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Stickman.Managers;
+
 namespace Stickman
 {
     public class LevelLoader : MonoBehaviour
@@ -13,11 +15,12 @@ namespace Stickman
         public Sprite[] images;
         GameObject randomCharacterPanel, selectedCharacterPanel;
         int selectedCharacterIndex;
-        public float transitionTime = 3f;
+        int previousScene;
         Dictionary<Characters , int> charactersMapScenes = new Dictionary<Characters, int>();
         
         private void Awake()
         {
+            previousScene =  GameManager.Instance.CurrentLoadedScene;
             randomCharacterPanel = GameObject.Find("RandomChar");
             selectedCharacterPanel = GameObject.Find("SelectedChar");
         }
@@ -31,13 +34,15 @@ namespace Stickman
         {
             yield return new WaitForSeconds(5f);
             EnableCharacterPanel(true);
-            yield return new WaitForSeconds(transitionTime);
+            yield return new WaitForSeconds(2f);
             transition.SetBool("End" , true);
-            //SceneManager.LoadScene(PickCharacterScene(selectedCharacterIndex));
-            Debug.Log(PickCharacterScene(selectedCharacterIndex));
+            yield return new WaitForSeconds(2f);
+            Debug.Log("Next Scene: " + PickCharacterScene(selectedCharacterIndex));
+            SceneManager.LoadScene(PickCharacterScene(selectedCharacterIndex));
+            //Debug.Log(PickCharacterScene(selectedCharacterIndex));
         }
 
-        private void PickRandomCharacter(){selectedCharacterIndex = Random.Range(0,4);}
+
         private int PickCharacterScene(int index){
             switch(index){
                 case 0:
@@ -68,9 +73,14 @@ namespace Stickman
             randomCharacterPanel.SetActive(!setting);
             selectedCharacterPanel.SetActive(setting);
         }        
-
+        private void PickRandomCharacter()
+        {
+            selectedCharacterIndex = Random.Range(0,5);    
+        }
         private void InizializeCharacterPanel(){  
-            PickRandomCharacter();
+            do
+                PickRandomCharacter();
+            while( selectedCharacterIndex == PickCharacterScene(selectedCharacterIndex));
             selectedCharacterPanel.GetComponent<SpriteRenderer>().sprite = images[selectedCharacterIndex];
         }
 

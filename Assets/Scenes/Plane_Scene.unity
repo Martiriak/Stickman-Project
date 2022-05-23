@@ -192,8 +192,8 @@ MonoBehaviour:
   - Object: {fileID: 6037243852033956611, guid: ba8cc9fcf9d2ce840b2db8aa616ebaf6, type: 3}
     SpawnProbWeight: 0
     LevelSlotWeight: 1
-  m_minSlots: 20
-  m_maxSlots: 50
+  m_minSlots: 1
+  m_maxSlots: 2
   m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!114 &67310002
 MonoBehaviour:
@@ -207,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a083caf4789a934681474c6fbda0ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mSpeedManager: {fileID: 1185692109}
 --- !u!1 &110611348
 GameObject:
   m_ObjectHideFlags: 0
