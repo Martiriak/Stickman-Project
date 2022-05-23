@@ -1,6 +1,6 @@
 using UnityEngine;
 using Stickman.Levels.Context;
-using Stickman.Managers.Speed;
+using Stickman.Managers;
 
 namespace Stickman.Levels.Spawner
 {
@@ -12,22 +12,16 @@ namespace Stickman.Levels.Spawner
     [RequireComponent(typeof(LevelSpawner))]
     public class LevelSpawnerContext : MonoBehaviour
     {
-        [SerializeField] private SpeedManager mSpeedManager;
-
-        private LevelContext mContextToAssign;
+        private LevelContext m_contextToAssign;
 
         private void Awake()
         {
-#if UNITY_EDITOR
-            if (mSpeedManager == null)
-                Debug.LogError("No speed manager was provided!");
-#endif
-            mContextToAssign = new LevelContext(mSpeedManager);
+            m_contextToAssign = new LevelContext(GameManager.Instance.SpeedManager);
         }
 
         public void ProvideContext(Level level)
         {
-            level.AssignContext(mContextToAssign);
+            level.AssignContext(m_contextToAssign);
         }
     }
 }
