@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Stickman.Managers;
+using Stickman.Player;
 
 namespace Stickman
 {
-    public class GravityFrog : MonoBehaviour
+    public class GravityFrog : PlayerBase
     {
         [SerializeField]
         private AnimationClip[] animationClips;
@@ -58,35 +59,41 @@ namespace Stickman
             }*/
         }
 
-        void OnCollisionEnter2D(Collision2D collision)
+        protected override void OnLanding()
         {
-            if (collision.gameObject.CompareTag("Platform"))
-            {
-                gravity = true;
-            }
+            Debug.Log("WEEEEEELA !!!");
         }
 
-        void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                anim.SetBool("Hit", true);
-                Debug.Log("Obstacle In");
-                GameManager.Instance.LivesManager.RemoveLife();
-            }
-        }
 
-        void OnTriggerExit2D(Collider2D collision)
-        {
-            Debug.Log("COLLISIONE CON ...");
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                Debug.Log("COLLISIONE CON OBSTACLE");
-                anim.SetBool("Hit", false);
-                GameManager.Instance.LivesManager.RemoveLife();
-                Debug.Log("Obstacle Out");
-            }
-        }
+        //void OnCollisionEnter2D(Collision2D collision)
+        //{
+        //    if (collision.gameObject.CompareTag("Platform"))
+        //    {
+        //        gravity = true;
+        //    }
+        //}
+
+        //void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if (collision.gameObject.CompareTag("Obstacle"))
+        //    {
+        //        anim.SetBool("Hit", true);
+        //        Debug.Log("Obstacle In");
+        //        GameManager.Instance.LivesManager.RemoveLife();
+        //    }
+        //}
+
+        //void OnTriggerExit2D(Collider2D collision)
+        //{
+        //    Debug.Log("COLLISIONE CON ...");
+        //    if (collision.gameObject.CompareTag("Obstacle"))
+        //    {
+        //        Debug.Log("COLLISIONE CON OBSTACLE");
+        //        anim.SetBool("Hit", false);
+        //        GameManager.Instance.LivesManager.RemoveLife();
+        //        Debug.Log("Obstacle Out");
+        //    }
+        //}
 
         public void OnDeathTrigger()
         {

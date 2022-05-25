@@ -249,6 +249,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4724411781144889845, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4724411781144889845, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6004823533884688381, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
       propertyPath: positionShakeSpeed
       value: 1
