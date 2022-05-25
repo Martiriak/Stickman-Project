@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 169a1b8f06c17c84e8de491f2bfef986, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.59053785, g: 0.396132, b: 0.6245467, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &143607635
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7980688657823836605, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
 --- !u!1 &158613061
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,23 +428,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_levelsPool:
-  - Object: {fileID: 3974481625408135969, guid: fc0cd2006b5708c48bc9606ca5357e3e, type: 3}
-    SpawnProbWeight: 0
-    LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 42929990156e90040ad2126c4459815f, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 5
     LevelSlotWeight: 1
-  - Object: {fileID: 3974481625408135969, guid: 6ba84d5772cdbd44db222bca88f72bed, type: 3}
-    SpawnProbWeight: 0
+  - Object: {fileID: 3974481625408135969, guid: 896044acf60479e43b577632c8ac0236, type: 3}
+    SpawnProbWeight: 3
     LevelSlotWeight: 1
-  - Object: {fileID: 3974481625408135969, guid: 38fae17ce815dd649a13d37b9571d3a2, type: 3}
-    SpawnProbWeight: 0
+  - Object: {fileID: 3974481625408135969, guid: ec388ecc82915b44b9b5d4565ff3b373, type: 3}
+    SpawnProbWeight: 2
     LevelSlotWeight: 1
-  - Object: {fileID: 3974481625408135969, guid: 161bdf3344a4ab94b8a0781abb2d7a5d, type: 3}
-    SpawnProbWeight: 0
+  - Object: {fileID: 3974481625408135969, guid: 42aa6d38216904848937b46eb0d8e76c, type: 3}
+    SpawnProbWeight: 3
     LevelSlotWeight: 1
-  m_minSlots: 4
-  m_maxSlots: 5
+  - Object: {fileID: 3974481625408135969, guid: 429c98bee4504f94fb33b68cef2651e1, type: 3}
+    SpawnProbWeight: 4
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: 13a1949be6112084da1a6dfc0e41e356, type: 3}
+    SpawnProbWeight: 3
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: 01f46e24a4b7de540a4670fff9575c56, type: 3}
+    SpawnProbWeight: 1
+    LevelSlotWeight: 3
+  - Object: {fileID: 3974481625408135969, guid: d6ccabeef7db80a41a774518ab41f6da, type: 3}
+    SpawnProbWeight: 2
+    LevelSlotWeight: 2
+  m_minSlots: 20
+  m_maxSlots: 30
   m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!4 &481497034
 Transform:
@@ -419,7 +485,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &537181540
 MonoBehaviour:
   m_ObjectHideFlags: 0
