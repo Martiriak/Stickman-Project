@@ -1,3 +1,4 @@
+using System; // C# Actions.
 using System.Collections;
 using UnityEngine;
 
@@ -24,6 +25,12 @@ namespace Stickman.Players
         private IEnumerator c_animationCoroutine = null;
 
 
+        public event Action OnRunning;
+        //public event Action OnJumping;
+        //public event Action OnCrushingDown;
+        public event Action OnSwinging;
+
+
         private bool IsGrounded
         {
             get
@@ -41,6 +48,8 @@ namespace Stickman.Players
 
             m_hitbox.SetActive(false);
         }
+
+        private void Start() => OnRunning?.Invoke();
 
         private void Update()
         {
@@ -91,11 +100,16 @@ namespace Stickman.Players
         private IEnumerator SwingAnimation()
         {
             Debug.Log("Swing!");
+            OnSwinging?.Invoke();
+
             m_hitbox.SetActive(true);
             yield return new WaitForSeconds(m_animationDurationTMP);
             m_hitbox.SetActive(false);
+
             m_isSwinging = false;
             c_animationCoroutine = null;
+
+            OnRunning?.Invoke();
         }
     }
 }
