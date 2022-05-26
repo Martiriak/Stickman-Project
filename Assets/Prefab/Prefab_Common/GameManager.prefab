@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_maxSpeedTimestamp: 300
-  m_minSpeed: 3
+  m_minSpeed: 5
   m_maxSpeed: 15
   m_speedCurve:
     serializedVersion: 2
