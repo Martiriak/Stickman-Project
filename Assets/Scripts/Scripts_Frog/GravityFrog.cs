@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stickman.Managers;
+using Stickman.Player;
 
 namespace Stickman
 {
-    public class GravityFrog : MonoBehaviour
+    public class GravityFrog : PlayerBase
     {
         [SerializeField]
         private AnimationClip[] animationClips;
@@ -15,23 +17,24 @@ namespace Stickman
         private float forceGravity = 9.8f;
         private Rigidbody2D rb;
 
-        //Respawn deathTrigger;
-        GameGUI life;
-        [SerializeField]
-        private GameObject canvas;
+        Respawn deathTrigger;
+
+        //public Action<int> OnLifeChange;
+
         void Start()
         {
             anim = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
             gravity = false;
-            //deathTrigger = GameObject.FindGameObjectWithTag("Death").GetComponent<Respawn>();
-            life = canvas.GetComponent<GameGUI>();
+            deathTrigger = GameObject.FindGameObjectWithTag("Death").GetComponent<Respawn>();
+
+            // To be removed
+            GameManager.Instance.LivesManager.ResetLife();
         }
 
-        // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (gravity)
                 {
@@ -49,44 +52,54 @@ namespace Stickman
                 }
 
             }
-            DestroyPlayer();
+            //DestroyPlayer();
             /*if(deathTrigger.GetFallen()){
                 OnDeathTrigger();
                 deathTrigger.SetFallenFalse();
             }*/
         }
 
-        void OnCollisionEnter2D(Collision2D collision)
+        protected override void OnLanding()
         {
-            if (collision.gameObject.CompareTag("Platform"))
-            {
-                gravity = true;
-            }
+            Debug.Log("WEEEEEELA !!!");
         }
 
-        void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                anim.SetBool("Hit", true);
-                Debug.Log("Obstacle In");
-                life.HitDamage();
-            }
-        }
 
-        void OnTriggerExit2D(Collider2D collision)
-        {
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                anim.SetBool("Hit", false);
-                Debug.Log("Obstacle Out");
-            }
-        }
+        //void OnCollisionEnter2D(Collision2D collision)
+        //{
+        //    if (collision.gameObject.CompareTag("Platform"))
+        //    {
+        //        gravity = true;
+        //    }
+        //}
+
+        //void OnTriggerEnter2D(Collider2D collision)
+        //{
+        //    if (collision.gameObject.CompareTag("Obstacle"))
+        //    {
+        //        anim.SetBool("Hit", true);
+        //        Debug.Log("Obstacle In");
+        //        GameManager.Instance.LivesManager.RemoveLife();
+        //    }
+        //}
+
+        //void OnTriggerExit2D(Collider2D collision)
+        //{
+        //    Debug.Log("COLLISIONE CON ...");
+        //    if (collision.gameObject.CompareTag("Obstacle"))
+        //    {
+        //        Debug.Log("COLLISIONE CON OBSTACLE");
+        //        anim.SetBool("Hit", false);
+        //        GameManager.Instance.LivesManager.RemoveLife();
+        //        Debug.Log("Obstacle Out");
+        //    }
+        //}
 
         public void OnDeathTrigger()
         {
+            Debug.Log("COLLISIONE CON FUORI");
             anim.SetBool("Hit", true);
-            life.HitDamage();
+            GameManager.Instance.LivesManager.RemoveLife();
             Debug.Log("Death In");
             StartCoroutine(Wait());
         }
@@ -99,9 +112,10 @@ namespace Stickman
         }
 
         private void DestroyPlayer(){
-            if(life.getLifes() == 0){
-                Destroy(gameObject);
-            }
+            //if (GameManager.Instance.LivesManager.GetLivesLeft() <= 0)
+            //{
+            //    Destroy(gameObject);
+            //}
         }
 
     }

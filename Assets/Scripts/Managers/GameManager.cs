@@ -9,7 +9,9 @@ namespace Stickman.Managers
         public static GameManager Instance => m_instance;
 
         [SerializeField] private SpeedManager m_speedManager;
+        [SerializeField] private LivesManager m_livesManager;
         public SpeedManager SpeedManager => m_speedManager;
+        public LivesManager LivesManager => m_livesManager;
 
         // Here we can include stuff like score, player lives, etc...
 

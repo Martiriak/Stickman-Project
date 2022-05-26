@@ -2,88 +2,51 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 namespace Stickman
 {
     /// <summary>
     /// It keeps track of player health and displays it accordingly.
-    /// Methods can be called by other scripts: LivesManager.Instance.SomeMethod();
+    /// Methods can be called by other scripts: GameManager.Instance.LivesManager.SomeMethod();
     /// </summary>
     public class LivesManager : MonoBehaviour
     {
-        public static LivesManager Instance { get; private set; }
         private int livesLeft;
+        public Action<int> OnLifeChange;
 
-        public RawImage life1;
-        public RawImage life2;
-        public RawImage life3;
-
-        private void Awake()
+        public int GetLivesLeft()
         {
-            if (Instance == null)
-            {
-                DontDestroyOnLoad(gameObject);
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-            ResetLife();
+            return livesLeft;
         }
 
         public void ResetLife()
         {
-            livesLeft = 3;
-            DisplayLife();
+            livesLeft = 5;
+            OnLifeChange?.Invoke(livesLeft); // same as: if (OnLifeChange != null) OnLifeChange(lifeleft);
         }
 
         public void RemoveLife()
         {
+            Debug.Log("REMOVE LIFE CHIAMATA");
             livesLeft -= 1;
             if (livesLeft <= 0)
             {
+                // GAME OVER
                 // call something like ... GameManager.Instance.GameOver();
             }
-            DisplayLife();
+            OnLifeChange?.Invoke(livesLeft);
         }
 
         public void AddLife()
         {
-            if (livesLeft < 3)
-            {
-                livesLeft += 1;
-            }
-            DisplayLife();
+            livesLeft += 1;
+            OnLifeChange?.Invoke(livesLeft);
         }
 
         public void DisplayLife()
         {
-            if (livesLeft == 3)
-            {
-                life1.color = new Vector4(255, 255, 255, 255);
-                life2.color = new Vector4(255, 255, 255, 255);
-                life3.color = new Vector4(255, 255, 255, 255);
-            }
-            if (livesLeft == 2)
-            {
-                life1.color = new Vector4(255, 255, 255, 255);
-                life2.color = new Vector4(255, 255, 255, 255);
-                life3.color = new Vector4(0, 0, 0, 200);
-            }
-            if (livesLeft == 1)
-            {
-                life1.color = new Vector4(255, 255, 255, 255);
-                life2.color = new Vector4(0, 0, 0, 200);
-                life3.color = new Vector4(0, 0, 0, 200);
 
-            }
-            if (livesLeft == 0)
-            {
-                life1.color = new Vector4(0, 0, 0, 200);
-                life2.color = new Vector4(0, 0, 0, 200);
-                life3.color = new Vector4(0, 0, 0, 200);
-            }
         }
 
     }
