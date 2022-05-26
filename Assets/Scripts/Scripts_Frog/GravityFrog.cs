@@ -37,7 +37,7 @@ namespace Stickman
             if (Input.GetMouseButtonDown(0))
             {
                 if (gravity)
-                {
+               {
                     if (anim.GetBool("Gravity"))
                     {
                         Physics2D.gravity = new Vector3(0, -forceGravity);
@@ -61,7 +61,7 @@ namespace Stickman
 
         protected override void OnLanding()
         {
-            Debug.Log("WEEEEEELA !!!");
+            gravity = true;
         }
 
 
