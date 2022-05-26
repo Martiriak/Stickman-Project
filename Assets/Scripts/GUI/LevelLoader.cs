@@ -80,7 +80,7 @@ namespace Stickman
         private void InizializeCharacterPanel(){  
             do
                 PickRandomCharacter();
-            while( selectedCharacterIndex == PickCharacterScene(selectedCharacterIndex));
+            while( previousScene == PickCharacterScene(selectedCharacterIndex));
             selectedCharacterPanel.GetComponent<SpriteRenderer>().sprite = images[selectedCharacterIndex];
         }
 
