@@ -18,6 +18,8 @@ namespace Stickman.Levels.Spawner
         [SerializeField] private int m_minSlots = 20;
         [Tooltip("Maximum number of level slots it will generate.")]
         [SerializeField] private int m_maxSlots = 50;
+        [Tooltip("The initial level.")]
+        [SerializeField] private GameObject m_startingLevelPrefab;
         [Tooltip("The final level.")]
         [SerializeField] private GameObject m_finalLevelPrefab;
 
@@ -57,15 +59,23 @@ namespace Stickman.Levels.Spawner
 
         private void SpawnLevels()
         {
-            int numberOfSlots = Random.Range(m_minSlots, m_maxSlots);
+            // Spawna il primo livello, giusto per avere qualcosa su cui poggiare i piedi.
+            {
+                Level level = Instantiate(m_startingLevelPrefab, m_nextLevelPosition, transform.rotation).GetComponent<Level>();
+                m_contextForLevels.ProvideContext(level);
+            }
 
             // Spawna tutti i livelli...
+            int numberOfSlots = Random.Range(m_minSlots, m_maxSlots);
+
             while (numberOfSlots > 0)
                 numberOfSlots -= SpawnNewLevel();
 
             // Spawna l'ultimo livello, il portale.
-            Level level = Instantiate(m_finalLevelPrefab, m_nextLevelPosition, transform.rotation).GetComponent<Level>();
-            m_contextForLevels.ProvideContext(level);
+            {
+                Level level = Instantiate(m_finalLevelPrefab, m_nextLevelPosition, transform.rotation).GetComponent<Level>();
+                m_contextForLevels.ProvideContext(level);
+            }
 
             HasFinishedSpawning = true;
         }
