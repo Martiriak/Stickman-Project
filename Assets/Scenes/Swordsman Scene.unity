@@ -348,7 +348,7 @@ MonoBehaviour:
   m_minSlots: 30
   m_maxSlots: 40
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: a5aa9bb5e45a0504ca6d624a70f6f38f, type: 3}
-  m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
+  m_finalLevelPrefab: {fileID: 3006254539476748088, guid: 38434eb163853f34d880c763eb0a96a9, type: 3}
 --- !u!4 &481497034
 Transform:
   m_ObjectHideFlags: 0
