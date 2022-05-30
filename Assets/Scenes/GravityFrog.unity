@@ -233,6 +233,7 @@ MonoBehaviour:
     LevelSlotWeight: 1
   m_minSlots: 20
   m_maxSlots: 50
+  m_startingLevelPrefab: {fileID: 0}
   m_finalLevelPrefab: {fileID: 0}
 --- !u!4 &600252631
 Transform:
@@ -293,6 +294,7 @@ MonoBehaviour:
   m_levelsPool: []
   m_minSlots: 20
   m_maxSlots: 50
+  m_startingLevelPrefab: {fileID: 0}
   m_finalLevelPrefab: {fileID: 0}
 --- !u!4 &654768530
 Transform:
@@ -401,63 +403,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1001 &815606506
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7980688657823836605, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_Name
-      value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836606, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,8 +535,15 @@ MonoBehaviour:
   - Object: {fileID: 8993733444322167136, guid: 1e376f6a633bfd9469f118a4e811372c, type: 3}
     SpawnProbWeight: 2
     LevelSlotWeight: 1
+  - Object: {fileID: 8993733444322167136, guid: d1b4638e4aab94043928d9fc25f7324d, type: 3}
+    SpawnProbWeight: 2
+    LevelSlotWeight: 1
+  - Object: {fileID: 8993733444322167136, guid: 3b5f72bbaeda04642b9ec7783169adfa, type: 3}
+    SpawnProbWeight: 2
+    LevelSlotWeight: 1
   m_minSlots: 10
   m_maxSlots: 10
+  m_startingLevelPrefab: {fileID: 3006254539476748088, guid: 902176e87faa84a40a12045908efba8b, type: 3}
   m_finalLevelPrefab: {fileID: 6012735780272281297, guid: e60b8f9e070baba40930e80ee4af2bf4, type: 3}
 --- !u!4 &1242250351
 Transform:
@@ -1394,6 +1346,18 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1613303845}
+    - target: {fileID: 5767429399173372682, guid: 4215480af5b192f489c8761853ad5525, type: 3}
+      propertyPath: animationClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767429399173372682, guid: 4215480af5b192f489c8761853ad5525, type: 3}
+      propertyPath: animationClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: 149ebfa963ee1014c9a7575660d311d6, type: 2}
+    - target: {fileID: 5767429399173372682, guid: 4215480af5b192f489c8761853ad5525, type: 3}
+      propertyPath: animationClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 7400000, guid: 9bc51d44b6881fc468afbb38c12b4d45, type: 2}
     - target: {fileID: 5767429399173373168, guid: 4215480af5b192f489c8761853ad5525, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1408,11 +1372,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5767429399173373175, guid: 4215480af5b192f489c8761853ad5525, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.476
       objectReference: {fileID: 0}
     - target: {fileID: 5767429399173373175, guid: 4215480af5b192f489c8761853ad5525, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.462
+      value: 4.453
       objectReference: {fileID: 0}
     - target: {fileID: 5767429399173373175, guid: 4215480af5b192f489c8761853ad5525, type: 3}
       propertyPath: m_LocalPosition.z
