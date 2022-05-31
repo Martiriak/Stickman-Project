@@ -1,5 +1,6 @@
 using UnityEngine;
 using Stickman.Managers.Speed;
+using Stickman.Managers.Time;
 
 namespace Stickman.Managers
 {
@@ -10,14 +11,16 @@ namespace Stickman.Managers
 
         [SerializeField] private SpeedManager m_speedManager;
         [SerializeField] private LivesManager m_livesManager;
+        [SerializeField] private TimeTracker m_timeTracker;
         public SpeedManager SpeedManager => m_speedManager;
         public LivesManager LivesManager => m_livesManager;
+        public TimeTracker TimeTracker => m_timeTracker;
 
         // Here we can include stuff like score, player lives, etc...
 
         public int CurrentLoadedScene { get; set; } = 0;
 
-        // I don't need lazy initialization, since this class is avaiable from the start of the game.
+        // I don't need lazy initialization, since this class is available from the start of the game.
         private void Awake()
         {
             if (m_instance == null)
@@ -26,6 +29,14 @@ namespace Stickman.Managers
                 DontDestroyOnLoad(gameObject);
             }
             else Destroy(gameObject);
+
+#if UNITY_EDITOR
+            CurrentLoadedScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+
+            // Just for debug purposes, start the stopwatch.
+            if (CurrentLoadedScene != 0)
+                TimeTracker.StartStopWatch();
+#endif
         }
     }
 }

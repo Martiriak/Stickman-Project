@@ -1,5 +1,4 @@
 using System; // C# Actions.
-//using System.Collections;
 using UnityEngine;
 
 namespace Stickman.Managers.Time
@@ -18,7 +17,7 @@ namespace Stickman.Managers.Time
         public event Action<float /*Total*/, float /*LapFinalTime*/, int /*LapsNumber*/> OnLap;
         public event Action<float /*FinalTotal*/, int /*LapsNumber*/> OnStopped;
 
-        public void StartStopWatch()
+        public void StartStopWatch(bool startImmediately = true)
         {
             if (IsPlaying) return;
             IsPlaying = true;
@@ -29,7 +28,8 @@ namespace Stickman.Managers.Time
 
             if (OnStarted != null) OnStarted();
 
-            IsPaused = false;
+            if (startImmediately) IsPaused = false;
+            else IsPaused = true; // Unnecessary, but safe to do.
         }
 
         public void Lap()
@@ -40,19 +40,23 @@ namespace Stickman.Managers.Time
 
             if (OnLap != null) OnLap(TotalStopWatch, LapStopWatch, NumberOfLaps);
 
+            //Debug.Log($"LAP! Attualmente: {NumberOfLaps}");
+
             LapStopWatch = 0f;
         }
 
         public void Pause()
         {
-            if (!IsPlaying && IsPaused) return;
+            if (!IsPlaying) return;
+            if (IsPaused) return;
 
             IsPaused = true;
         }
 
         public void Resume()
         {
-            if (!IsPlaying && !IsPaused) return;
+            if (!IsPlaying) return;
+            if (!IsPaused) return;
 
             IsPaused = false;
         }
@@ -74,10 +78,13 @@ namespace Stickman.Managers.Time
          * each frame, we will have the time update to the previous frame. */
         private void LateUpdate()
         {
-            if (!IsPlaying && IsPaused) return;
+            if (!IsPlaying) return;
+            if (IsPaused) return;
 
             LapStopWatch += UnityEngine.Time.deltaTime;
-            TotalStopWatch += LapStopWatch;
+            TotalStopWatch += UnityEngine.Time.deltaTime;
+
+            //Debug.Log($"Tempo Del Lap: {LapStopWatch}; Tempo Totale: {TotalStopWatch}");
         }
     }
 }

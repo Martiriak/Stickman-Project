@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44600135, g: 0.624972, b: 0.72263163, a: 1}
+  m_IndirectSpecularColor: {r: 0.44601268, g: 0.62494797, b: 0.7225996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -233,6 +233,7 @@ MonoBehaviour:
     LevelSlotWeight: 1
   m_minSlots: 20
   m_maxSlots: 50
+  m_startingLevelPrefab: {fileID: 0}
   m_finalLevelPrefab: {fileID: 0}
 --- !u!4 &600252631
 Transform:
@@ -293,6 +294,7 @@ MonoBehaviour:
   m_levelsPool: []
   m_minSlots: 20
   m_maxSlots: 50
+  m_startingLevelPrefab: {fileID: 0}
   m_finalLevelPrefab: {fileID: 0}
 --- !u!4 &654768530
 Transform:
@@ -592,6 +594,7 @@ MonoBehaviour:
     LevelSlotWeight: 1
   m_minSlots: 10
   m_maxSlots: 10
+  m_startingLevelPrefab: {fileID: 0}
   m_finalLevelPrefab: {fileID: 6012735780272281297, guid: e60b8f9e070baba40930e80ee4af2bf4, type: 3}
 --- !u!4 &1242250351
 Transform:
@@ -628,11 +631,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.076852
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.6990743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_LocalPosition.z
