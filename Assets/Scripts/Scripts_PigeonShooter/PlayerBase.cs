@@ -13,6 +13,8 @@ namespace Stickman.Player
         //[SerializeField] private AnimationClip[] animationClips;
         //protected Animator anim;
 
+        private Transform startingPos = null;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -21,36 +23,83 @@ namespace Stickman.Player
 
         void OnCollisionEnter2D(Collision2D collision)
         {
+            CollisionEnterBehaviuor(collision);
+        }
+
+        virtual protected void CollisionEnterBehaviuor(Collision2D collision){
             Debug.Log("ON_COLLISION_ENTER");
             if (collision.gameObject.CompareTag("Platform"))
             {
                 OnLanding();
             }
         }
-
         protected virtual void OnLanding() { }
+
+        void OnCollisionExit2D(Collision2D collision)
+        {
+            CollisionExitBehaviuor(collision);
+        }
+
+        virtual protected void CollisionExitBehaviuor(Collision2D collision){
+            Debug.Log("ON_COLLISION_EXIT");
+        }
 
         void OnTriggerEnter2D(Collider2D collision)
         {
+            TriggerEnterBehaviuor(collision);
+        }
+
+        virtual protected void TriggerEnterBehaviuor(Collider2D collision){
             Debug.Log("ON_TRIGGER_ENTER");
             if (collision.gameObject.CompareTag("Obstacle"))
             {
                 //anim.SetBool("Hit", true);
+                StartCoroutine(Blink());
                 GameManager.Instance.LivesManager.RemoveLife();
                 Debug.Log("FORSE HO RIDOTTO VITA");
             }
+            if(collision.CompareTag("KillZone")){
+                StartCoroutine(Respawn());
+            }
         }
 
-        void OnTriggerExit2D(Collider2D collision)
+        virtual protected void OnTriggerExit2D(Collider2D collision)
         {
+            TriggerExitBehaviuor(collision);
+        }
+
+        virtual protected void TriggerExitBehaviuor(Collider2D collision){
             Debug.Log("ON_TRIGGER_EXIT");
             if (collision.gameObject.CompareTag("Obstacle"))
             {
                 Debug.Log("COLLISIONE CON OBSTACLE");
                 //anim.SetBool("Hit", false);
-                GameManager.Instance.LivesManager.RemoveLife();
+                //GameManager.Instance.LivesManager.RemoveLife();
                 Debug.Log("Obstacle Out");
             }
         }
+
+        protected IEnumerator Blink(){
+            Debug.Log("Blink");
+            for(int i=0 ; i<4 ; i++){
+                gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                yield return new WaitForSeconds(0.1f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+
+        virtual protected IEnumerator Respawn(){
+            Rigidbody2D rig = gameObject.GetComponent<Rigidbody2D>();
+            Transform startingPos = GameObject.Find("StartPosition").GetComponent<Transform>();
+            if(startingPos!=null){
+                gameObject.transform.position = startingPos.position;
+                rig.bodyType = RigidbodyType2D.Static;
+                StartCoroutine(Blink());
+                yield return new WaitForSeconds(1.5f);
+                rig.bodyType = RigidbodyType2D.Dynamic;
+            }
+        }
+        
     }
 }

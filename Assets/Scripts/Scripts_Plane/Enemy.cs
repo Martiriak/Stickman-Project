@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stickman.Managers;
 
 namespace Stickman
 {
@@ -11,9 +12,11 @@ namespace Stickman
             get => m_enemySpeed;
             set => m_enemySpeed = value;
         }
+
+        
         private void Update()
         {
-            Vector3 movement = -Vector2.right * m_enemySpeed * Time.deltaTime;
+            Vector3 movement = -Vector2.right * GameManager.Instance.SpeedManager.EvaluateSpeed() * Time.deltaTime;
             transform.Translate(movement);
         }
 

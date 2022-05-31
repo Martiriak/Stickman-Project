@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4596162142843049808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8499999, y: 1.04, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8198907560807298097}
@@ -493,7 +493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6252295311483426885}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.12, y: 4.99, z: 0}
+  m_LocalPosition: {x: 10.12, y: 5.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6012986920063513168}
@@ -637,7 +637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7099518875227497446}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8499999, y: -3.01, z: 0}
+  m_LocalPosition: {x: 1.5, y: -4.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8198907560807298097}
@@ -680,7 +680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7734379846428754806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8499999, y: -1.04, z: 0}
+  m_LocalPosition: {x: 3, y: -1.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8198907560807298097}
@@ -723,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8047597278006585078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8499999, y: 2.96, z: 0}
+  m_LocalPosition: {x: 3, y: 3.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8198907560807298097}
@@ -766,7 +766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8296289217731720070}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8499999, y: 5.02, z: 0}
+  m_LocalPosition: {x: 1.5, y: 5.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8198907560807298097}
@@ -791,6 +791,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6228489610362159514}
     m_Modifications:
+    - target: {fileID: 7671312620716680997, guid: 89b4fb5d69d72da429eb718feb00efa2, type: 3}
+      propertyPath: fanPushingForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8514129450258946851, guid: 89b4fb5d69d72da429eb718feb00efa2, type: 3}
       propertyPath: m_Name
       value: Fan

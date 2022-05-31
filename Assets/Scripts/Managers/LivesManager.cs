@@ -15,6 +15,10 @@ namespace Stickman
         private int livesLeft;
         public Action<int> OnLifeChange;
 
+        private void Start()
+        {
+            ResetLife();
+        }
         public int GetLivesLeft()
         {
             return livesLeft;
