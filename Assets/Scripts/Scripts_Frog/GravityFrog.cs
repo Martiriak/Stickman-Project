@@ -25,7 +25,7 @@ namespace Stickman
         {
             anim = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
-            gravity = false;
+            gravity = true;
             deathTrigger = GameObject.FindGameObjectWithTag("Death").GetComponent<Respawn>();
 
             // To be removed
@@ -37,15 +37,15 @@ namespace Stickman
             if (Input.GetMouseButtonDown(0))
             {
                 if (gravity)
-                {
+               {
                     if (anim.GetBool("Gravity"))
                     {
-                        Physics2D.gravity = new Vector3(0, -forceGravity);
+                        Physics2D.gravity = new Vector2(0, -forceGravity);
                         anim.SetBool("Gravity", false);
                     }
                     else
                     {
-                        Physics2D.gravity = new Vector3(0, forceGravity);
+                        Physics2D.gravity = new Vector2(0, forceGravity);
                         anim.SetBool("Gravity", true);
                     }
                     gravity = false;
@@ -61,7 +61,7 @@ namespace Stickman
 
         protected override void OnLanding()
         {
-            Debug.Log("WEEEEEELA !!!");
+            gravity = true;
         }
 
 

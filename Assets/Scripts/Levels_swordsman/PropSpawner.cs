@@ -19,6 +19,8 @@ namespace Stickman
 
         private void Start()
         {
+            if (m_propsPool.Length == 0) return;
+
             foreach (Transform spawnPoint in m_propsSpawnPoints)
             {
                 int propToSpawnIndex = PickRandomProp();

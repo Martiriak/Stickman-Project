@@ -306,34 +306,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_levelsPool:
-  - Object: {fileID: 3974481625408135969, guid: 429c98bee4504f94fb33b68cef2651e1, type: 3}
-    SpawnProbWeight: 3
-    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: 42929990156e90040ad2126c4459815f, type: 3}
+    SpawnProbWeight: 0.5
+    LevelSlotWeight: 0
   - Object: {fileID: 3974481625408135969, guid: 896044acf60479e43b577632c8ac0236, type: 3}
+    SpawnProbWeight: 2
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: ec388ecc82915b44b9b5d4565ff3b373, type: 3}
     SpawnProbWeight: 3
     LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 42aa6d38216904848937b46eb0d8e76c, type: 3}
+    SpawnProbWeight: 4
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: 429c98bee4504f94fb33b68cef2651e1, type: 3}
     SpawnProbWeight: 3
     LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 13a1949be6112084da1a6dfc0e41e356, type: 3}
-    SpawnProbWeight: 3
-    LevelSlotWeight: 1
-  - Object: {fileID: 3974481625408135969, guid: ec388ecc82915b44b9b5d4565ff3b373, type: 3}
-    SpawnProbWeight: 2
-    LevelSlotWeight: 1
-  - Object: {fileID: 3974481625408135969, guid: d6ccabeef7db80a41a774518ab41f6da, type: 3}
-    SpawnProbWeight: 2
-    LevelSlotWeight: 2
-  - Object: {fileID: 3974481625408135969, guid: 42929990156e90040ad2126c4459815f, type: 3}
-    SpawnProbWeight: 1
+    SpawnProbWeight: 3.5
     LevelSlotWeight: 1
   - Object: {fileID: 3974481625408135969, guid: 01f46e24a4b7de540a4670fff9575c56, type: 3}
-    SpawnProbWeight: 1
+    SpawnProbWeight: 2
+    LevelSlotWeight: 2
+  - Object: {fileID: 3974481625408135969, guid: 3bdb254ff681f3f4491dbedcc8726c0a, type: 3}
+    SpawnProbWeight: 1.5
     LevelSlotWeight: 3
+  - Object: {fileID: 3974481625408135969, guid: d6ccabeef7db80a41a774518ab41f6da, type: 3}
+    SpawnProbWeight: 2
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: 556e1cb9410c51b4e931f7c5266c2a43, type: 3}
+    SpawnProbWeight: 1.5
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: 50db55765cb24434bac72d1d736074ee, type: 3}
+    SpawnProbWeight: 3
+    LevelSlotWeight: 1
+  - Object: {fileID: 3974481625408135969, guid: e0c5812795ddc1347a9c5a50be3a4ab9, type: 3}
+    SpawnProbWeight: 1
+    LevelSlotWeight: 5
+  - Object: {fileID: 3974481625408135969, guid: 5e5b4c47f7eb117429ae74811493ee53, type: 3}
+    SpawnProbWeight: 1.5
+    LevelSlotWeight: 4
   m_minSlots: 30
   m_maxSlots: 40
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: a5aa9bb5e45a0504ca6d624a70f6f38f, type: 3}
-  m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
+  m_finalLevelPrefab: {fileID: 3006254539476748088, guid: 38434eb163853f34d880c763eb0a96a9, type: 3}
 --- !u!4 &481497034
 Transform:
   m_ObjectHideFlags: 0
