@@ -46,7 +46,7 @@ namespace Stickman.Managers.Speed
         private void Update()
         {
             if (m_timer < m_maxSpeedTimestamp)
-                m_timer += Time.deltaTime;
+                m_timer += UnityEngine.Time.deltaTime;
         }
     }
 }
