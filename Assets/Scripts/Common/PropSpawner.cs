@@ -27,7 +27,8 @@ namespace Stickman
 
                 GameObject prefabPropGameObj = m_propsPool[propToSpawnIndex].Object.gameObject;
 
-                Instantiate(prefabPropGameObj, spawnPoint);
+                if (prefabPropGameObj != null)
+                    Instantiate(prefabPropGameObj, spawnPoint);
             }
         }
 
