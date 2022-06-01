@@ -824,10 +824,9 @@ MonoBehaviour:
   images:
   - {fileID: -6367560908665664636, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
   - {fileID: -6367560908665664636, guid: 40de9a8703e2e5a47882b0b86451c741, type: 3}
-  - {fileID: 3863635566180601805, guid: bb22e9cd7a3f50c41aa55c47dd8c2975, type: 3}
+  - {fileID: 21300000, guid: 8cac13b98be3dbf4fb779ca52ab427c6, type: 3}
   - {fileID: -6367560908665664636, guid: 3750f45c844123341b9a777a96cb1eca, type: 3}
   - {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
-  transitionTime: 1
 --- !u!1 &1350633673
 GameObject:
   m_ObjectHideFlags: 0

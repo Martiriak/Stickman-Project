@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stickman.Player;
 
 namespace Stickman
 {
-    public class PlanePlayer : MonoBehaviour
+    public class PlanePlayer : PlayerBase
     {
         enum PushDirection { UP , DOWN}
         [SerializeField] private float planeFloatingForce = 10f;
         [SerializeField] private float cloudPushingForce = 10f;
-        [SerializeField] private float fanPushingForce = 20f;
+        [SerializeField] private Animator animator;
         private Rigidbody2D rig;
 
         void Awake()
@@ -17,10 +18,6 @@ namespace Stickman
             rig = gameObject.GetComponent<Rigidbody2D>();
         }
 
-        void Start()
-        {
-        
-        }
 
         void Update()
         {
@@ -28,17 +25,20 @@ namespace Stickman
         }
 
         void PlaneFlapping(){
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1")){
+                animator.Play("PigFlyFlap");
+                //rig.velocity = Vector3.zero;
                 PushPlane(PushDirection.UP , planeFloatingForce);
+            }
         }
 
-        void OnTriggerEnter2D(Collider2D collider)
+  /*      void OnTriggerEnter2D(Collider2D collider)
         {
             if(collider.CompareTag("Cloud")){
                 PushPlane(PushDirection.DOWN, cloudPushingForce);
                 Debug.Log("Cloud");
             }
-            if(collider.CompareTag("Fan")){
+           if(collider.CompareTag("Fan")){
                 PushPlane(PushDirection.UP, fanPushingForce);
                 Debug.Log("Fan");
             }
@@ -46,6 +46,7 @@ namespace Stickman
                StartCoroutine(Blink());
             }
         }
+        */
 
         void PushPlane(PushDirection dir, float vel){
            switch (dir) {
@@ -58,14 +59,14 @@ namespace Stickman
            }
         }
 
-        IEnumerator Blink(){
+       /* IEnumerator Blink(){
             for(int i=0 ; i<4 ; i++){
                 yield return new WaitForSeconds(0.1f);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.black;
                 yield return new WaitForSeconds(0.1f);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             }
-        }
+        }*/
     
 
     }
