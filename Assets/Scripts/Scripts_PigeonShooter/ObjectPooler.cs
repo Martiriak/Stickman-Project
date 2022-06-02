@@ -29,15 +29,15 @@ namespace pigeonShooter
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                DontDestroyOnLoad(gameObject);
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            //if (Instance == null)
+            //{
+            //    DontDestroyOnLoad(gameObject);
+            //    Instance = this;
+            //}
+            //else
+            //{
+            //    Destroy(gameObject);
+            //}
             Instance = this;
         }
 

@@ -14,6 +14,8 @@ namespace Stickman
     {
         private int livesLeft;
         public Action<int> OnLifeChange;
+        private bool isInvulnerable;
+        private float invulnerabilityTime = 1.0f;
 
         private void Start()
         {
@@ -32,14 +34,17 @@ namespace Stickman
 
         public void RemoveLife()
         {
-            Debug.Log("REMOVE LIFE CHIAMATA");
+            if (isInvulnerable) return;
+            Debug.Log("REMOVE LIFE CHIAMATA *****************************************************************");
             livesLeft -= 1;
+            OnLifeChange?.Invoke(livesLeft);
+            StartCoroutine(Invulnerability());
             if (livesLeft <= 0)
             {
                 // GAME OVER
                 // call something like ... GameManager.Instance.GameOver();
+                return;
             }
-            OnLifeChange?.Invoke(livesLeft);
         }
 
         public void AddLife()
@@ -48,8 +53,12 @@ namespace Stickman
             OnLifeChange?.Invoke(livesLeft);
         }
 
-        public void DisplayLife()
+        private IEnumerator Invulnerability()
         {
+            isInvulnerable = true;
+            Debug.Log("Life Invulnerability Coroutine Called");
+            yield return new WaitForSeconds(invulnerabilityTime);
+            isInvulnerable = false;
 
         }
 

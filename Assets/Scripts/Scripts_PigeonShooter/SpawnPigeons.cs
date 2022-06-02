@@ -7,6 +7,7 @@ namespace pigeonShooter
     public class SpawnPigeons : MonoBehaviour
     {
         public GameObject pigeonPrefab;
+        public GameObject pigeonPowerUpPrefab;
 
         [SerializeField] private Camera mViewport;
         private float screenAreaPadding = 0.35f;
@@ -67,20 +68,27 @@ namespace pigeonShooter
                 if (UnityEngine.Random.value > 0.5f) // with prob 50%
                 {
                     // spawn pigeon with x fixed (in front of player) and rand y
-                    //xPos = maxXPos;
-                    //yPos = UnityEngine.Random.Range(minYPos, maxYPos);
                     xPos = max.x;
                     yPos = UnityEngine.Random.Range(minY, max.y);
                 }
                 else
                 {
                     // spawn pigeon with y fixed (on top of player) and rand x
-                    //yPos = maxYPos;
-                    //xPos = UnityEngine.Random.Range(minXPos, maxXPos);
                     yPos = max.y;
                     xPos = UnityEngine.Random.Range(minX, max.x);
                 }
-                Instantiate(pigeonPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
+
+                // Spawn PigeonPowerUp with probability (10%)
+                if (UnityEngine.Random.value < 0.1f)
+                {
+                    Instantiate(pigeonPowerUpPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
+                }
+                else
+                {
+                    Instantiate(pigeonPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
+                }
+                
+
                 //ObjectPooler.Instance.SpawnFromPool("PigeonPoolName", new Vector3(xPos, yPos, 0), Quaternion.identity);
                 yield return new WaitForSeconds(0.5f);
             }

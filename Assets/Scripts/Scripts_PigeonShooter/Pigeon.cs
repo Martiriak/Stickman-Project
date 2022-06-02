@@ -15,14 +15,18 @@ namespace pigeonShooter
 
         [SerializeField] private GameObject pigeonFall;
         [SerializeField] private GameObject pigeonFeathers;
+        [SerializeField] private GameObject boxPowerUp;
+
+        [SerializeField] private  bool isPowerUp;
 
         private Transform targetPlayer;
         private float speed = 4f;
         private float dashSpeed = 12f;
         private Vector3 dashVector;
-        bool isDashing;
-        bool isSurvived;
-        bool isAttacking;
+        private bool isDashing;
+        private bool isSurvived;
+        private bool isAttacking;
+        
 
         private void Awake()
         {
@@ -98,6 +102,7 @@ namespace pigeonShooter
                 //Instantiate(pigeonFall, this.transform.position, Quaternion.identity);
                 ObjectPooler.Instance.SpawnFromPool("PigeonFall", this.transform.position, Quaternion.identity);
                 Instantiate(pigeonFeathers, this.transform.position, Quaternion.identity);
+                if (isPowerUp) Instantiate(boxPowerUp, this.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
 
