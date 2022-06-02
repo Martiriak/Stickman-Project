@@ -1,3 +1,4 @@
+using System; // C# Actions.
 using System.Collections;
 using UnityEngine;
 using Stickman.Props.Builder;
@@ -7,25 +8,36 @@ namespace Stickman.Props
     public enum PropTypes
     {
         Health,
-        Invulnerability
+        Invulnerability,
+        // Add here new types!
     }
+
 
     [RequireComponent(typeof(Collider2D))]
     public class Prop : MonoBehaviour
     {
-        [SerializeField] private PropTypes propType;
+        [SerializeField] private PropTypes m_propType;
+
+        public event Action OnConsumed;
+        public event Action<PropTypes /*Type*/> OnConsumedWithType;
+        public event Action OnDestruction;
 
         public PropCommand Consume()
         {
-            // Callbacks vari qui...
+            if (OnConsumed != null) OnConsumed();
+            if (OnConsumedWithType != null) OnConsumedWithType(m_propType);
+
             StartCoroutine(Die());
 
-            return PropBehaviourBuilder.AssembleCommand(propType);
+            return PropBehaviourBuilder.AssembleCommand(m_propType);
         }
 
+        // Die the next frame.
         private IEnumerator Die()
         {
             yield return null;
+
+            if (OnDestruction != null) OnDestruction();
             Destroy(gameObject);
         }
 
