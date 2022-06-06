@@ -14,7 +14,6 @@ namespace Stickman
         public void SpawnNewEnemy(GameObject enemy , float enemySpeed)
         {
             Enemy currentEnemy = Instantiate( enemy , transform.position, Quaternion.identity).GetComponent<Enemy>();
-            currentEnemy.EnemySpeed = enemySpeed;
             m_hasSpawned = true;
         }
 
