@@ -5690,6 +5690,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7890307756028418514, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+      propertyPath: m_levelSpawner
+      value: 
+      objectReference: {fileID: 549893353}
     - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -6166,6 +6170,8 @@ MonoBehaviour:
   m_maxSpeedTimestamp: 10
   m_minSpeed: 1
   m_maxSpeed: 20
+  m_percentIncrement: 10
+  m_maxPercentIncrement: 10
   m_speedCurve:
     serializedVersion: 2
     m_Curve:

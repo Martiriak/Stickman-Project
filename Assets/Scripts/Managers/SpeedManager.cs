@@ -43,14 +43,14 @@ namespace Stickman.Managers.Speed
         {
             GameManager.Instance.TimeTracker.OnLap += (int CurrentLap) =>
             {
-                Debug.Log($"Current Lap: {CurrentLap}");
+                //Debug.Log($"Current Lap: {CurrentLap}");
                 m_currentIncrement = (m_percentIncrement * (CurrentLap - 1)) / 100f;
             };
         }
 
         public float EvaluateSpeed()
         {
-            float curveProgress = Mathf.Clamp01(m_timer / m_maxSpeedTimestamp);
+            float curveProgress = Mathf.Clamp01(GameManager.Instance.TimeTracker.LapStopWatch / m_maxSpeedTimestamp);
             curveProgress = Mathf.Clamp(curveProgress + m_currentIncrement, 0f, c_maxPercentIncrementFloat);
 
             float normalizedVelocity = m_speedCurve.Evaluate(curveProgress);
@@ -67,16 +67,6 @@ namespace Stickman.Managers.Speed
             if (m_maxSpeed < m_minSpeed) m_maxSpeed = m_minSpeed;
 
             c_speedLimitsIntervalLenght = m_maxSpeed - m_minSpeed;
-        }
-
-
-        // TEMPORANEO! Serve un time tracker separato, perché sarà utile
-        // per robe tipo il punteggio etc.
-        private float m_timer = 0f;
-        private void Update()
-        {
-            if (m_timer < m_maxSpeedTimestamp)
-                m_timer += UnityEngine.Time.deltaTime;
         }
     }
 }

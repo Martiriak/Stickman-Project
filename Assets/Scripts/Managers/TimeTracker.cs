@@ -26,7 +26,7 @@ namespace Stickman.Managers.Time
 
             TotalStopWatch = 0f;
             LapStopWatch = 0f;
-            NumberOfLaps = 0;
+            NumberOfLaps = 1;
 
             if (OnStarted != null) OnStarted();
 

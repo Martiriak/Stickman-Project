@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Stickman.Managers;
-using Stickman.Managers.Time;
 
 namespace Stickman
 {

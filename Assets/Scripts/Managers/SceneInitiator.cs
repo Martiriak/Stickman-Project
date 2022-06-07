@@ -1,21 +1,37 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Stickman.Managers;
+using Stickman.Levels.Spawner;
+
 
 namespace Stickman.Scenes
 {
     public class SceneInitiator : MonoBehaviour
     {
         [SerializeField] private bool m_isPlayableScene = true;
+        [SerializeField] private LevelSpawner m_levelSpawner = null;
 
-        private void Start()
+        private IEnumerator Start()
         {
             GameManager.Instance.CurrentLoadedScene = SceneManager.GetActiveScene().buildIndex;
 
             if (m_isPlayableScene)
             {
-                GameManager.Instance.TimeTracker.Lap();
-                GameManager.Instance.TimeTracker.Resume();
+                if (GameManager.Instance.TimeTracker.IsPlaying)
+                {
+                    GameManager.Instance.TimeTracker.Lap();
+                    GameManager.Instance.TimeTracker.Resume();
+                }
+                else
+                {
+                    GameManager.Instance.TimeTracker.StartStopWatch(false);
+
+                    while (!m_levelSpawner.HasFinishedSpawning)
+                        yield return null;
+
+                    GameManager.Instance.TimeTracker.Resume();
+                }
             }
             else
             {
