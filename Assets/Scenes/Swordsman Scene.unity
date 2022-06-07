@@ -395,6 +395,8 @@ MonoBehaviour:
   m_maxSpeedTimestamp: 30
   m_minSpeed: 5
   m_maxSpeed: 15
+  m_percentIncrement: 10
+  m_maxPercentIncrement: 10
   m_speedCurve:
     serializedVersion: 2
     m_Curve:

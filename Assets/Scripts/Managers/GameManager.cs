@@ -29,14 +29,6 @@ namespace Stickman.Managers
                 DontDestroyOnLoad(gameObject);
             }
             else Destroy(gameObject);
-
-#if UNITY_EDITOR
-            CurrentLoadedScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
-
-            // Just for debug purposes, start the stopwatch.
-            if (CurrentLoadedScene != 0)
-                TimeTracker.StartStopWatch();
-#endif
         }
     }
 }

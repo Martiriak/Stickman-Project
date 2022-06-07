@@ -14,8 +14,10 @@ namespace Stickman.Managers.Time
         public bool IsPaused { get; private set; } = true;
 
         public event Action OnStarted;
-        public event Action<float /*Total*/, float /*LapFinalTime*/, int /*LapsNumber*/> OnLap;
-        public event Action<float /*FinalTotal*/, int /*LapsNumber*/> OnStopped;
+        public event Action<int /*LapsNumber*/> OnLap;
+        public event Action OnStopped;
+        public event Action<float /*Total*/, float /*LapFinalTime*/, int /*LapsNumber*/> OnLapWithDetails;
+        public event Action<float /*FinalTotal*/, int /*LapsNumber*/> OnStoppedWithDetails;
 
         public void StartStopWatch(bool startImmediately = true)
         {
@@ -38,7 +40,8 @@ namespace Stickman.Managers.Time
 
             ++NumberOfLaps;
 
-            if (OnLap != null) OnLap(TotalStopWatch, LapStopWatch, NumberOfLaps);
+            if (OnLap != null) OnLap(NumberOfLaps);
+            if (OnLapWithDetails != null) OnLapWithDetails(TotalStopWatch, LapStopWatch, NumberOfLaps);
 
             //Debug.Log($"LAP! Attualmente: {NumberOfLaps}");
 
@@ -70,7 +73,8 @@ namespace Stickman.Managers.Time
             IsPlaying = false;
             IsPaused = true;
 
-            if (OnStopped != null) OnStopped(TotalStopWatch, NumberOfLaps);
+            if (OnStopped != null) OnStopped();
+            if (OnStoppedWithDetails != null) OnStoppedWithDetails(TotalStopWatch, NumberOfLaps);
         }
 
 

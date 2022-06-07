@@ -2,6 +2,7 @@ using System; // C# Actions
 using UnityEngine;
 using Stickman.WeightWrapper;
 using Random = UnityEngine.Random;
+using Stickman.Managers;
 
 namespace Stickman.Levels.Spawner
 {
@@ -77,7 +78,9 @@ namespace Stickman.Levels.Spawner
                 m_contextForLevels.ProvideContext(level);
             }
 
+
             HasFinishedSpawning = true;
+            GameManager.Instance.TimeTracker.StartStopWatch();
         }
 
         private int SpawnNewLevel()
