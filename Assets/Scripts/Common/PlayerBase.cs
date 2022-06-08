@@ -87,6 +87,7 @@ namespace Stickman.Player
 
         private void BlinkPlayerSprite()
         {
+             Debug.Log("ON_BLINKPLAYER");
             StartCoroutine(Blink());
         }
 

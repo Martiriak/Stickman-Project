@@ -20,7 +20,7 @@ namespace Stickman
                 frog.transform.position = new Vector3(0,0,0);
                 Physics.SyncTransforms();
                 //fallen = true;
-                player.OnDeathTrigger();
+                //player.OnDeathTrigger();
             }
         }
 

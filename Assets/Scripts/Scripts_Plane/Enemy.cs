@@ -13,13 +13,21 @@ namespace Stickman
             set => m_enemySpeed = value;
         }
 
-        
-        private void Update()
+        private void OnEnable()
         {
-            Vector3 movement = -Vector2.right * GameManager.Instance.SpeedManager.EvaluateSpeed() * Time.deltaTime;
-            transform.Translate(movement);
+            GameManager.Instance.SpeedManager.OnSpeedChange += MoveEnemyWithSpeed;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.SpeedManager.OnSpeedChange -= MoveEnemyWithSpeed;
         }
 
 
+        private void MoveEnemyWithSpeed(float speed)
+        {
+            Vector3 movement = -Vector2.right * speed * Time.deltaTime;
+            transform.Translate(movement);
+        }
     }
 }

@@ -77,6 +77,7 @@ namespace Stickman.Levels.Spawner
                 m_contextForLevels.ProvideContext(level);
             }
 
+
             HasFinishedSpawning = true;
         }
 

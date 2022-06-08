@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Stickman.Managers;
 
 namespace Stickman.Levels.Portal
 {
@@ -9,10 +10,9 @@ namespace Stickman.Levels.Portal
     {
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            // Se i layer sono impostati giusti, non ci serve controllare con chi collidiamo.
-            Debug.Log("Fine livello!");
-
-            SceneManager.LoadScene(1); // To Plane!
+            GameManager.Instance.TimeTracker.Pause();
+            
+            SceneManager.LoadScene(1); // To the Loading Level!
         }
 
 

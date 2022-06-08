@@ -17,7 +17,7 @@ namespace Stickman
         
         void Awake()
         {
-            currentSpeed = mSpeedManager.EvaluateSpeed();
+            currentSpeed = mSpeedManager.CurrentSpeed;
             mEndLevelTrigger.ExitingScreen += () =>
             {
                 //ExitingScreenFinished?.Invoke();
