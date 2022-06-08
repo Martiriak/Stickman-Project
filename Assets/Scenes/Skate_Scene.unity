@@ -508,28 +508,28 @@ MonoBehaviour:
     SpawnProbWeight: 0.2
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 6f345794914358e4aa3cd3e3c25676df, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.2
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 9355f96af49a6d5429d5460b6ee76930, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.2
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 48ca7014e5f836842998cec00414f7eb, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: b148d59e489f65745a7614ee18f608e2, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: 78762067b38ea524484277328651f0a4, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: 7b4621dfe6aa3334a9c1583c63eebab3, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: ab7f3ba430b59da468c09ff74e8a14e0, type: 3}
-    SpawnProbWeight: 1
+    SpawnProbWeight: 0.2
     LevelSlotWeight: 2
-  m_minSlots: 8
-  m_maxSlots: 10
+  m_minSlots: 25
+  m_maxSlots: 30
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: f6da609d585a74a4480e42eb0514afcf, type: 3}
   m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!114 &549893354
