@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Stickman.PlayArea;
+using Stickman.Managers;
 
 namespace pigeonShooter
 {
@@ -9,8 +11,7 @@ namespace pigeonShooter
         public GameObject pigeonPrefab;
         public GameObject pigeonPowerUpPrefab;
 
-        [SerializeField] private Camera mViewport;
-        private float screenAreaPadding = 0.35f;
+        [SerializeField] private PlayAreaInitializer playArea;
         private Vector3 min; //bottom left corner of viewport box
         private Vector3 max; //bottom right corner of viewport box
         private float xPos;
@@ -27,17 +28,8 @@ namespace pigeonShooter
 
         private void GetScreenBorders() /// Would be better to call a PlayAreaInitializer GetCorners method ... Tell Alessandro!!!
         {
-            // Obtain bottom-left (min) and the top-right (max) corners of viewport box
-            float cameraDistanceToGamePlane = Mathf.Abs(mViewport.transform.position.z);
-            min = mViewport.ViewportToWorldPoint(new Vector3(0f, 0f, cameraDistanceToGamePlane));
-            max = mViewport.ViewportToWorldPoint(new Vector3(1f, 1f, cameraDistanceToGamePlane));
-            min.z = 0f; max.z = 0f;
-            // Adds some padding
-            min.x -= screenAreaPadding; min.y -= screenAreaPadding;
-            max.x += screenAreaPadding; max.y += screenAreaPadding;
-            // Obtains center and size of play area.
-            Vector3 viewportCenter = mViewport.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, cameraDistanceToGamePlane));
-            Vector3 playAreaSize = max - min; playAreaSize.z = 1f;
+            min = playArea.BottomLeftCorner;
+            max = playArea.TopRightCorner;
         }
 
         public void StartPigeonSpawn()
@@ -87,10 +79,15 @@ namespace pigeonShooter
                 {
                     Instantiate(pigeonPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
                 }
-                
+
 
                 //ObjectPooler.Instance.SpawnFromPool("PigeonPoolName", new Vector3(xPos, yPos, 0), Quaternion.identity);
-                yield return new WaitForSeconds(0.5f);
+                float gameSpeed = GameManager.Instance.SpeedManager.EvaluateSpeed();
+                float m = -0.05f;
+                float q = 0.7f;
+                float seconds = m * gameSpeed + q;
+
+                yield return new WaitForSeconds(seconds);
             }
         }
 

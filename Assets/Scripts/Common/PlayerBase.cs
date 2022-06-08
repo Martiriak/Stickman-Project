@@ -18,13 +18,13 @@ namespace Stickman.Player
             // In LivesManager e' presente un evento/canale/azione chiamato OnLifeChange.
             // Funzioni si possono collegare a questo evento, rimanendo in ascolto per eventuali cambiamenti alla vita del player.
             // La riga sotto indica che UpdateLivesUI (che aggiorna UI vita) si collega a OnLifeChange (aka chiamata quando OnLifeChange viene chiamata).
-            GameManager.Instance.LivesManager.OnLifeChange += BlinkPlayerSprite;
+            GameManager.Instance.LivesManager.OnDamageTaken += BlinkPlayerSprite;
         }
 
         private void OnDestroy()
         {
             // Funzione UpdateLivesUI si scollega da OnLifeChange
-            GameManager.Instance.LivesManager.OnLifeChange -= BlinkPlayerSprite;
+            GameManager.Instance.LivesManager.OnDamageTaken -= BlinkPlayerSprite;
         }
 
         void OnCollisionEnter2D(Collision2D collision)
@@ -85,7 +85,7 @@ namespace Stickman.Player
             }
         }
 
-        private void BlinkPlayerSprite(int i)
+        private void BlinkPlayerSprite()
         {
             StartCoroutine(Blink());
         }

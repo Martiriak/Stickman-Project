@@ -13,7 +13,8 @@ namespace Stickman
     public class LivesManager : MonoBehaviour
     {
         private int livesLeft;
-        public Action<int> OnLifeChange;
+        public event Action<int> OnLifeChange;
+        public event Action OnDamageTaken;
         private bool isInvulnerable;
         private float invulnerabilityTime = 1.0f;
 
@@ -38,6 +39,7 @@ namespace Stickman
             Debug.Log("REMOVE LIFE CHIAMATA *****************************************************************");
             livesLeft -= 1;
             OnLifeChange?.Invoke(livesLeft);
+            OnDamageTaken?.Invoke();
             StartCoroutine(Invulnerability());
             if (livesLeft <= 0)
             {

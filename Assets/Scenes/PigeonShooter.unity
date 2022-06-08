@@ -539,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pigeonPrefab: {fileID: 3376385534384258430, guid: 824f56ac96a719241bf69dd241cea5b5, type: 3}
   pigeonPowerUpPrefab: {fileID: 7348845241762538547, guid: 67e1cb86337459148a0546fc53f5ad7f, type: 3}
-  mViewport: {fileID: 843090969}
+  playArea: {fileID: 1097188723}
 --- !u!4 &338355951
 Transform:
   m_ObjectHideFlags: 0
