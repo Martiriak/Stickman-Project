@@ -1,33 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Stickman.Managers;
 
 namespace Stickman
 {
     public class PauseMenu : MonoBehaviour
     {
-        public GameObject pauseMenuUI;
+        [SerializeField] private GameObject pauseMenuUI;
 
+        public void Resume()
+        {
+            GameManager.Instance.TimeTracker.Resume();
 
-        // Update is called once per frame
-
-        public void Resume(){
-            Time.timeScale = 1f;
             pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
         }
 
-        public void Pause(){
+        public void Pause()
+        {
+            GameManager.Instance.TimeTracker.Pause();
+
             pauseMenuUI.SetActive(true);
             Time.timeScale = 0f;
         }
 
-        public void LoadMenu(){
+        public void LoadMenu()
+        {
+            GameManager.Instance.TimeTracker.Stop();
+
             Time.timeScale = 1f;
             SceneManager.LoadScene("Menu");
         }
 
-        public void QuitGame(){
+        public void QuitGame()
+        {
             Application.Quit();
         }
 
