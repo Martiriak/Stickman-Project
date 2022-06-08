@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 using UnityEngine;
 
-namespace pigeonShooter
+namespace Stickman.pigeonShooter
 {
     public class SmoothRandom
     {

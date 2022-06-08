@@ -4,7 +4,7 @@ using UnityEngine;
 using Stickman.PlayArea;
 using Stickman.Managers;
 
-namespace pigeonShooter
+namespace Stickman.pigeonShooter
 {
     public class SpawnPigeons : MonoBehaviour
     {
@@ -49,6 +49,16 @@ namespace pigeonShooter
             GameObject.Destroy(pigeon);
         }
 
+        private float SpeedToSpawnSecondsDelay()
+        {
+            float gameSpeed = GameManager.Instance.SpeedManager.EvaluateSpeed();
+            float m = -0.03f;
+            float q = 0.7f;
+            float seconds = m * gameSpeed + q;
+            if (seconds < 0.2f) seconds = 0.21f;
+            return seconds;
+        }
+
         IEnumerator PigeonSpawn()
         {
             float minX; float minY;
@@ -82,11 +92,8 @@ namespace pigeonShooter
 
 
                 //ObjectPooler.Instance.SpawnFromPool("PigeonPoolName", new Vector3(xPos, yPos, 0), Quaternion.identity);
-                float gameSpeed = GameManager.Instance.SpeedManager.EvaluateSpeed();
-                float m = -0.05f;
-                float q = 0.7f;
-                float seconds = m * gameSpeed + q;
 
+                float seconds = SpeedToSpawnSecondsDelay();
                 yield return new WaitForSeconds(seconds);
             }
         }

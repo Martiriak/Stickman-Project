@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace pigeonShooter
+namespace Stickman.pigeonShooter
 {
     public class PigeonFall : MonoBehaviour, IPooledObject
     {

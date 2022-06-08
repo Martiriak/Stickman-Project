@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace pigeonShooter
+namespace Stickman.pigeonShooter
 {
     public interface IPooledObject
     {

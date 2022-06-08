@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace pigeonShooter
+namespace Stickman.pigeonShooter
 {
     //[RequireComponent(typeof(Pigeon))]
     public class PigeonAnimation : MonoBehaviour

@@ -895,10 +895,10 @@ MonoBehaviour:
   pools:
   - tag: Bullet
     prefab: {fileID: 5625292635213751280, guid: 68b5f77f1f8550f4682f092c792749bb, type: 3}
-    size: 15
+    size: 20
   - tag: PigeonFall
     prefab: {fileID: 1533075064734987546, guid: e1cce9f2c87c7f642a22d7a645f5c7bf, type: 3}
-    size: 15
+    size: 30
 --- !u!4 &1264750773
 Transform:
   m_ObjectHideFlags: 0

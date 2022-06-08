@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace pigeonShooter
+namespace Stickman.pigeonShooter
 {
     public class ShakeObject : MonoBehaviour
     {
