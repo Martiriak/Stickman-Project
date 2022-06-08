@@ -12,24 +12,24 @@ namespace Stickman
         private AnimationClip[] animationClips;
 
         public Animator anim;
-        private bool gravity;
+        private bool gravity = true;
         [SerializeField]
         private float forceGravity = 9.8f;
         private Rigidbody2D rb;
 
-        Respawn deathTrigger;
+        //Respawn deathTrigger;
 
         //public Action<int> OnLifeChange;
 
-        void Start()
+        void Awake()
         {
             anim = GetComponent<Animator>();
             rb = GetComponent<Rigidbody2D>();
-            gravity = true;
-            deathTrigger = GameObject.FindGameObjectWithTag("Death").GetComponent<Respawn>();
+            //gravity = true;
+            //deathTrigger = GameObject.FindGameObjectWithTag("Death").GetComponent<Respawn>();
 
             // To be removed
-            GameManager.Instance.LivesManager.ResetLife();
+           //GameManager.Instance.LivesManager.ResetLife();
         }
 
         void Update()
@@ -73,15 +73,13 @@ namespace Stickman
         //    }
         //}
 
-        //void OnTriggerEnter2D(Collider2D collision)
-        //{
-        //    if (collision.gameObject.CompareTag("Obstacle"))
-        //    {
-        //        anim.SetBool("Hit", true);
-        //        Debug.Log("Obstacle In");
-        //        GameManager.Instance.LivesManager.RemoveLife();
-        //    }
-        //}
+        /*void OnTriggerEnter2D(Collider2D collision)
+        {
+           if (collision.gameObject.CompareTag("Gravity"))
+           {
+            gravity = false;
+           }
+        }*/
 
         //void OnTriggerExit2D(Collider2D collision)
         //{
@@ -95,7 +93,7 @@ namespace Stickman
         //    }
         //}
 
-        public void OnDeathTrigger()
+        /*public void OnDeathTrigger()
         {
             Debug.Log("COLLISIONE CON FUORI");
             anim.SetBool("Hit", true);
@@ -109,14 +107,7 @@ namespace Stickman
             yield return new WaitForSeconds(1f);
             anim.SetBool("Hit", false);
             Debug.Log("Death Out");
-        }
-
-        private void DestroyPlayer(){
-            //if (GameManager.Instance.LivesManager.GetLivesLeft() <= 0)
-            //{
-            //    Destroy(gameObject);
-            //}
-        }
+        }*/
 
     }
 }
