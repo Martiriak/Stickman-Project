@@ -17,6 +17,6 @@ namespace Stickman.Levels.Context
             SpeedManager = speedM;
         }
 
-        public float CurrentVelocity => SpeedManager.EvaluateSpeed();
+        public float CurrentVelocity => SpeedManager.CurrentSpeed;
     }
 }

@@ -2,6 +2,7 @@ using System; // For C# Actions.
 using UnityEngine;
 using Stickman.Levels.EndTrigger;
 using Stickman.Levels.Context;
+using Stickman.Managers;
 
 namespace Stickman.Levels
 {
@@ -51,7 +52,17 @@ namespace Stickman.Levels
             }
         }
 
-        private void Update()
+        private void OnEnable()
+        {
+            GameManager.Instance.SpeedManager.OnSpeedChange += MoveLevelWithSpeed;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.SpeedManager.OnSpeedChange -= MoveLevelWithSpeed;
+        }
+
+        private void MoveLevelWithSpeed(float speed)
         {
             Vector3 movement = LevelDirection * mContext.CurrentVelocity * Time.deltaTime;
             transform.Translate(movement);

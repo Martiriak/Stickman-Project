@@ -15,8 +15,12 @@ namespace Stickman.Managers.Time
 
         public event Action OnStarted;
         public event Action<int /*LapsNumber*/> OnLap;
+        public event Action OnPaused;
+        public event Action OnResumed;
         public event Action OnStopped;
         public event Action<float /*Total*/, float /*LapFinalTime*/, int /*LapsNumber*/> OnLapWithDetails;
+        public event Action<float /*CurrentTotal*/, float /*LapCurrentTime*/, int /*LapsNumber*/> OnPausedWithDetails;
+        public event Action<float /*CurrentTotal*/, float /*LapCurrentTime*/, int /*LapsNumber*/> OnResumedWithDetails;
         public event Action<float /*FinalTotal*/, int /*LapsNumber*/> OnStoppedWithDetails;
 
         public void StartStopWatch(bool startImmediately = true)
@@ -54,6 +58,9 @@ namespace Stickman.Managers.Time
             if (IsPaused) return;
 
             IsPaused = true;
+
+            if (OnPaused != null) OnPaused();
+            if (OnPausedWithDetails != null) OnPausedWithDetails(TotalStopWatch, LapStopWatch, NumberOfLaps);
         }
 
         public void Resume()
@@ -62,6 +69,9 @@ namespace Stickman.Managers.Time
             if (!IsPaused) return;
 
             IsPaused = false;
+
+            if (OnResumed != null) OnResumed();
+            if (OnResumedWithDetails != null) OnResumedWithDetails(TotalStopWatch, LapStopWatch, NumberOfLaps);
         }
 
         public void Stop()
