@@ -41,6 +41,10 @@ namespace Stickman
             //    time += Time.deltaTime;
             //    timeTxt.text = time.ToString("F2");
             //}
+             if (GameManager.Instance.LivesManager.GetLivesLeft() > 0)
+            {
+                timeTxt.text = $"{GameManager.Instance.TimeTracker.TotalStopWatch.ToString("F2")}";
+            }
         }
 
     }

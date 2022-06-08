@@ -15,6 +15,7 @@ TagManager:
   - KillZone
   - Bullet
   - Gun
+  - Gravity
   layers:
   - Default
   - TransparentFX
