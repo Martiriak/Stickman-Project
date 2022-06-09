@@ -22,7 +22,7 @@ namespace Stickman.Player
             GameManager.Instance.LivesManager.OnDamageTaken += BlinkPlayerSprite;
         }
 
-        private void OnDestroy()
+        virtual protected void OnDestroy()
         {
             // Funzione UpdateLivesUI si scollega da OnLifeChange
             GameManager.Instance.LivesManager.OnDamageTaken -= BlinkPlayerSprite;

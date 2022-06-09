@@ -64,6 +64,12 @@ namespace Stickman
             gravity = true;
         }
 
+        protected override void OnDestroy(){
+            Physics2D.gravity = new Vector2(0, -forceGravity);
+            base.OnDestroy();
+
+        }
+
 
         //void OnCollisionEnter2D(Collision2D collision)
         //{
