@@ -6,7 +6,7 @@ namespace Stickman.Props.Commands
     {
         public override void Execute()
         {
-            //GameManager.Instance.LivesManager.AddLife();
+            GameManager.Instance.LivesManager.AddLife();
         }
     }
 }

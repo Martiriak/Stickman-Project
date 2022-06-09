@@ -878,6 +878,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1031,6 +1035,10 @@ PrefabInstance:
     - target: {fileID: 1511442859903861397, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511442859903861397, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503925, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_Name

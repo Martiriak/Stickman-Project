@@ -9,6 +9,7 @@ namespace Stickman.Props
     {
         Health,
         Invulnerability,
+        Clock,
         // Add here new types!
     }
 

@@ -64,7 +64,7 @@ namespace Stickman.Levels
 
         private void MoveLevelWithSpeed(float speed)
         {
-            Vector3 movement = LevelDirection * mContext.CurrentVelocity * Time.deltaTime;
+            Vector3 movement = LevelDirection * speed * Time.deltaTime;
             transform.Translate(movement);
         }
     }

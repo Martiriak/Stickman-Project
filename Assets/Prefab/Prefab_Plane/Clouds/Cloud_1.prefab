@@ -236,5 +236,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5408c08c8873d19448e876424acfbc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fanPushingForce: 10
+  trapPushingForce: 10
   type: 0
