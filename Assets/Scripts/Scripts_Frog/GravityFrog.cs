@@ -115,10 +115,6 @@ namespace Stickman
             Debug.Log("Death Out");
         }*/
     
-        override protected void OnDestroy()
-        {
-            Physics2D.gravity = new Vector2(0, -forceGravity);
-            base.OnDestroy();
-        }
+
     }
 }

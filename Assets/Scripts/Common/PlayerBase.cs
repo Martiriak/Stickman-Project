@@ -66,6 +66,7 @@ namespace Stickman.Player
                 Debug.Log("FORSE HO RIDOTTO VITA");
             }
             if(collision.CompareTag("KillZone")){
+                GameManager.Instance.LivesManager.RemoveLife();
                 StartCoroutine(Respawn());
             }
 
