@@ -51,7 +51,8 @@ namespace Stickman.pigeonShooter
 
         private float SpeedToSpawnSecondsDelay()
         {
-            float gameSpeed = GameManager.Instance.SpeedManager.EvaluateSpeed();
+            //float gameSpeed = GameManager.Instance.SpeedManager.EvaluateSpeed();
+            float gameSpeed = 5;
             float m = -0.03f;
             float q = 0.7f;
             float seconds = m * gameSpeed + q;
