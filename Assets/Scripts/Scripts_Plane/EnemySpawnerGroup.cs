@@ -12,11 +12,11 @@ namespace Stickman
         [SerializeField]
         private SpawnerSchemas m_spawnerSchema;
 
-        private SpeedManager m_speedMng; 
+        //private SpeedManager m_speedMng; 
 
         private void Awake()
         {
-            m_speedMng = GameObject.Find("Managers").GetComponent<SpeedManager>();
+         //   m_speedMng = GameObject.Find("Managers").GetComponent<SpeedManager>();
         }
         void Start()
         {
@@ -38,7 +38,7 @@ namespace Stickman
             for(int i= 0 ; i< nEnemiesToSpawn ; i++){
                 int chosenEnemyIndex = PickRandomEnemy();
                 EnemySpawner chosenSpawner = m_spawners[PickRandomSpawner()].GetComponent<EnemySpawner>();
-                chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex] ,m_speedMng.CurrentSpeed);
+                chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex]);
             }
         }
 
@@ -46,7 +46,7 @@ namespace Stickman
             for(int i= 0 ; i< m_spawners.Length ; i++){
                 int chosenEnemyIndex = PickRandomEnemy();
                 EnemySpawner chosenSpawner = m_spawners[i].GetComponent<EnemySpawner>();
-                chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex] ,m_speedMng.CurrentSpeed);
+                chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex]);
             }
         }
         private void BlockoneSpawnMode(){
@@ -57,7 +57,7 @@ namespace Stickman
                 if(i != spawnerOff){
                     Debug.Log(i);
                     EnemySpawner chosenSpawner = m_spawners[i].GetComponent<EnemySpawner>();
-                    chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex] ,m_speedMng.CurrentSpeed);
+                    chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex]);
                 }
             }
         }

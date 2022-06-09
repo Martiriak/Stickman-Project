@@ -11,7 +11,7 @@ namespace Stickman
             get => m_hasSpawned;
             set =>  m_hasSpawned = value;
         }
-        public void SpawnNewEnemy(GameObject enemy , float enemySpeed)
+        public void SpawnNewEnemy(GameObject enemy)
         {
             Enemy currentEnemy = Instantiate( enemy , transform.position, Quaternion.identity).GetComponent<Enemy>();
             m_hasSpawned = true;

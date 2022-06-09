@@ -143,7 +143,6 @@ namespace Stickman.Managers.Speed
                 m_previousFrameLapStopWatch = m_currentFrameLapStopWatch;
 
                 EvaluateSpeed();
-
                 yield return null;
             }
         }

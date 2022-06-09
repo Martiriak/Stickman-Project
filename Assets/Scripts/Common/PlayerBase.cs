@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Stickman.Managers;
+using Stickman.Props;
 
 namespace Stickman.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]
     [RequireComponent(typeof(Animator))]
-    public class PlayerBase : MonoBehaviour
+    public class PlayerBase : MonoBehaviour , IPropHandler
     {
 
         private Transform startingPos = null;
@@ -67,6 +68,10 @@ namespace Stickman.Player
             if(collision.CompareTag("KillZone")){
                 StartCoroutine(Respawn());
             }
+
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Prop")){
+                HandlePropFromObject(collision.gameObject);
+            }
         }
 
         virtual protected void OnTriggerExit2D(Collider2D collision)
@@ -112,6 +117,13 @@ namespace Stickman.Player
                 rig.bodyType = RigidbodyType2D.Dynamic;
             }
         }
+
+        public void HandlePropFromObject(GameObject PropGameObject)
+        {
+            PropCommand command = PropGameObject.GetComponent<Prop>()?.Consume();
+            command?.Execute();
+        }
+
         
     }
 }

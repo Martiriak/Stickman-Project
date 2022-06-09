@@ -7,9 +7,19 @@ namespace Stickman
 {
     public class Enemy : MonoBehaviour
     {
-        private void Update()
+         private void OnEnable()
         {
-            Vector3 movement = -Vector2.right * GameManager.Instance.SpeedManager.CurrentSpeed * Time.deltaTime;
+            GameManager.Instance.SpeedManager.OnSpeedChange += MoveLevelWithSpeed;
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.SpeedManager.OnSpeedChange -= MoveLevelWithSpeed;
+        }
+       
+        private void MoveLevelWithSpeed(float speed)
+        {
+            Vector3 movement = -Vector2.right * speed * Time.deltaTime;
             transform.Translate(movement);
         }
 

@@ -149,6 +149,9 @@ namespace Stickman
                 StartCoroutine(Blink());
                 GameManager.Instance.LivesManager.RemoveLife();
             }
+            if(other.gameObject.layer == LayerMask.NameToLayer("Prop")){
+                HandlePropFromObject(other.gameObject);
+            }
         }
        // private void OnTriggerExit2D(Collider2D other){
         override protected void TriggerExitBehaviuor(Collider2D other){   
