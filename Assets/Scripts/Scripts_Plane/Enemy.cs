@@ -9,7 +9,7 @@ namespace Stickman
     {
         private void Update()
         {
-            Vector3 movement = -Vector2.right * GameManager.Instance.SpeedManager.EvaluateSpeed() * Time.deltaTime;
+            Vector3 movement = -Vector2.right * GameManager.Instance.SpeedManager.CurrentSpeed * Time.deltaTime;
             transform.Translate(movement);
         }
 
