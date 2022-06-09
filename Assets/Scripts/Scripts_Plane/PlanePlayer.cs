@@ -25,7 +25,8 @@ namespace Stickman
         }
 
         void PlaneFlapping(){
-            if (Input.GetButtonDown("Fire1")){
+            //if (Input.GetButtonDown("Fire1")){
+            if (Input.GetMouseButtonDown(0)){
                 animator.Play("PigFlyFlap");
                 //rig.velocity = Vector3.zero;
                 PushPlane(PushDirection.UP , planeFloatingForce);

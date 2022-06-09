@@ -31,6 +31,9 @@ namespace Stickman
 
         [SerializeField] private SkateState m_playerState = SkateState.JUMPING;
 
+        [SerializeField]
+        private GameObject grindPopUp ; 
+
         void Awake()
         {
             m_rig = gameObject.GetComponent<Rigidbody2D>();
@@ -53,10 +56,10 @@ namespace Stickman
         }
 
         private void SkateJump(){
-            if(Input.GetButton("Fire1")){
+            if(Input.GetMouseButton(0)){
                 m_accumulatedJumpForce += Time.deltaTime*10;
             }
-            if (Input.GetButtonUp("Fire1")){
+            if (Input.GetMouseButtonUp(0)){
                 if(m_accumulatedJumpForce >= m_maxJumpForce)
                     m_rig.AddForce( Vector2.up * m_maxJumpForce , ForceMode2D.Impulse);
                 else
@@ -66,7 +69,7 @@ namespace Stickman
         }
 
         private void DoubleJump(){
-            if(Input.GetButton("Fire1"))
+            if(Input.GetMouseButtonDown(0))
                 if(!m_hasDoubleJumped){
                     m_rig.velocity = Vector3.zero;
                     m_rig.AddForce( Vector2.up * m_doubleJumpForce , ForceMode2D.Impulse);
@@ -75,7 +78,7 @@ namespace Stickman
         }
 
         private void Grind(){
-            if(Input.GetButtonUp("Fire1"))
+            if(Input.GetMouseButtonUp(0))
                 if(currentGrind!=null)
                     currentGrind.ActivateGrinds();
         }
@@ -135,8 +138,9 @@ namespace Stickman
         //private void OnTriggerEnter2D(Collider2D other){
         override protected void TriggerEnterBehaviuor(Collider2D other){
             if(other.CompareTag("GrindTrigger")){
-               currentGrind = other.gameObject.GetComponent<GrindTrigger>();
-               m_playerState = SkateState.CANGRIND;   
+                grindPopUp.SetActive(true);
+                currentGrind = other.gameObject.GetComponent<GrindTrigger>();
+                m_playerState = SkateState.CANGRIND;   
             }
             if(other.CompareTag("KillZone")){
                 SkateRespawn();
@@ -149,6 +153,7 @@ namespace Stickman
        // private void OnTriggerExit2D(Collider2D other){
         override protected void TriggerExitBehaviuor(Collider2D other){   
             if(other.CompareTag("GrindTrigger")){
+                grindPopUp.SetActive(false);
                 currentGrind = null;
                 m_playerState = SkateState.JUMPING;   
             }
