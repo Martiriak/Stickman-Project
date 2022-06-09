@@ -1,7 +1,4 @@
 using UnityEngine;
-using Stickman.Managers;
-using UnityEngine.SceneManagement;
-
 
 namespace Stickman.PlayArea
 {
@@ -29,9 +26,6 @@ namespace Stickman.PlayArea
 
         private void Awake()
         {
-            GameManager.Instance.CurrentLoadedScene = SceneManager.GetActiveScene().buildIndex;
-            Debug.Log(GameManager.Instance.CurrentLoadedScene);
-
             // Obtains the bottom-left (min) and the top-right (max) corners
             // of the bounding box that represents the play area, which is the viewport box.
             float cameraDistanceToGamePlane = Mathf.Abs(mViewport.transform.position.z);

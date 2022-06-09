@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9897314, g: 0.52100897, b: 0.3396706, a: 1}
+  m_IndirectSpecularColor: {r: 0.9833792, g: 0.52134705, b: 0.34159264, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -232,6 +232,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7890307756028418514, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+      propertyPath: m_levelSpawner
+      value: 
+      objectReference: {fileID: 67310001}
     - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -242,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -506,7 +510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &534791258
 GameObject:
@@ -812,6 +816,8 @@ MonoBehaviour:
   m_maxSpeedTimestamp: 5
   m_minSpeed: 7
   m_maxSpeed: 15
+  m_percentIncrement: 10
+  m_maxPercentIncrement: 10
   m_speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -878,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503929, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1511442860186503929, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_AnchorMax.x
