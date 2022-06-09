@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pigeonPrefab: {fileID: 2608815958368969395, guid: b2f9b187356ff7143aed5a43da83c82d, type: 3}
-  pigeonPowerUpPrefab: {fileID: 7348845241762538547, guid: 67e1cb86337459148a0546fc53f5ad7f, type: 3}
+  pigeonPowerUpPrefab: {fileID: 8393054569411084606, guid: 401ee17232046ad48976158bd1956abf, type: 3}
   playArea: {fileID: 1097188723}
 --- !u!4 &338355951
 Transform:
@@ -880,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631723, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_RootOrder
