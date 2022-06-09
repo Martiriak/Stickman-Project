@@ -15,6 +15,7 @@ namespace Stickman
         private int livesLeft;
         public event Action<int> OnLifeChange;
         public event Action OnDamageTaken;
+        public event Action OnDeath;
         private bool isInvulnerable;
         //private float invulnerabilityTime = 1.0f;
 
@@ -43,6 +44,8 @@ namespace Stickman
             StartCoroutine(Invulnerability(1f));
             if (livesLeft <= 0)
             {
+                OnDeath?.Invoke();
+
                 // GAME OVER
                 // call something like ... GameManager.Instance.GameOver();
                 return;
@@ -66,6 +69,12 @@ namespace Stickman
 
         public void CallInInvulnerability(float invulnerabilityTime){
             StartCoroutine(Invulnerability(invulnerabilityTime));
+        }
+
+        public int Die(){
+            if(livesLeft <= 0)
+                return 0;
+            return livesLeft;
         }
 
     }
