@@ -586,6 +586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 612523619422785728, guid: 9db6473b73df8c544a70417d6f3333e3, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 612523619422785730, guid: 9db6473b73df8c544a70417d6f3333e3, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -633,6 +637,14 @@ PrefabInstance:
     - target: {fileID: 612523619422785740, guid: 9db6473b73df8c544a70417d6f3333e3, type: 3}
       propertyPath: m_Name
       value: Swordsman
+      objectReference: {fileID: 0}
+    - target: {fileID: 621347494483039157, guid: 9db6473b73df8c544a70417d6f3333e3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165208210729165381, guid: 9db6473b73df8c544a70417d6f3333e3, type: 3}
+      propertyPath: m_mask.m_Bits
+      value: 385
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9db6473b73df8c544a70417d6f3333e3, type: 3}
