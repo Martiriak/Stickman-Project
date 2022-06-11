@@ -11,6 +11,18 @@ PrefabInstance:
       propertyPath: isPowerUp
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 172733461733594158, guid: b2f9b187356ff7143aed5a43da83c82d, type: 3}
+      propertyPath: boxPowerUp.Array.data[0]
+      value: 
+      objectReference: {fileID: 5738851569988073080, guid: c9918ff19329acc4fbe17272a87e07ab, type: 3}
+    - target: {fileID: 172733461733594158, guid: b2f9b187356ff7143aed5a43da83c82d, type: 3}
+      propertyPath: boxPowerUp.Array.data[1]
+      value: 
+      objectReference: {fileID: 1981908069843057692, guid: faf08bc76f3022e4387d9dbda983c089, type: 3}
+    - target: {fileID: 172733461733594158, guid: b2f9b187356ff7143aed5a43da83c82d, type: 3}
+      propertyPath: boxPowerUp.Array.data[2]
+      value: 
+      objectReference: {fileID: 5738851569988073080, guid: 1960b3ba0b2ce2b4baa131264193a925, type: 3}
     - target: {fileID: 2608815958368969395, guid: b2f9b187356ff7143aed5a43da83c82d, type: 3}
       propertyPath: m_Name
       value: PigeonPowerup

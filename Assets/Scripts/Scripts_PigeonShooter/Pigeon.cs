@@ -16,6 +16,7 @@ namespace Stickman.pigeonShooter
         [SerializeField] private GameObject pigeonFall;
         [SerializeField] private GameObject pigeonFeathers;
         [SerializeField] private GameObject boxPowerUp;
+        //[SerializeField] private GameObject[] boxPowerUp;
 
         [SerializeField] private  bool isPowerUp;
 
@@ -102,6 +103,8 @@ namespace Stickman.pigeonShooter
                 //Instantiate(pigeonFall, this.transform.position, Quaternion.identity);
                 ObjectPooler.Instance.SpawnFromPool("PigeonFall", this.transform.position, Quaternion.identity);
                 Instantiate(pigeonFeathers, this.transform.position, Quaternion.identity);
+                //int rand = Random.Range(0, boxPowerUp.Length);
+                //if (isPowerUp) Instantiate(boxPowerUp[rand], this.transform.position, Quaternion.identity);
                 if (isPowerUp) Instantiate(boxPowerUp, this.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
