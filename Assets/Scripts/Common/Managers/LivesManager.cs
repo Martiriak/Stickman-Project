@@ -18,6 +18,7 @@ namespace Stickman
         public event Action OnDeath;
         public event Action<float> OnInvulnerability;
         private bool isInvulnerable;
+        public bool IsInvulnerable => isInvulnerable;
         //private float invulnerabilityTime = 1.0f;
 
         private void Start()

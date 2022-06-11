@@ -11,9 +11,9 @@ namespace Stickman.Players.SwordsmanUtilities
 #if UNITY_EDITOR
         private void Awake()
         {
-            if (gameObject.layer != LayerMask.NameToLayer("Damaging"))
+            /*if (gameObject.layer != LayerMask.NameToLayer("Damaging"))
                 Debug.LogWarning("METTIMI IL LAYER \"Damaging\" IN BUILD FINALE PLEASE!");
-            gameObject.layer = LayerMask.NameToLayer("Damaging");
+            gameObject.layer = LayerMask.NameToLayer("Damaging");*/
 
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (!rb.isKinematic)
