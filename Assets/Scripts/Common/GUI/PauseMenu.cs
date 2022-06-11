@@ -7,7 +7,7 @@ namespace Stickman
     public class PauseMenu : MonoBehaviour
     {
         [SerializeField] private GameObject pauseMenuUI;
-
+        [SerializeField] private GameObject deadMenuUI;
         public void Resume()
         {
             GameManager.Instance.TimeTracker.Resume();
@@ -18,6 +18,7 @@ namespace Stickman
 
         public void Pause()
         {
+            Debug.Log("Pausa");
             GameManager.Instance.TimeTracker.Pause();
 
             pauseMenuUI.SetActive(true);
@@ -36,6 +37,24 @@ namespace Stickman
         {
             Application.Quit();
         }
+
+        public void Restart(){
+            Time.timeScale = 1f;
+            int rand = Random.Range(2, 7);
+            GameManager.Instance.LivesManager.ResetLife();
+            GameManager.Instance.TimeTracker.Stop();
+            GameManager.Instance.SpeedManager.ResetSpeed();
+            SceneManager.LoadScene(rand);
+            
+        }
+
+        void Die(){
+            deadMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
+        private void Start() { GameManager.Instance.LivesManager.OnDeath += Die; }
+        private void OnDestroy() { GameManager.Instance.LivesManager.OnDeath -= Die; }
 
     }
 }

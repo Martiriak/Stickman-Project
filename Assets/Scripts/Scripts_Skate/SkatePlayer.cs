@@ -143,6 +143,7 @@ namespace Stickman
                 m_playerState = SkateState.CANGRIND;   
             }
             if(other.CompareTag("KillZone")){
+                GameManager.Instance.LivesManager.RemoveLife();
                 SkateRespawn();
             }
             if(other.CompareTag("Obstacle")){
