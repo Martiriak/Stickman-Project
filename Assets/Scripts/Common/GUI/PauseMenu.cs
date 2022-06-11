@@ -42,6 +42,8 @@ namespace Stickman
             Time.timeScale = 1f;
             int rand = Random.Range(2, 7);
             GameManager.Instance.LivesManager.ResetLife();
+            GameManager.Instance.TimeTracker.Stop();
+            GameManager.Instance.SpeedManager.ResetSpeed();
             SceneManager.LoadScene(rand);
             
         }

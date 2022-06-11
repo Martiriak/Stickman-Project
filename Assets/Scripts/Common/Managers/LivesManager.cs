@@ -16,6 +16,7 @@ namespace Stickman
         public event Action<int> OnLifeChange;
         public event Action OnDamageTaken;
         public event Action OnDeath;
+        public event Action<float> OnInvulnerability;
         private bool isInvulnerable;
         //private float invulnerabilityTime = 1.0f;
 
@@ -68,6 +69,7 @@ namespace Stickman
         }
 
         public void CallInInvulnerability(float invulnerabilityTime){
+            OnInvulnerability?.Invoke(invulnerabilityTime);
             StartCoroutine(Invulnerability(invulnerabilityTime));
         }
 

@@ -595,7 +595,7 @@ MonoBehaviour:
     SpawnProbWeight: 1
     LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: 1e376f6a633bfd9469f118a4e811372c, type: 3}
-    SpawnProbWeight: 1
+    SpawnProbWeight: 2
     LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: c97272853c5f9f347bd5e7a34a6d4d82, type: 3}
     SpawnProbWeight: 1

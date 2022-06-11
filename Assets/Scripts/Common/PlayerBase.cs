@@ -20,12 +20,14 @@ namespace Stickman.Player
             // Funzioni si possono collegare a questo evento, rimanendo in ascolto per eventuali cambiamenti alla vita del player.
             // La riga sotto indica che UpdateLivesUI (che aggiorna UI vita) si collega a OnLifeChange (aka chiamata quando OnLifeChange viene chiamata).
             GameManager.Instance.LivesManager.OnDamageTaken += BlinkPlayerSprite;
+            GameManager.Instance.LivesManager.OnInvulnerability += RainbowPlayerSprite;            
         }
 
         virtual protected void OnDestroy()
         {
             // Funzione UpdateLivesUI si scollega da OnLifeChange
             GameManager.Instance.LivesManager.OnDamageTaken -= BlinkPlayerSprite;
+            GameManager.Instance.LivesManager.OnInvulnerability -= RainbowPlayerSprite;   
         }
 
         void OnCollisionEnter2D(Collision2D collision)
@@ -104,6 +106,29 @@ namespace Stickman.Player
                 yield return new WaitForSeconds(0.1f);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 yield return new WaitForSeconds(0.1f);
+            }
+        }
+
+
+        private void RainbowPlayerSprite(float invincibleTime)
+        {
+             Debug.Log("ON_RainBowPLAYER");
+            StartCoroutine(RainBow(invincibleTime));
+        }
+
+        protected IEnumerator RainBow(float invincibleTime){
+            Debug.Log("RainBow");
+            for(int i=0 ; i<invincibleTime ; i++){
+                gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+                yield return new WaitForSeconds(0.2f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                yield return new WaitForSeconds(0.2f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+                yield return new WaitForSeconds(0.2f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                yield return new WaitForSeconds(0.2f);
+                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                yield return new WaitForSeconds(0.2f);
             }
         }
 

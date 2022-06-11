@@ -123,7 +123,7 @@ namespace Stickman.Managers.Speed
             if (OnSpeedChange != null) OnSpeedChange(CurrentSpeed);
         }
 
-        private void ResetSpeed()
+        public void ResetSpeed()
         {
             CurrentSpeed = 0f;
 
