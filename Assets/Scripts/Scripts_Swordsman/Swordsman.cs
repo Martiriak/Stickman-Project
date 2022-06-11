@@ -36,7 +36,7 @@ namespace Stickman.Players
             get
             {
                 RaycastHit2D wasGroundHit;
-                wasGroundHit = Physics2D.BoxCast(transform.position, new Vector2(0.5f, 0.5f), 45f, -Vector2.up, 1f, m_groundLayers);
+                wasGroundHit = Physics2D.BoxCast(transform.position, new Vector2(0.5f, 0.5f), 0f, -Vector2.up, 1f, m_groundLayers);
 
                 return wasGroundHit.collider != null;
             }
@@ -76,7 +76,7 @@ namespace Stickman.Players
                 m_isCrashingDown = false;
 
                 if (m_justJumped)
-                    c_rb.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
+                    c_rb.velocity = Vector2.up * m_jumpForce;
             }
             else
             {
