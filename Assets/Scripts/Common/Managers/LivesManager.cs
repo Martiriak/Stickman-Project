@@ -15,6 +15,7 @@ namespace Stickman
         private int livesLeft;
         public Action<int> OnLifeChange;
         private bool isInvulnerable;
+        public bool IsInvulnerable => isInvulnerable;
         private float invulnerabilityTime = 1.0f;
 
         private void Start()
