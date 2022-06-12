@@ -11,6 +11,8 @@ namespace Stickman
     {
         public TextMeshProUGUI timeTxt;
         public TextMeshProUGUI lifesTxt;
+        public TextMeshProUGUI scoreTxt;
+        public TextMeshProUGUI bestScoreTxt;
         [SerializeField] private float time;
 
         void Start()
@@ -21,6 +23,9 @@ namespace Stickman
             GameManager.Instance.LivesManager.OnLifeChange += UpdateLivesUI;
              Debug.Log("START LIVES UI CHIAMATA");
              lifesTxt.text = GameManager.Instance.LivesManager.GetLivesLeft().ToString();
+             if(PlayerPrefs.GetFloat("BestScore") == null){
+                PlayerPrefs.SetFloat("BestScore",0);
+             }
         }
 
         private void OnDestroy()
@@ -47,7 +52,22 @@ namespace Stickman
             {
                 timeTxt.text = $"{GameManager.Instance.TimeTracker.TotalStopWatch.ToString("F2")}";
             }
+
+            if(GameManager.Instance.LivesManager.GetLivesLeft() == 0){
+                Score();
+            }
         }
+
+        public void Score(){
+            PlayerPrefs.SetFloat("HighScore", GameManager.Instance.TimeTracker.TotalStopWatch);
+            if(PlayerPrefs.GetFloat("HighScore")>PlayerPrefs.GetFloat("BestScore")){
+                 PlayerPrefs.SetFloat("BestScore",PlayerPrefs.GetFloat("HighScore"));
+            }
+            scoreTxt.text = PlayerPrefs.GetFloat("HighScore").ToString("F2");
+            bestScoreTxt.text = PlayerPrefs.GetFloat("BestScore").ToString("F2");
+        }
+
+        
 
     }
 }

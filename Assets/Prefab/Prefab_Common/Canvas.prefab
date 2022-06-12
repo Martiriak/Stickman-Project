@@ -3147,6 +3147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeTxt: {fileID: 1022563214}
   lifesTxt: {fileID: 919998343}
+  scoreTxt: {fileID: 1804419144}
+  bestScoreTxt: {fileID: 531103883}
   time: 0
 --- !u!114 &1613303846
 MonoBehaviour:
