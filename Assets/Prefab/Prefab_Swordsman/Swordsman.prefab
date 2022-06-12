@@ -14,9 +14,7 @@ GameObject:
   - component: {fileID: 612523619422785728}
   - component: {fileID: 612523619422785729}
   - component: {fileID: 612523619422785735}
-  - component: {fileID: 1165208210729165381}
-  - component: {fileID: 7732360086649050156}
-  - component: {fileID: 3230409962790010679}
+  - component: {fileID: 6906406}
   - component: {fileID: 7030785763684904108}
   m_Layer: 6
   m_Name: Swordsman
@@ -129,7 +127,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 5
 --- !u!61 &612523619422785729
 BoxCollider2D:
@@ -176,7 +174,7 @@ MonoBehaviour:
     m_Bits: 129
   m_animationDurationTMP: 0.5
   m_hitbox: {fileID: 621347494483039157}
---- !u!114 &1165208210729165381
+--- !u!114 &6906406
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,39 +183,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 612523619422785740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4b8151ce538c44f87290c94c9e70d3, type: 3}
+  m_Script: {fileID: 11500000, guid: f575e9fd2745f3d46b94f19823b6ac08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxLives: 3
-  m_invulnerabilityTime: 2
---- !u!114 &7732360086649050156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612523619422785740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aacc009f1d82b67429256ffc2ec9791a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_renderer: {fileID: 612523619422785731}
-  m_swordsmanLives: {fileID: 1165208210729165381}
---- !u!114 &3230409962790010679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612523619422785740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd01c7c4995103d4f8632a71f783596c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_context:
-    LivesManager: {fileID: 1165208210729165381}
+  m_collidableMask:
+    serializedVersion: 2
+    m_Bits: 385
 --- !u!114 &7030785763684904108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +214,7 @@ GameObject:
   - component: {fileID: 2690705119064378951}
   - component: {fileID: 4891595916052300180}
   - component: {fileID: 5752888999925411216}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: Sword Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
