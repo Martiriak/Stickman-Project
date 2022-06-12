@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47885966, g: 0.80018497, b: 0.89945316, a: 1}
+  m_IndirectSpecularColor: {r: 0.47884, g: 0.8001845, b: 0.90072787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: gaypride parade
+  m_text: Chubby Runners
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 196a6d756f73bf049b06bb6267763227, type: 2}
   m_sharedMaterial: {fileID: 8275567868974907679, guid: 196a6d756f73bf049b06bb6267763227, type: 2}
