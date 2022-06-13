@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using Stickman.Player;
 using Stickman.Managers;
+using Stickman.Managers.Sound;
 
 namespace Stickman
 {
@@ -24,6 +25,8 @@ namespace Stickman
         [SerializeField]
         private GrindTrigger currentGrind = null;
 
+        private SoundManager m_soundManager;
+
         //[SerializeField]
         //private Transform m_startingPos = null;
         private float m_accumulatedJumpForce;
@@ -38,6 +41,8 @@ namespace Stickman
         {
             m_rig = gameObject.GetComponent<Rigidbody2D>();
             m_accumulatedJumpForce = m_minJumpForce;
+            m_soundManager = GameManager.Instance.SoundManager;
+            m_soundManager.SetupPlayerSoundInstance(PlayerTypes.SKATE);
         }
 
         void Update()
@@ -60,6 +65,7 @@ namespace Stickman
                 m_accumulatedJumpForce += Time.deltaTime*10;
             }
             if (Input.GetMouseButtonUp(0)){
+                m_soundManager.PlaySkateSound(PlayerActions.JUMP);
                 if(m_accumulatedJumpForce >= m_maxJumpForce)
                     m_rig.AddForce( Vector2.up * m_maxJumpForce , ForceMode2D.Impulse);
                 else
@@ -71,6 +77,7 @@ namespace Stickman
         private void DoubleJump(){
             if(Input.GetMouseButtonDown(0))
                 if(!m_hasDoubleJumped){
+                    m_soundManager.PlaySkateSound(PlayerActions.JUMP);
                     m_rig.velocity = Vector3.zero;
                     m_rig.AddForce( Vector2.up * m_doubleJumpForce , ForceMode2D.Impulse);
                     m_hasDoubleJumped = true;
@@ -90,6 +97,7 @@ namespace Stickman
         }
 
         private void Jumping(){
+            m_soundManager.PlaySkateSound(PlayerActions.STOP);
             animator.SetBool("Jumping" , true);
             m_playerState = SkateState.JUMPING;
         }
@@ -116,9 +124,12 @@ namespace Stickman
 
         //private void OnCollisionEnter2D(Collision2D other){
         override protected void CollisionEnterBehaviuor(Collision2D other){
-            if(other.gameObject.CompareTag("Floor"))
-                Landing();
+            if(other.gameObject.CompareTag("Floor")){
+                m_soundManager.PlaySkateSound(PlayerActions.LAND);
+                Landing();    
+            }
             if(other.gameObject.CompareTag("Grind")){
+                m_soundManager.PlaySkateSound(PlayerActions.GRIND);
                 m_grindSparkling.SetActive(true);
                 Landing();
             }

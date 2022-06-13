@@ -1,6 +1,7 @@
 using UnityEngine;
 using Stickman.Managers.Speed;
 using Stickman.Managers.Time;
+using Stickman.Managers.Sound;
 
 namespace Stickman.Managers
 {
@@ -12,9 +13,11 @@ namespace Stickman.Managers
         [SerializeField] private SpeedManager m_speedManager;
         [SerializeField] private LivesManager m_livesManager;
         [SerializeField] private TimeTracker m_timeTracker;
+        [SerializeField] private SoundManager m_soundManager;
         public SpeedManager SpeedManager => m_speedManager;
         public LivesManager LivesManager => m_livesManager;
         public TimeTracker TimeTracker => m_timeTracker;
+        public SoundManager SoundManager => m_soundManager;
 
         // Here we can include stuff like score, player lives, etc...
 
