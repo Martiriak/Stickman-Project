@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Stickman.Managers;
 using Stickman.Props;
@@ -11,7 +10,6 @@ namespace Stickman.Player
     [RequireComponent(typeof(Animator))]
     public class PlayerBase : MonoBehaviour , IPropHandler
     {
-
         private Transform startingPos = null;
 
         void Start()
@@ -67,12 +65,13 @@ namespace Stickman.Player
                 GameManager.Instance.LivesManager.RemoveLife();
                 Debug.Log("FORSE HO RIDOTTO VITA");
             }
-            if(collision.CompareTag("KillZone")){
+            if (collision.CompareTag("KillZone")){
                 GameManager.Instance.LivesManager.RemoveLife();
                 StartCoroutine(Respawn());
             }
 
-            if(collision.gameObject.layer == LayerMask.NameToLayer("Prop")){
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Prop"))
+            {
                 HandlePropFromObject(collision.gameObject);
             }
         }

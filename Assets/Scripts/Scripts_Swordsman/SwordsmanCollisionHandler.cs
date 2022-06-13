@@ -22,6 +22,11 @@ namespace Stickman.Player.Swordsman
                 GameManager.Instance.LivesManager.RemoveLife();
                 StartCoroutine(Respawn());
             }
+
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Prop"))
+            {
+                HandlePropFromObject(collision.gameObject);
+            }
         }
 
         protected override void CollisionEnterBehaviuor(Collision2D collision) { }
