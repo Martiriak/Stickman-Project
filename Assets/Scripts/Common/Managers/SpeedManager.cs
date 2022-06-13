@@ -29,12 +29,13 @@ namespace Stickman.Managers.Speed
         [SerializeField] private AnimationCurve m_speedCurve;
 
 
-        private float m_curveProgress = 0f;
-        private float m_currentIncrement = 0f;
         public float CurrentSpeed { get; private set; } = 0f;
 
-        float m_currentFrameLapStopWatch = 0f;
-        float m_previousFrameLapStopWatch = 0f;
+        private float m_curveProgress = 0f;
+        private float m_currentIncrement = 0f;
+
+        private float m_currentFrameLapStopWatch = 0f;
+        private float m_previousFrameLapStopWatch = 0f;
 
 
 
@@ -57,23 +58,30 @@ namespace Stickman.Managers.Speed
 
         private void Start()
         {
-            GameManager.Instance.TimeTracker.OnStarted += () =>
+            GameManager.Instance.TimeTracker.OnStarted += (bool IsPausedWhenStarted) =>
             {
                 m_currentFrameLapStopWatch = 0f;
                 m_previousFrameLapStopWatch = 0f;
+                m_curveProgress = 0f;
+                m_currentIncrement = 0f;
 
-                c_updateCoroutine = UpdateCurveProgress();
-                StartCoroutine(c_updateCoroutine);
+                if (!IsPausedWhenStarted)
+                {
+                    c_updateCoroutine = UpdateCurveProgress();
+                    StartCoroutine(c_updateCoroutine);
+                }
             };
 
             GameManager.Instance.TimeTracker.OnStopped += () =>
             {
-                m_currentFrameLapStopWatch = 0f;
-                m_previousFrameLapStopWatch = 0f;
                 ResetSpeed();
 
-                StopCoroutine(c_updateCoroutine);
-                c_updateCoroutine = null;
+                // Check if null, because it surely will be if the stopwatch is stopped when paused.
+                if (c_updateCoroutine != null)
+                {
+                    StopCoroutine(c_updateCoroutine);
+                    c_updateCoroutine = null;
+                }
             };
 
             GameManager.Instance.TimeTracker.OnPaused += () =>
@@ -98,6 +106,8 @@ namespace Stickman.Managers.Speed
                 m_currentIncrement = (m_percentIncrement * (CurrentLap - 1)) / 100f;
                 if (m_currentIncrement > c_maxPercentIncrementFloat)
                     m_currentIncrement = c_maxPercentIncrementFloat;
+
+                m_curveProgress = m_currentIncrement;
             };
         }
 
@@ -137,7 +147,6 @@ namespace Stickman.Managers.Speed
                 m_currentFrameLapStopWatch = GameManager.Instance.TimeTracker.LapStopWatch / m_maxSpeedTimestamp;
 
                 m_curveProgress += m_currentFrameLapStopWatch - m_previousFrameLapStopWatch;
-                m_curveProgress += m_currentIncrement;
                 m_curveProgress = Mathf.Clamp01(m_curveProgress);
 
                 m_previousFrameLapStopWatch = m_currentFrameLapStopWatch;

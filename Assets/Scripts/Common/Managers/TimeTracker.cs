@@ -13,7 +13,7 @@ namespace Stickman.Managers.Time
         public bool IsPlaying { get; private set; } = false;
         public bool IsPaused { get; private set; } = true;
 
-        public event Action OnStarted;
+        public event Action<bool /*IsPausedWhenStarted*/> OnStarted;
         public event Action<int /*LapsNumber*/> OnLap;
         public event Action OnPaused;
         public event Action OnResumed;
@@ -32,24 +32,25 @@ namespace Stickman.Managers.Time
             LapStopWatch = 0f;
             NumberOfLaps = 1;
 
-            if (OnStarted != null) OnStarted();
-
             if (startImmediately) IsPaused = false;
             else IsPaused = true; // Unnecessary, but safe to do.
+
+            if (OnStarted != null) OnStarted(!startImmediately);
         }
 
         public void Lap()
         {
             if (!IsPlaying) return;
 
+            Debug.Log("Giovanni Muciaccia!");
+
             ++NumberOfLaps;
 
-            if (OnLap != null) OnLap(NumberOfLaps);
-            if (OnLapWithDetails != null) OnLapWithDetails(TotalStopWatch, LapStopWatch, NumberOfLaps);
-
-            //Debug.Log($"LAP! Attualmente: {NumberOfLaps}");
-
+            float oldLapStopWatchTime = LapStopWatch;
             LapStopWatch = 0f;
+
+            if (OnLap != null) OnLap(NumberOfLaps);
+            if (OnLapWithDetails != null) OnLapWithDetails(TotalStopWatch, oldLapStopWatchTime, NumberOfLaps);
         }
 
         public void Pause()
@@ -78,7 +79,7 @@ namespace Stickman.Managers.Time
         {
             if (!IsPlaying) return;
 
-            Lap();
+            //Lap();
 
             IsPlaying = false;
             IsPaused = true;

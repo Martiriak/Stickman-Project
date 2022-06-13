@@ -10,12 +10,15 @@ namespace Stickman
         public TextMeshProUGUI recentScoreTxt;
         public TextMeshProUGUI bestScoreTxt;
 
-        void Start(){
-            if(PlayerPrefs.GetFloat("HighScore") == null){
+        void Start()
+        {
+            if (PlayerPrefs.GetFloat("HighScore") == 0)
+            {
                 recentScoreTxt.text = "0";
                 bestScoreTxt.text  = "0";
             }
-            else{
+            else
+            {
                 recentScoreTxt.text = PlayerPrefs.GetFloat("HighScore").ToString("F2");
                 bestScoreTxt.text = PlayerPrefs.GetFloat("BestScore").ToString("F2");
             }
