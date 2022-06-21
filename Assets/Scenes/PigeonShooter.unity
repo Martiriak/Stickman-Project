@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.47885966, g: 0.80018497, b: 0.89945316, a: 1}
+  m_IndirectSpecularColor: {r: 0.47884, g: 0.8001845, b: 0.90072787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -301,6 +301,22 @@ PrefabInstance:
     - target: {fileID: 6004823533884688381, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
       propertyPath: rotationShakeRange.z
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525354679137443231, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6465683
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525354679137443231, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
+      propertyPath: m_Size.y
+      value: 0.68102
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525354679137443231, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0028467178
+      objectReference: {fileID: 0}
+    - target: {fileID: 6525354679137443231, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.02562058
       objectReference: {fileID: 0}
     - target: {fileID: 6996495838518916608, guid: d59dc6fe4a50f6142a67341e5918a43e, type: 3}
       propertyPath: m_RootOrder
@@ -972,7 +988,7 @@ MonoBehaviour:
   pools:
   - tag: Bullet
     prefab: {fileID: 5625292635213751280, guid: 68b5f77f1f8550f4682f092c792749bb, type: 3}
-    size: 20
+    size: 16
   - tag: PigeonFall
     prefab: {fileID: 1533075064734987546, guid: e1cce9f2c87c7f642a22d7a645f5c7bf, type: 3}
     size: 30

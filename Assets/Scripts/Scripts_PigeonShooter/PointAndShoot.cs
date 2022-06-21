@@ -25,18 +25,31 @@ namespace Stickman.pigeonShooter
             myCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         }
 
+#if UNITY_EDITOR
         void Update()
         {
             if (Input.GetMouseButtonDown(0))
             {
-                RotateAndShootGun();
+                touchedPoint = myCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
+                RotateAndShootGun(touchedPoint);
             }
         }
+#else
+        void Update()
+        {
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+                touchedPoint = myCamera.ScreenToWorldPoint(touch.position);
+                touchedPoint.z = 0f;
+                RotateAndShootGun(touchedPoint);
+            }
+        }
+#endif
 
-        void RotateAndShootGun()
+        void RotateAndShootGun(Vector3 touchedPoint)
         {
             // Rotate gun
-            touchedPoint = myCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
             Vector3 difference = touchedPoint - gun.transform.position;
             float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
             gun.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
