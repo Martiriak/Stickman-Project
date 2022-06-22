@@ -18,7 +18,9 @@ namespace Stickman
         [SerializeField]
         private GameObject optionsPanel;
         [SerializeField]
-        private GameObject creditsPanel;          
+        private GameObject creditsPanel;
+        [SerializeField]
+        private Slider SliderVolume;               
 
 
         void Start()
@@ -33,6 +35,12 @@ namespace Stickman
             {
                 recentScoreTxt.text = PlayerPrefs.GetFloat("HighScore").ToString("F2");
                 bestScoreTxt.text = PlayerPrefs.GetFloat("BestScore").ToString("F2");
+            }
+            if(PlayerPrefs.GetFloat("Volume")== null){
+                SetVolume(1);
+            }
+            else{
+                SetVolume(PlayerPrefs.GetFloat("Volume"));
             }
         }
 
@@ -81,6 +89,9 @@ namespace Stickman
         }
 
         public void SetVolume(float value){
+            Debug.Log("SoundVOlume" + value);
+            SliderVolume.value = value;
+            PlayerPrefs.SetFloat("Volume",value);
             soundmanager.SetMasterVolume(value);
         }
     }
