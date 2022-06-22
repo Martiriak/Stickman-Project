@@ -113,5 +113,13 @@ namespace Stickman.Managers.Sound
             FMODUnity.RuntimeManager.PlayOneShot("event:/Game_Over");
         }
 
+        public void SetMasterVolume(float linear){
+            string masterBusString = "Bus:/";
+            FMOD.Studio.Bus masterBus;
+            masterBus = FMODUnity.RuntimeManager.GetBus(masterBusString);
+            float dbVolume = linear > 0 ? linear : 0f;
+            masterBus.setVolume(dbVolume);
+        }
+
     }
 }
