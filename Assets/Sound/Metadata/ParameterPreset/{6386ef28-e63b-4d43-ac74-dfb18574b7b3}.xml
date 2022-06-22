@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{6386ef28-e63b-4d43-ac74-dfb18574b7b3}">
+		<property name="name">
+			<value>Skate_State</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3a357eaf-53ac-433e-905a-054a4abf8612}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{14bb089d-04fc-43fe-b09b-a710c8a8dc3c}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{14bb089d-04fc-43fe-b09b-a710c8a8dc3c}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Rolling</value>
+			<value>Grinding</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
