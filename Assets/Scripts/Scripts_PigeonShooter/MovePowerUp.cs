@@ -37,6 +37,7 @@ namespace Stickman
         {
             Debug.Log("Activate Power Up !!!");
             // ...
+            transform.DetachChildren();
             Destroy(gameObject);
         }
     }

@@ -345,8 +345,8 @@ MonoBehaviour:
   - Object: {fileID: 3974481625408135969, guid: 5e5b4c47f7eb117429ae74811493ee53, type: 3}
     SpawnProbWeight: 1.5
     LevelSlotWeight: 4
-  m_minSlots: 5
-  m_maxSlots: 10
+  m_minSlots: 30
+  m_maxSlots: 40
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: a5aa9bb5e45a0504ca6d624a70f6f38f, type: 3}
   m_finalLevelPrefab: {fileID: 3006254539476748088, guid: 38434eb163853f34d880c763eb0a96a9, type: 3}
 --- !u!4 &481497034

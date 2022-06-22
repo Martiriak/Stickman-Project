@@ -29,8 +29,8 @@ namespace Stickman.Players
 
 
         public event Action OnRunning;
-        //public event Action OnJumping;
-        //public event Action OnCrushingDown;
+        public event Action OnJumping;
+        public event Action OnCrushingDown;
         public event Action OnSwinging;
 
 
@@ -56,15 +56,16 @@ namespace Stickman.Players
 
         private void Start() => OnRunning?.Invoke();
 
+#if UNITY_EDITOR
         private void Update()
         {
-            // Gather input TMP!
             if (Input.GetKeyDown(KeyCode.W)) Jump();
 
             if (Input.GetKeyDown(KeyCode.S)) CrashDown();
 
             if (Input.GetKeyDown(KeyCode.Space)) SwingSword();
         }
+#endif
 
         private void FixedUpdate()
         {
@@ -74,14 +75,21 @@ namespace Stickman.Players
                 m_isCrashingDown = false;
 
                 if (m_justJumped)
+                {
                     c_rb.velocity = Vector2.up * m_jumpForce;
+                    OnJumping?.Invoke();
+                }
             }
             else
             {
                 m_isInAir = true;
 
                 if (m_isCrashingDown)
+                {
                     c_rb.velocity = (-Vector2.up) * m_crashDownSpeed;
+                    OnCrushingDown?.Invoke();
+                    m_isCrashingDown = false;
+                }
             }
 
             // Handle sword swing
@@ -116,16 +124,22 @@ namespace Stickman.Players
 
         private void OnEnable()
         {
-            c_inputHandler.OnJump += Jump;
-            c_inputHandler.OnFalling += CrashDown;
-            c_inputHandler.OnSwordSwing += SwingSword;
+            if (c_inputHandler != null)
+            {
+                c_inputHandler.OnJump += Jump;
+                c_inputHandler.OnFalling += CrashDown;
+                c_inputHandler.OnSwordSwing += SwingSword;
+            }
         }
 
         private void OnDisable()
         {
-            c_inputHandler.OnJump -= Jump;
-            c_inputHandler.OnFalling -= CrashDown;
-            c_inputHandler.OnSwordSwing -= SwingSword;
+            if (c_inputHandler != null)
+            {
+                c_inputHandler.OnJump -= Jump;
+                c_inputHandler.OnFalling -= CrashDown;
+                c_inputHandler.OnSwordSwing -= SwingSword;
+            }
         }
 
         private void OnValidate()
