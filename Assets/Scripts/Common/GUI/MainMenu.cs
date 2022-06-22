@@ -16,7 +16,9 @@ namespace Stickman
         [SerializeField]
         private GameObject scorePanel;
         [SerializeField]
-        private GameObject optionsPanel;        
+        private GameObject optionsPanel;
+        [SerializeField]
+        private GameObject creditsPanel;          
 
 
         void Start()
@@ -52,18 +54,30 @@ namespace Stickman
             scorePanel.SetActive(true);
             optionsPanel.SetActive(false);
             gameObject.SetActive(false);
+            creditsPanel.SetActive(false);
         }
         public void ShowOptionsPanel(){
             soundmanager.PlayUIClick(SoundLabels.GOOD);
             scorePanel.SetActive(false);
             optionsPanel.SetActive(true);
             gameObject.SetActive(false);
+            creditsPanel.SetActive(false);
         }
+
+        public void ShowCreditsPanel(){
+            soundmanager.PlayUIClick(SoundLabels.GOOD);
+            scorePanel.SetActive(false);
+            optionsPanel.SetActive(false);
+            gameObject.SetActive(false);
+            creditsPanel.SetActive(true);
+        }
+
         public void BackToMenu(){
             soundmanager.PlayUIClick(SoundLabels.BAD);
             scorePanel.SetActive(false);
             optionsPanel.SetActive(false);
             gameObject.SetActive(true);
+            creditsPanel.SetActive(false);
         }
     }
 }
