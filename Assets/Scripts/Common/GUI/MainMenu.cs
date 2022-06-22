@@ -79,5 +79,9 @@ namespace Stickman
             gameObject.SetActive(true);
             creditsPanel.SetActive(false);
         }
+
+        public void SetVolume(float value){
+            soundmanager.SetMasterVolume(value);
+        }
     }
 }
