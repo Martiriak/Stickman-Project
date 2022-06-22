@@ -80,7 +80,7 @@ namespace Stickman.Managers.Sound
                 m_instancePlayer.start();
                 break;
             case PlayerActions.JUMP:
-                FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerBase_Jump");
+                PlayJumpSound();
                 break;
             case PlayerActions.STOP:
                 m_instancePlayer.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
@@ -90,6 +90,15 @@ namespace Stickman.Managers.Sound
                 break;
            }
             
+        }
+        public void PlayJumpSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerBase_Jump");
+        }
+        public void PlayDamageSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Death_Zone");
+        }
+        public void PlayProptSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Power_Up");
         }
 
     }

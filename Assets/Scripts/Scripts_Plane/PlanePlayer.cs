@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Stickman.Player;
+using Stickman.Managers;
+using Stickman.Managers.Sound;
+
 
 namespace Stickman
 {
@@ -28,6 +31,7 @@ namespace Stickman
             //if (Input.GetButtonDown("Fire1")){
             if (Input.GetMouseButtonDown(0)){
                 animator.Play("PigFlyFlap");
+                GameManager.Instance.SoundManager.PlayJumpSound();
                 //rig.velocity = Vector3.zero;
                 PushPlane(PushDirection.UP , planeFloatingForce);
             }

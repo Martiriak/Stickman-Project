@@ -98,6 +98,7 @@ namespace Stickman.Player
         private void BlinkPlayerSprite()
         {
              Debug.Log("ON_BLINKPLAYER");
+            GameManager.Instance.SoundManager.PlayDamageSound();
             StartCoroutine(Blink());
         }
 
