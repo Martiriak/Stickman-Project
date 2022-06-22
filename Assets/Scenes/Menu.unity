@@ -2430,7 +2430,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2018064767}
         m_TargetAssemblyTypeName: Stickman.MainMenu, Assembly-CSharp
-        m_MethodName: OptionsMenuOn
+        m_MethodName: ShowOptionsPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3551,7 +3551,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2018064767}
         m_TargetAssemblyTypeName: Stickman.MainMenu, Assembly-CSharp
-        m_MethodName: ScoreMenuOn
+        m_MethodName: ShowScorePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4722,8 +4722,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recentScoreTxt: {fileID: 1066155356}
   bestScoreTxt: {fileID: 1214582324}
-  m_scorePanel: {fileID: 1396253013}
-  m_optionsPanel: {fileID: 60754039}
+  scorePanel: {fileID: 1396253013}
+  optionsPanel: {fileID: 60754039}
 --- !u!1 &2087538140
 GameObject:
   m_ObjectHideFlags: 0

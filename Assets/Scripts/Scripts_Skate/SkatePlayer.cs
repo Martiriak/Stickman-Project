@@ -186,5 +186,12 @@ namespace Stickman
             if (m_minJumpForce > m_maxJumpForce)
                 m_minJumpForce = m_maxJumpForce;
         }
+
+        protected override void OnDestroy()
+        {
+            m_soundManager.PlaySkateSound(PlayerActions.STOP);
+            m_soundManager.ReleasePlayerSoundInstance(); 
+            base.OnDestroy();
+        }
     }
 }
