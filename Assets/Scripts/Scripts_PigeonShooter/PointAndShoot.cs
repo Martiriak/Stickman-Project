@@ -40,9 +40,13 @@ namespace Stickman.pigeonShooter
             if (Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
-                touchedPoint = myCamera.ScreenToWorldPoint(touch.position);
-                touchedPoint.z = 0f;
-                RotateAndShootGun(touchedPoint);
+
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    touchedPoint = myCamera.ScreenToWorldPoint(touch.position);
+                    touchedPoint.z = 0f;
+                    RotateAndShootGun(touchedPoint);
+                }
             }
         }
 #endif

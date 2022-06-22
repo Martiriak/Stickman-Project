@@ -1,27 +1,30 @@
 using System; // C# Actions.
 using System.Collections;
 using UnityEngine;
+using Stickman.Players.SwordsmanUtilities;
 
 namespace Stickman.Players
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(SwordsmanInputHandler))]
     public class Swordsman : MonoBehaviour
     {
         [SerializeField] private float m_jumpForce = 10f;
         [SerializeField] private float m_crashDownSpeed = 5f;
         [SerializeField] private LayerMask m_groundLayers;
-
-        [Header("TMP STUFF")]
-        [SerializeField] private float m_animationDurationTMP = 2f;
-        [SerializeField] private GameObject m_hitbox;
-
-        private Rigidbody2D c_rb;
+        [Space]
+        [SerializeField] private float m_swordSwingDuration = 1f;
+        [SerializeField] private GameObject m_swordHitbox;
 
         private bool m_isInAir = false;
         private bool m_isSwinging = false;
         private bool m_isCrashingDown = false;
         private bool m_justJumped = false;
+
+        private Rigidbody2D c_rb;
+        private SwordsmanInputHandler c_inputHandler;
+        private WaitForSeconds c_yieldSwordSwingDuration = null;
         private IEnumerator c_animationCoroutine = null;
 
 
@@ -45,8 +48,10 @@ namespace Stickman.Players
         private void Awake()
         {
             c_rb = GetComponent<Rigidbody2D>();
+            c_inputHandler = GetComponent<SwordsmanInputHandler>();
+            c_yieldSwordSwingDuration = new WaitForSeconds(m_swordSwingDuration);
 
-            m_hitbox.SetActive(false);
+            m_swordHitbox.SetActive(false);
         }
 
         private void Start() => OnRunning?.Invoke();
@@ -56,16 +61,9 @@ namespace Stickman.Players
             // Gather input TMP!
             if (Input.GetKeyDown(KeyCode.W)) Jump();
 
-            if (Input.GetKeyDown(KeyCode.S) && m_isInAir)
-                m_isCrashingDown = true;
+            if (Input.GetKeyDown(KeyCode.S)) CrashDown();
 
-            if (Input.GetKeyDown(KeyCode.Space)/* && !m_isSwinging*/)
-                m_isSwinging = true;
-        }
-
-        private void Jump()
-        {
-            m_justJumped = true;
+            if (Input.GetKeyDown(KeyCode.Space)) SwingSword();
         }
 
         private void FixedUpdate()
@@ -86,7 +84,7 @@ namespace Stickman.Players
                     c_rb.velocity = (-Vector2.up) * m_crashDownSpeed;
             }
 
-            // Gestire swing
+            // Handle sword swing
             if (m_isSwinging && c_animationCoroutine == null)
             {
                 c_animationCoroutine = SwingAnimation();
@@ -96,20 +94,43 @@ namespace Stickman.Players
             m_justJumped = false;
         }
 
-        // MEGA TEMP.
+
+        private void Jump() { m_justJumped = true; }
+        private void CrashDown() { if (m_isInAir) m_isCrashingDown = true; }
+        private void SwingSword() { m_isSwinging = true; }
+
         private IEnumerator SwingAnimation()
         {
-            Debug.Log("Swing!");
             OnSwinging?.Invoke();
 
-            m_hitbox.SetActive(true);
-            yield return new WaitForSeconds(m_animationDurationTMP);
-            m_hitbox.SetActive(false);
+            m_swordHitbox.SetActive(true);
+            yield return c_yieldSwordSwingDuration;
+            m_swordHitbox.SetActive(false);
 
             m_isSwinging = false;
             c_animationCoroutine = null;
 
             OnRunning?.Invoke();
+        }
+
+
+        private void OnEnable()
+        {
+            c_inputHandler.OnJump += Jump;
+            c_inputHandler.OnFalling += CrashDown;
+            c_inputHandler.OnSwordSwing += SwingSword;
+        }
+
+        private void OnDisable()
+        {
+            c_inputHandler.OnJump -= Jump;
+            c_inputHandler.OnFalling -= CrashDown;
+            c_inputHandler.OnSwordSwing -= SwingSword;
+        }
+
+        private void OnValidate()
+        {
+            c_yieldSwordSwingDuration = new WaitForSeconds(m_swordSwingDuration);
         }
     }
 }
