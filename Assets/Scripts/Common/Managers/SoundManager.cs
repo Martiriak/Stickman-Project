@@ -100,6 +100,18 @@ namespace Stickman.Managers.Sound
         public void PlayProptSound() {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Power_Up");
         }
+        public void PlayLaserSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Shooter_Laser");
+        }
+        public void PlayBreakBoxSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Swordman_Crash");
+        }
+        public void PlaySwooshSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Swordman_Swoosh");
+        }
+        public void PlayGameOverSound() {
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Game_Over");
+        }
 
     }
 }

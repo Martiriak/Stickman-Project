@@ -1,4 +1,6 @@
 using UnityEngine;
+using Stickman.Managers;
+using Stickman.Managers.Sound;
 
 namespace Stickman.Damageables
 {
@@ -6,6 +8,7 @@ namespace Stickman.Damageables
     {
         public void HandleHit()
         {
+            GameManager.Instance.SoundManager.PlayBreakBoxSound();
             Destroy(gameObject);
         }
     }
