@@ -528,8 +528,13 @@ MonoBehaviour:
   - Object: {fileID: 6037243852033956611, guid: ab7f3ba430b59da468c09ff74e8a14e0, type: 3}
     SpawnProbWeight: 0
     LevelSlotWeight: 2
+<<<<<<< HEAD
   m_minSlots: 2
   m_maxSlots: 3
+=======
+  m_minSlots: 5
+  m_maxSlots: 10
+>>>>>>> feature/tutorialUI
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: f6da609d585a74a4480e42eb0514afcf, type: 3}
   m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0230c8ee8dd1a074fb01a3ee49c31404, type: 3}
 --- !u!114 &549893354
@@ -5441,6 +5446,24 @@ PrefabInstance:
       propertyPath: m_levelSpawner
       value: 
       objectReference: {fileID: 549893353}
+    - target: {fileID: 7947625095066591138, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+      propertyPath: inputField
+      value: 'Tap to jump
+
+
+        Tap when in the air to double jump
+
+
+        Hold
+        tap to jump higher
+
+
+        When you see the ! tap to grind
+
+
+        Avoid
+        Obstacles'
+      objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -6003,6 +6026,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4422221913782702797, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: inputField
+      value: 'Tap for jump
+
+        Tap when you see ! and Grind
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5057647291375978362, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_Color.a
       value: 0.68235296
@@ -6010,6 +6041,14 @@ PrefabInstance:
     - target: {fileID: 5057647291375978362, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446409305176023775, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579653621810370391, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: inputField
+      value: test skate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}

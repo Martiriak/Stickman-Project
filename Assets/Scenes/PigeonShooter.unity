@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.47234017, g: 0.8014199, b: 0.8965913, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0, g: 0.99999946, b: 0.99999946, a: 1}
+>>>>>>> feature/tutorialUI
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -213,8 +217,8 @@ MonoBehaviour:
   - Object: {fileID: 6037243852033956611, guid: cddb4bb42749faa43adc3eb05bab71a8, type: 3}
     SpawnProbWeight: 1
     LevelSlotWeight: 1
-  m_minSlots: 10
-  m_maxSlots: 15
+  m_minSlots: 5
+  m_maxSlots: 10
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: 1a6e798c96976c742b829d30ed0cebc3, type: 3}
   m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 32804991f9248a4479a75915bce5f157, type: 3}
 --- !u!114 &48776553
@@ -963,6 +967,17 @@ PrefabInstance:
       propertyPath: m_levelSpawner
       value: 
       objectReference: {fileID: 48776552}
+    - target: {fileID: 7947625095066591138, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+      propertyPath: inputField
+      value: 'Tap for shoot the fucking pigeons
+
+
+        Some pigeons give you power
+        ups
+
+
+        Don''t get caught'
+      objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_Name
       value: LevelLoader
@@ -1414,6 +1429,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4422221913782702797, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: inputField
+      value: Tap for Shooting the fucking Pigeons!
+      objectReference: {fileID: 0}
     - target: {fileID: 5057647291375978362, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_Color.a
       value: 0.68235296
@@ -1421,6 +1440,14 @@ PrefabInstance:
     - target: {fileID: 5057647291375978362, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_PixelsPerUnitMultiplier
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446409305176023775, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579653621810370391, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: inputField
+      value: Test Pigeon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}

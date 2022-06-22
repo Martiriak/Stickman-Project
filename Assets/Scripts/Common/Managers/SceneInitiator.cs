@@ -11,15 +11,19 @@ namespace Stickman.Scenes
     {
         [SerializeField] private bool m_isPlayableScene = true;
         [SerializeField] private LevelSpawner m_levelSpawner = null;
+        [SerializeField] private Animation m_fadeAnimation;
+        [SerializeField] private TutorialUI m_tutorialPanel;
 
         private IEnumerator Start()
         {
             GameManager.Instance.CurrentLoadedScene = SceneManager.GetActiveScene().buildIndex;
+            m_tutorialPanel.OnTutorialClose += ()=>{GameManager.Instance.TimeTracker.Resume();};
 
             if (m_isPlayableScene)
             {
                 if (GameManager.Instance.TimeTracker.IsPlaying)
                 {
+                    m_fadeAnimation.Play();
                     GameManager.Instance.TimeTracker.Lap();
                     GameManager.Instance.TimeTracker.Resume();
                 }
@@ -30,11 +34,18 @@ namespace Stickman.Scenes
                     while (!m_levelSpawner.HasFinishedSpawning)
                         yield return null;
 
-                    GameManager.Instance.TimeTracker.Resume();
+                    m_fadeAnimation.Play();
+                    yield return null;
+
+                    while (m_fadeAnimation.isPlaying)
+                        yield return null;
+
+                    m_tutorialPanel.SetTutorial();
                 }
             }
             else
             {
+                 m_fadeAnimation.Play();
                 // Not necessary, but safe to do.
                 GameManager.Instance.TimeTracker.Pause();
             }
