@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Stickman.Managers;
 using Stickman.Props;
+using Stickman.Managers.Sound;
 
 namespace Stickman.Player
 {
@@ -25,7 +26,8 @@ namespace Stickman.Player
         {
             // Funzione UpdateLivesUI si scollega da OnLifeChange
             GameManager.Instance.LivesManager.OnDamageTaken -= BlinkPlayerSprite;
-            GameManager.Instance.LivesManager.OnInvulnerability -= RainbowPlayerSprite;   
+            GameManager.Instance.LivesManager.OnInvulnerability -= RainbowPlayerSprite;
+            GameManager.Instance.SoundManager.ReleasePlayerSoundInstance();   
         }
 
         void OnCollisionEnter2D(Collision2D collision)
@@ -95,6 +97,7 @@ namespace Stickman.Player
         private void BlinkPlayerSprite()
         {
              Debug.Log("ON_BLINKPLAYER");
+            GameManager.Instance.SoundManager.PlayDamageSound();
             StartCoroutine(Blink());
         }
 
@@ -149,6 +152,9 @@ namespace Stickman.Player
             command?.Execute();
         }
 
+        public void PlaySound(){
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Player_Running" );
+        }
         
     }
 }

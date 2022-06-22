@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1c557027-8029-4e96-acaa-e558d205f290}">
+		<property name="assetPath">
+			<value>ANMLInsc_InsJ_Ambience_Cricket-Insect_06-01_LOOP.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.9049375000000008</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a0918bf-99e6-4d36-ae07-630102a959c3}</destination>
+		</relationship>
+	</object>
+</objects>

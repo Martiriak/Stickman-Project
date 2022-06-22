@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{376768ee-3dd4-4185-95ae-f2c08985ceae}">
+		<property name="assetPath">
+			<value>single_crow_8_clean.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.3330833333333336</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a0918bf-99e6-4d36-ae07-630102a959c3}</destination>
+		</relationship>
+	</object>
+</objects>

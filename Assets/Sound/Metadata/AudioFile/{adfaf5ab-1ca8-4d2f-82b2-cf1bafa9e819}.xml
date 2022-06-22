@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{adfaf5ab-1ca8-4d2f-82b2-cf1bafa9e819}">
+		<property name="assetPath">
+			<value>metal-sliding_1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.46517708333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a0918bf-99e6-4d36-ae07-630102a959c3}</destination>
+		</relationship>
+	</object>
+</objects>

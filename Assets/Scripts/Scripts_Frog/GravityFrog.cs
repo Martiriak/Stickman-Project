@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Stickman.Managers;
+using Stickman.Managers.Sound;
 using Stickman.Player;
 
 namespace Stickman
@@ -38,6 +39,7 @@ namespace Stickman
             {
                 if (gravity)
                {
+                    GameManager.Instance.SoundManager.PlayJumpSound();
                     if (anim.GetBool("Gravity"))
                     {
                         Physics2D.gravity = new Vector2(0, -forceGravity);

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Stickman.Managers;
+using Stickman.Managers.Sound;
 using UnityEngine;
 
 namespace Stickman.pigeonShooter
@@ -63,6 +65,7 @@ namespace Stickman.pigeonShooter
 
         void FireBullet(Vector2 direction, float rotationZ)
         {
+            GameManager.Instance.SoundManager.PlayLaserSound();
             GameObject b = objectPooler.SpawnFromPool("Bullet", bulletStart.transform.position, Quaternion.Euler(0.0f, 0.0f, rotationZ));
             b.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
         }

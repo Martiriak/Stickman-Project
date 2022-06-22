@@ -2,6 +2,9 @@ using System; // C# Actions.
 using System.Collections;
 using UnityEngine;
 using Stickman.Props.Builder;
+using Stickman.Managers;
+using Stickman.Managers.Sound;
+
 
 namespace Stickman.Props
 {
@@ -38,8 +41,10 @@ namespace Stickman.Props
         {
             yield return null;
 
-            if (OnDestruction != null) OnDestruction();
-            Destroy(gameObject);
+            if (OnDestruction != null) OnDestruction();{
+                GameManager.Instance.SoundManager.PlayProptSound();
+                Destroy(gameObject);
+            }
         }
 
 

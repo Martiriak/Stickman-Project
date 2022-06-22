@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{ae3e1117-4bee-4854-ae76-dd7f5eb10944}">
+		<property name="assetPath">
+			<value>retro_gaming-death_zone.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.87554166666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7a0918bf-99e6-4d36-ae07-630102a959c3}</destination>
+		</relationship>
+	</object>
+</objects>
