@@ -32,6 +32,9 @@ namespace Stickman
             GameManager.Instance.TimeTracker.Stop();
             soundManager.PlayUIClick(SoundLabels.GOOD);
             Time.timeScale = 1f;
+            GameManager.Instance.LivesManager.ResetLife();
+            GameManager.Instance.TimeTracker.Stop();
+            GameManager.Instance.SpeedManager.ResetSpeed();
             SceneManager.LoadScene("Menu");
         }
 
