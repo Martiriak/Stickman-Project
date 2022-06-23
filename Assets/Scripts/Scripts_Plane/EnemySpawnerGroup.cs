@@ -8,7 +8,7 @@ namespace Stickman
     {
         private enum SpawnerSchemas { ALL , RANDOM , BLOCKONE};
         [SerializeField]
-        private GameObject [] m_enemy, m_spawners;
+        private GameObject [] m_enemy, m_spawners, props;
         [SerializeField]
         private SpawnerSchemas m_spawnerSchema;
 
@@ -34,7 +34,7 @@ namespace Stickman
         }
 
         private void RandomSpawnMode(){
-            float nEnemiesToSpawn = m_spawners.Length * 70 / 100;
+            float nEnemiesToSpawn = m_spawners.Length * 65 / 100;
             for(int i= 0 ; i< nEnemiesToSpawn ; i++){
                 int chosenEnemyIndex = PickRandomEnemy();
                 EnemySpawner chosenSpawner = m_spawners[PickRandomSpawner()].GetComponent<EnemySpawner>();
