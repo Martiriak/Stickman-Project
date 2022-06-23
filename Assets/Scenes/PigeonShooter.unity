@@ -1212,7 +1212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_minSpeed
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7980688657823836605, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_Name
