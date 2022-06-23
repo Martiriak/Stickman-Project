@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxSpeedTimestamp: 300
   m_minSpeed: 5
-  m_maxSpeed: 15
+  m_maxSpeed: 10
   m_percentIncrement: 5
   m_maxPercentIncrement: 5
   m_speedCurve:

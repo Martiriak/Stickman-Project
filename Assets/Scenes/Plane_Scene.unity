@@ -201,8 +201,8 @@ MonoBehaviour:
   - Object: {fileID: 6037243852033956611, guid: f7a4784d10605cb4a8fd87aa08aa8478, type: 3}
     SpawnProbWeight: 0.1
     LevelSlotWeight: 1
-  m_minSlots: 5
-  m_maxSlots: 7
+  m_minSlots: 10
+  m_maxSlots: 15
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: c691a402475f4bf479c1f7033ea6020e, type: 3}
   m_finalLevelPrefab: {fileID: 3090189622707256149, guid: 0f3b262c759b47344918219dcc2cb55b, type: 3}
 --- !u!114 &67310002
@@ -242,10 +242,10 @@ PrefabInstance:
 
         Clouds push you down
 
-        Fans push you
-        up
+        Fans push you up
 
-        Avoid obstacles'
+        Avoid
+        obstacles'
       objectReference: {fileID: 0}
     - target: {fileID: 8210505404814631720, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
       propertyPath: m_Name

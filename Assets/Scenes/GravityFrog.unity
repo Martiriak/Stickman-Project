@@ -656,7 +656,7 @@ MonoBehaviour:
     SpawnProbWeight: 1
     LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: 1e376f6a633bfd9469f118a4e811372c, type: 3}
-    SpawnProbWeight: 2
+    SpawnProbWeight: 1
     LevelSlotWeight: 1
   - Object: {fileID: 8993733444322167136, guid: c97272853c5f9f347bd5e7a34a6d4d82, type: 3}
     SpawnProbWeight: 1
@@ -685,8 +685,8 @@ MonoBehaviour:
   - Object: {fileID: 8993733444322167136, guid: e321466b49ffc384b93e0b75bcce4b37, type: 3}
     SpawnProbWeight: 1
     LevelSlotWeight: 1
-  m_minSlots: 15
-  m_maxSlots: 20
+  m_minSlots: 10
+  m_maxSlots: 15
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: e9a694879ee6ce347b75588b809870f5, type: 3}
   m_finalLevelPrefab: {fileID: 6012735780272281297, guid: e60b8f9e070baba40930e80ee4af2bf4, type: 3}
 --- !u!4 &1242250351
@@ -908,11 +908,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_maxSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_minSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_maxSpeedTimestamp

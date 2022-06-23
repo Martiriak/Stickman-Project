@@ -789,6 +789,12 @@ MonoBehaviour:
   - Object: {fileID: 5738851569988073080, guid: 1960b3ba0b2ce2b4baa131264193a925, type: 3}
     SpawnProbWeight: 1
     LevelSlotWeight: 0
+  - Object: {fileID: 1981908069843057692, guid: faf08bc76f3022e4387d9dbda983c089, type: 3}
+    SpawnProbWeight: 1
+    LevelSlotWeight: 0
+  - Object: {fileID: 5738851569988073080, guid: c9918ff19329acc4fbe17272a87e07ab, type: 3}
+    SpawnProbWeight: 1
+    LevelSlotWeight: 0
   m_propsSpawnPoints:
   - {fileID: 2766984738974702655}
 --- !u!1 &7163698520358650280

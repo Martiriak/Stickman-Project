@@ -36,7 +36,7 @@ namespace Stickman
                 recentScoreTxt.text = PlayerPrefs.GetFloat("HighScore").ToString("F2");
                 bestScoreTxt.text = PlayerPrefs.GetFloat("BestScore").ToString("F2");
             }
-            if(PlayerPrefs.GetFloat("Volume")== null){
+            if(PlayerPrefs.GetFloat("Volume")== 0){
                 SetVolume(1);
             }
             else{
@@ -89,7 +89,6 @@ namespace Stickman
         }
 
         public void SetVolume(float value){
-            Debug.Log("SoundVOlume" + value);
             SliderVolume.value = value;
             PlayerPrefs.SetFloat("Volume",value);
             soundmanager.SetMasterVolume(value);
