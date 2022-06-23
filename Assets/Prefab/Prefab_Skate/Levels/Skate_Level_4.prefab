@@ -1094,6 +1094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6228489610362159514}
   - component: {fileID: 6037243852033956611}
+  - component: {fileID: 4024235785356676026}
   m_Layer: 0
   m_Name: Skate_Level_4
   m_TagString: Untagged
@@ -1118,6 +1119,7 @@ Transform:
   - {fileID: 7955613449832236870}
   - {fileID: 2805877803448806052}
   - {fileID: 6202642374997625190}
+  - {fileID: 9004103450361824663}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1134,6 +1136,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mEndLevelTrigger: {fileID: 4737506373081218437}
+--- !u!114 &4024235785356676026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090189622707256149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef788e19e7d520428a0ff475d6c4dd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_propsPool:
+  - Object: {fileID: 5738851569988073080, guid: c9918ff19329acc4fbe17272a87e07ab, type: 3}
+    SpawnProbWeight: 0.2
+    LevelSlotWeight: 0
+  - Object: {fileID: 1981908069843057692, guid: faf08bc76f3022e4387d9dbda983c089, type: 3}
+    SpawnProbWeight: 0.1
+    LevelSlotWeight: 0
+  - Object: {fileID: 5738851569988073080, guid: 1960b3ba0b2ce2b4baa131264193a925, type: 3}
+    SpawnProbWeight: 0.1
+    LevelSlotWeight: 0
+  - Object: {fileID: 0}
+    SpawnProbWeight: 0.6
+    LevelSlotWeight: 0
+  m_propsSpawnPoints:
+  - {fileID: 9004103450361824663}
 --- !u!1 &3356806313055777831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1235,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_grindTile: {fileID: 2440200889339794754}
   m_player: {fileID: 0}
+--- !u!1 &3843929476533356455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9004103450361824663}
+  m_Layer: 0
+  m_Name: ProptSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9004103450361824663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843929476533356455}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29.05, y: 2.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6228489610362159514}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5048895983857056940
 GameObject:
   m_ObjectHideFlags: 0
@@ -2164,7 +2223,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8533029538167644144
 Transform:
   m_ObjectHideFlags: 0

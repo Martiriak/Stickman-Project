@@ -379,7 +379,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 306494488477028193, guid: bc8542ee4a7488b478588155d7917731, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -505,29 +505,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_levelsPool:
   - Object: {fileID: 6037243852033956611, guid: 1f200688fb51f0b4d9071bac7e1db766, type: 3}
-    SpawnProbWeight: 0.2
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 6f345794914358e4aa3cd3e3c25676df, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.2
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 9355f96af49a6d5429d5460b6ee76930, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: 48ca7014e5f836842998cec00414f7eb, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: b148d59e489f65745a7614ee18f608e2, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: 78762067b38ea524484277328651f0a4, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: 7b4621dfe6aa3334a9c1583c63eebab3, type: 3}
-    SpawnProbWeight: 0
+    SpawnProbWeight: 0.1
     LevelSlotWeight: 2
   - Object: {fileID: 6037243852033956611, guid: ab7f3ba430b59da468c09ff74e8a14e0, type: 3}
-    SpawnProbWeight: 0
-    LevelSlotWeight: 2
+    SpawnProbWeight: 0.2
+    LevelSlotWeight: 1
   m_minSlots: 5
   m_maxSlots: 10
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: f6da609d585a74a4480e42eb0514afcf, type: 3}
@@ -5866,7 +5866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_maxSpeedTimestamp
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 7980688657823836605, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_Name
