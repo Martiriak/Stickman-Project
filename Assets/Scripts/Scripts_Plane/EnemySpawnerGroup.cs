@@ -40,6 +40,7 @@ namespace Stickman
                 EnemySpawner chosenSpawner = m_spawners[PickRandomSpawner()].GetComponent<EnemySpawner>();
                 chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex]);
             }
+            
         }
 
         private void AllSpawnMode(){

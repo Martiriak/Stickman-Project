@@ -199,7 +199,7 @@ MonoBehaviour:
     SpawnProbWeight: 0.1
     LevelSlotWeight: 1
   - Object: {fileID: 6037243852033956611, guid: f7a4784d10605cb4a8fd87aa08aa8478, type: 3}
-    SpawnProbWeight: 0.1
+    SpawnProbWeight: 0
     LevelSlotWeight: 1
   m_minSlots: 10
   m_maxSlots: 15
