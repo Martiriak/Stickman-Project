@@ -1398,9 +1398,9 @@ MonoBehaviour:
   bg1: {fileID: 169659888}
   bg2: {fileID: 713295428}
   bg3: {fileID: 1911625884}
-  bg1SpeedRed: 5.2
-  bg2SpeedRed: 5.3
-  bg3SpeedRed: 5.1
+  bg1SpeedRed: 0.2
+  bg2SpeedRed: 0.3
+  bg3SpeedRed: 0.1
   backgroundMovementOffset: -16.15
 --- !u!4 &2009828869
 Transform:
