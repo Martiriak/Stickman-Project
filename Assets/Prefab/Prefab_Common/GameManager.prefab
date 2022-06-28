@@ -63,11 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499bffbf227304445a4f27a735f9a867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxSpeedTimestamp: 300
+  m_maxSpeedTimestamp: 150
   m_minSpeed: 5
   m_maxSpeed: 10
-  m_percentIncrement: 5
-  m_maxPercentIncrement: 5
+  m_percentIncrement: 25
+  m_maxPercentIncrement: 80
   m_speedCurve:
     serializedVersion: 2
     m_Curve:

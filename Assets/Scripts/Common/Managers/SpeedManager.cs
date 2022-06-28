@@ -164,7 +164,7 @@ namespace Stickman.Managers.Speed
             if (m_maxSpeed < m_minSpeed) m_maxSpeed = m_minSpeed;
 
             m_percentIncrement = Mathf.Clamp(m_percentIncrement, 0, 100);
-            m_maxPercentIncrement = Mathf.Clamp(m_percentIncrement, 0, 100);
+            m_maxPercentIncrement = Mathf.Clamp(m_maxPercentIncrement, m_percentIncrement, 100);
 
             c_speedLimitsIntervalLenght = m_maxSpeed - m_minSpeed;
             c_maxPercentIncrementFloat = m_maxPercentIncrement / 100f;
