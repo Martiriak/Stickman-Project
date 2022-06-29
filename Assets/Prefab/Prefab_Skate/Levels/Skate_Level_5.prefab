@@ -830,13 +830,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_propsPool:
   - Object: {fileID: 5738851569988073080, guid: c9918ff19329acc4fbe17272a87e07ab, type: 3}
-    SpawnProbWeight: 0.15
+    SpawnProbWeight: 0.2
     LevelSlotWeight: 0
   - Object: {fileID: 1981908069843057692, guid: faf08bc76f3022e4387d9dbda983c089, type: 3}
-    SpawnProbWeight: 0.15
+    SpawnProbWeight: 0.2
     LevelSlotWeight: 0
   - Object: {fileID: 0}
-    SpawnProbWeight: 0.7
+    SpawnProbWeight: 0.6
     LevelSlotWeight: 0
   m_propsSpawnPoints:
   - {fileID: 8308406952302588521}
