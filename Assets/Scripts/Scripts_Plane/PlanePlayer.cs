@@ -37,22 +37,6 @@ namespace Stickman
             }
         }
 
-  /*      void OnTriggerEnter2D(Collider2D collider)
-        {
-            if(collider.CompareTag("Cloud")){
-                PushPlane(PushDirection.DOWN, cloudPushingForce);
-                Debug.Log("Cloud");
-            }
-           if(collider.CompareTag("Fan")){
-                PushPlane(PushDirection.UP, fanPushingForce);
-                Debug.Log("Fan");
-            }
-            if(collider.CompareTag("Obstacle")){
-               StartCoroutine(Blink());
-            }
-        }
-        */
-
         void PushPlane(PushDirection dir, float vel){
            switch (dir) {
                case PushDirection.UP:
@@ -63,16 +47,5 @@ namespace Stickman
                    break;
            }
         }
-
-       /* IEnumerator Blink(){
-            for(int i=0 ; i<4 ; i++){
-                yield return new WaitForSeconds(0.1f);
-                gameObject.GetComponent<SpriteRenderer>().color = Color.black;
-                yield return new WaitForSeconds(0.1f);
-                gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-        }*/
-    
-
     }
 }

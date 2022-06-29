@@ -35,8 +35,8 @@ namespace Stickman.Player
             CollisionEnterBehaviuor(collision);
         }
 
-        virtual protected void CollisionEnterBehaviuor(Collision2D collision){
-            Debug.Log("ON_COLLISION_ENTER");
+        virtual protected void CollisionEnterBehaviuor(Collision2D collision)
+        {
             if (collision.gameObject.CompareTag("Platform"))
             {
                 OnLanding();
@@ -49,25 +49,23 @@ namespace Stickman.Player
             CollisionExitBehaviuor(collision);
         }
 
-        virtual protected void CollisionExitBehaviuor(Collision2D collision){
-            Debug.Log("ON_COLLISION_EXIT");
-        }
+        virtual protected void CollisionExitBehaviuor(Collision2D collision) { }
 
         void OnTriggerEnter2D(Collider2D collision)
         {
             TriggerEnterBehaviuor(collision);
         }
 
-        virtual protected void TriggerEnterBehaviuor(Collider2D collision){
-            Debug.Log("ON_TRIGGER_ENTER");
+        virtual protected void TriggerEnterBehaviuor(Collider2D collision)
+        {
             if (collision.gameObject.CompareTag("Obstacle"))
             {
                 //anim.SetBool("Hit", true);
                 //StartCoroutine(Blink());
                 GameManager.Instance.LivesManager.RemoveLife();
-                Debug.Log("FORSE HO RIDOTTO VITA");
             }
-            if (collision.CompareTag("KillZone")){
+            if (collision.CompareTag("KillZone"))
+            {
                 GameManager.Instance.LivesManager.RemoveLife();
                 StartCoroutine(Respawn());
             }
@@ -83,27 +81,25 @@ namespace Stickman.Player
             TriggerExitBehaviuor(collision);
         }
 
-        virtual protected void TriggerExitBehaviuor(Collider2D collision){
-            Debug.Log("ON_TRIGGER_EXIT");
+        virtual protected void TriggerExitBehaviuor(Collider2D collision)
+        {
             if (collision.gameObject.CompareTag("Obstacle"))
             {
-                Debug.Log("COLLISIONE CON OBSTACLE");
                 //anim.SetBool("Hit", false);
                 //GameManager.Instance.LivesManager.RemoveLife();
-                Debug.Log("Obstacle Out");
             }
         }
 
         private void BlinkPlayerSprite()
         {
-             Debug.Log("ON_BLINKPLAYER");
             GameManager.Instance.SoundManager.PlayDamageSound();
             StartCoroutine(Blink());
         }
 
-        protected IEnumerator Blink(){
-            Debug.Log("Blink");
-            for(int i=0 ; i<5 ; i++){
+        protected IEnumerator Blink()
+        {
+            for (int i = 0; i < 5; i++)
+            {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.black;
                 yield return new WaitForSeconds(0.1f);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
@@ -114,13 +110,13 @@ namespace Stickman.Player
 
         private void RainbowPlayerSprite(float invincibleTime)
         {
-             Debug.Log("ON_RainBowPLAYER");
             StartCoroutine(RainBow(invincibleTime));
         }
 
-        protected IEnumerator RainBow(float invincibleTime){
-            Debug.Log("RainBow");
-            for(int i=0 ; i<invincibleTime ; i++){
+        protected IEnumerator RainBow(float invincibleTime)
+        {
+            for (int i = 0; i < invincibleTime; i++)
+            {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
                 yield return new WaitForSeconds(0.2f);
                 gameObject.GetComponent<SpriteRenderer>().color = Color.green;
@@ -134,10 +130,13 @@ namespace Stickman.Player
             }
         }
 
-        virtual protected IEnumerator Respawn(){
+        virtual protected IEnumerator Respawn()
+        {
             Rigidbody2D rig = gameObject.GetComponent<Rigidbody2D>();
             Transform startingPos = GameObject.Find("StartPosition").GetComponent<Transform>();
-            if(startingPos!=null){
+
+            if (startingPos != null)
+            {
                 gameObject.transform.position = startingPos.position;
                 rig.bodyType = RigidbodyType2D.Static;
                 StartCoroutine(Blink());
@@ -152,9 +151,9 @@ namespace Stickman.Player
             command?.Execute();
         }
 
-        public void PlaySound(){
+        public void PlaySound()
+        {
             FMODUnity.RuntimeManager.PlayOneShot("event:/Player_Running" );
         }
-        
     }
 }

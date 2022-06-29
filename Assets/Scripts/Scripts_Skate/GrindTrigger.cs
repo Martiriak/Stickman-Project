@@ -11,10 +11,7 @@ namespace Stickman
         private Collider2D m_grindCollider;
         private Collider2D m_grindTrigger;
 
-        
-
-        // Start is called before the first frame update
-        void Awake()
+        private void Awake()
         {
            /* m_player = GameObject.Find("Player");
             m_player.GetComponent<SkatePlayer>().GrindOn += ActivateGrinds;

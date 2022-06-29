@@ -37,7 +37,7 @@ namespace Stickman
         [SerializeField]
         private GameObject grindPopUp ; 
 
-        void Awake()
+        private void Awake()
         {
             m_rig = gameObject.GetComponent<Rigidbody2D>();
             m_accumulatedJumpForce = m_minJumpForce;
@@ -45,7 +45,7 @@ namespace Stickman
             m_soundManager.SetupPlayerSoundInstance(PlayerTypes.SKATE);
         }
 
-        void Update()
+        private void Update()
         {
            switch (m_playerState) {
                case SkateState.JUMPING:
@@ -60,7 +60,8 @@ namespace Stickman
            }
         }
 
-        private void SkateJump(){
+        private void SkateJump()
+        {
             if(Input.GetMouseButton(0)){
                 m_accumulatedJumpForce += Time.deltaTime*10;
             }
@@ -74,8 +75,9 @@ namespace Stickman
             }
         }
 
-        private void DoubleJump(){
-            if(Input.GetMouseButtonDown(0))
+        private void DoubleJump()
+        {
+            if (Input.GetMouseButtonDown(0))
                 if(!m_hasDoubleJumped){
                     m_soundManager.PlaySkateSound(PlayerActions.JUMP);
                     m_rig.velocity = Vector3.zero;

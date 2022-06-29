@@ -42,8 +42,6 @@ namespace Stickman.Managers.Time
         {
             if (!IsPlaying) return;
 
-            Debug.Log("Giovanni Muciaccia!");
-
             ++NumberOfLaps;
 
             float oldLapStopWatchTime = LapStopWatch;
@@ -98,8 +96,6 @@ namespace Stickman.Managers.Time
 
             LapStopWatch += UnityEngine.Time.deltaTime;
             TotalStopWatch += UnityEngine.Time.deltaTime;
-
-            //Debug.Log($"Tempo Del Lap: {LapStopWatch}; Tempo Totale: {TotalStopWatch}");
         }
     }
 }

@@ -22,7 +22,6 @@ namespace Stickman
 
         public void Pause()
         {
-            Debug.Log("Pausa");
             GameManager.Instance.TimeTracker.Pause();
             soundManager.PlayUIClick(SoundLabels.GOOD);
             pauseMenuUI.SetActive(true);

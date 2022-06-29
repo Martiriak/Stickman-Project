@@ -17,6 +17,7 @@ namespace Stickman.Props.Builder
                 case PropTypes.Invulnerability:
                     command = new InvulnerabilityPropCommand();
                 break;
+
                 case PropTypes.Clock:
                     command = new SlowTimePropCommand();
                 break;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Stickman.Managers.Speed;
+
 namespace Stickman
 {
     public class EnemySpawnerGroup : MonoBehaviour
@@ -12,19 +13,14 @@ namespace Stickman
         [SerializeField]
         private SpawnerSchemas m_spawnerSchema;
 
-        //private SpeedManager m_speedMng; 
-
-        private void Awake()
+        private void Start()
         {
-         //   m_speedMng = GameObject.Find("Managers").GetComponent<SpeedManager>();
-        }
-        void Start()
-        {
-           switch (m_spawnerSchema) {
+           switch (m_spawnerSchema)
+           {
                case SpawnerSchemas.ALL:
                    AllSpawnMode();
                    break;
-               case SpawnerSchemas.RANDOM :
+               case SpawnerSchemas.RANDOM:
                    RandomSpawnMode();
                    break;
                 case SpawnerSchemas.BLOCKONE:
@@ -50,13 +46,15 @@ namespace Stickman
                 chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex]);
             }
         }
-        private void BlockoneSpawnMode(){
+
+        private void BlockoneSpawnMode()
+        {
             int spawnerOff = Random.Range(0 , m_spawners.Length);
-            for(int i= 0 ; i< m_spawners.Length ; i++){
+            for (int i = 0; i < m_spawners.Length; i++)
+            {
                 int chosenEnemyIndex = PickRandomEnemy();
-                Debug.Log(spawnerOff);
-                if(i != spawnerOff){
-                    Debug.Log(i);
+                if (i != spawnerOff)
+                {
                     EnemySpawner chosenSpawner = m_spawners[i].GetComponent<EnemySpawner>();
                     chosenSpawner.SpawnNewEnemy(m_enemy[chosenEnemyIndex]);
                 }

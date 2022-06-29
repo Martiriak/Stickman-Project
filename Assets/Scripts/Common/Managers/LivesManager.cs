@@ -39,7 +39,6 @@ namespace Stickman
         public void RemoveLife()
         {
             if (isInvulnerable) return;
-            Debug.Log("REMOVE LIFE CHIAMATA *****************************************************************");
             livesLeft -= 1;
             OnLifeChange?.Invoke(livesLeft);
             OnDamageTaken?.Invoke();
@@ -63,7 +62,6 @@ namespace Stickman
         private IEnumerator Invulnerability(float invulnerabilityTime)
         {
             isInvulnerable = true;
-            Debug.Log("Life Invulnerability Coroutine Called : " + invulnerabilityTime);
             yield return new WaitForSeconds(invulnerabilityTime);
             isInvulnerable = false;
 

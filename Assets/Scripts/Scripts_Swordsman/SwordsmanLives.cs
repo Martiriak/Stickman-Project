@@ -33,7 +33,6 @@ namespace Stickman.Players
 
         public void RegenLives(uint amount = 1)
         {
-            Debug.Log("Healed!");
             m_currentLives += (int) amount;
             if (m_currentLives > m_maxLives)
                 m_currentLives = m_maxLives;
@@ -94,8 +93,7 @@ namespace Stickman.Players
         private void HandleDamage()
         {
             --m_currentLives;
-            if (m_currentLives < 1)
-                Debug.Log("DED");
+            if (m_currentLives < 1) { }
 
             if (c_invulnerabilityCoroutine != null)
                 StopCoroutine(c_invulnerabilityCoroutine);

@@ -12,10 +12,9 @@ namespace Stickman
         [SerializeField] private SpeedManager mSpeedManager;
         private float currentSpeed;
 
-        [SerializeField]
-         private LevelEndTrigger mEndLevelTrigger;
+        [SerializeField] private LevelEndTrigger mEndLevelTrigger;
         
-        void Awake()
+        private void Awake()
         {
             currentSpeed = mSpeedManager.CurrentSpeed;
             mEndLevelTrigger.ExitingScreen += () =>
@@ -25,7 +24,6 @@ namespace Stickman
             };
         }
 
-        // Update is called once per frame
         private void Update()
         {
             Vector3 movement = LevelDirection * currentSpeed * Time.deltaTime;

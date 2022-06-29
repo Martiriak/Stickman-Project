@@ -37,9 +37,7 @@ namespace Stickman
             yield return new WaitForSeconds(2f);
             transition.SetBool("End" , true);
             yield return new WaitForSeconds(2f);
-            Debug.Log("Next Scene: " + PickCharacterScene(selectedCharacterIndex));
             SceneManager.LoadScene(PickCharacterScene(selectedCharacterIndex));
-            //Debug.Log(PickCharacterScene(selectedCharacterIndex));
         }
 
 

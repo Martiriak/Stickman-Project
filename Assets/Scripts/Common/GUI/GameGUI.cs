@@ -21,7 +21,6 @@ namespace Stickman
             // Funzioni si possono collegare a questo evento, rimanendo in ascolto per eventuali cambiamenti alla vita del player.
             // La riga sotto indica che UpdateLivesUI (che aggiorna UI vita) si collega a OnLifeChange (aka chiamata quando OnLifeChange viene chiamata).
             GameManager.Instance.LivesManager.OnLifeChange += UpdateLivesUI;
-            Debug.Log("START LIVES UI CHIAMATA");
             lifesTxt.text = GameManager.Instance.LivesManager.GetLivesLeft().ToString();
 
             if (PlayerPrefs.GetFloat("BestScore") == 0f)
@@ -38,7 +37,6 @@ namespace Stickman
 
         private void UpdateLivesUI(int lives)
         {
-            Debug.Log("UPDATE LIVES UI CHIAMATA");
             lifesTxt.text = lives.ToString();
         }
 

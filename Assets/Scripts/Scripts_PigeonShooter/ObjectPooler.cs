@@ -29,15 +29,6 @@ namespace Stickman.pigeonShooter
 
         private void Awake()
         {
-            //if (Instance == null)
-            //{
-            //    DontDestroyOnLoad(gameObject);
-            //    Instance = this;
-            //}
-            //else
-            //{
-            //    Destroy(gameObject);
-            //}
             Instance = this;
         }
 
@@ -64,7 +55,7 @@ namespace Stickman.pigeonShooter
         {
             if (!poolDictionary.ContainsKey(tag))
             {
-                Debug.LogError("Pool with tag " + tag + " doesn't exist");
+                //Debug.LogError("Pool with tag " + tag + " doesn't exist");
                 return null;
             }
 
@@ -83,8 +74,6 @@ namespace Stickman.pigeonShooter
             poolDictionary[tag].Enqueue(objectToSpawn);
             return objectToSpawn;
         }
-
-
     }
 }
 

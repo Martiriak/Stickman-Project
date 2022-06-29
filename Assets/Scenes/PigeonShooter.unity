@@ -636,6 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pigeonPrefab: {fileID: 2608815958368969395, guid: b2f9b187356ff7143aed5a43da83c82d, type: 3}
   pigeonPowerUpPrefab: {fileID: 8393054569411084606, guid: 401ee17232046ad48976158bd1956abf, type: 3}
+  pigeonPowerUpSpawnProbability: 0.05
   playArea: {fileID: 1097188723}
 --- !u!4 &338355951
 Transform:
@@ -748,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 843090970}
   - component: {fileID: 843090969}
-  - component: {fileID: 843090968}
+  - component: {fileID: 843090971}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -756,14 +757,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &843090968
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843090967}
-  m_Enabled: 1
 --- !u!20 &843090969
 Camera:
   m_ObjectHideFlags: 0
@@ -821,6 +814,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &843090971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843090967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!1 &1097188721
 GameObject:
   m_ObjectHideFlags: 0

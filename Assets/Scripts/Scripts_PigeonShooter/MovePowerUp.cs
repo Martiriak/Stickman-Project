@@ -16,7 +16,7 @@ namespace Stickman
 
         void FixedUpdate()
         {
-                MoveTowardsPlayer();
+            MoveTowardsPlayer();
         }
 
         void MoveTowardsPlayer()
@@ -35,7 +35,6 @@ namespace Stickman
 
         private void ActivatePowerUp()
         {
-            Debug.Log("Activate Power Up !!!");
             // ...
             transform.DetachChildren();
             Destroy(gameObject);
