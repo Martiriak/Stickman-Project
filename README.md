@@ -6,7 +6,7 @@ Ad ogni partita il giocatore controlla in maniera casuale i vari personaggi disp
 Durante la corsa, i vari scenari incrementeno man mano la loro velocità per rendere difficoltosa l'attraversata.
 Inoltre tra i vari scenari, è possibile trovare ben 3 power up che permettono di recuperare la vita, diventare invincibile per qualche istante e rallentare la velocità.
 
-# Comandi di Gioco
+## Comandi di Gioco
 Essendo un gioco pensato per smartphone, per poter interagire viene richiesto l'uso del tap e swipe
 
 ## Personaggi
@@ -17,5 +17,5 @@ Essendo un gioco pensato per smartphone, per poter interagire viene richiesto l'
   - The Mask che corre e fa acrobazie con il suo skate
   
  
-# Sviluppatori
+## Sviluppatori
 Giuseppe Abagnale, Andrea Masciulli, Giovanni Meazza, Alessandro Pegoraro
