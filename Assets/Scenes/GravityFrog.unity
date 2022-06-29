@@ -899,6 +899,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1663905571 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7947625095066591138, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+  m_PrefabInstance: {fileID: 1268503194}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8207b030bdf7f4a40a700e78a6cfa7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1731220127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -906,18 +917,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_maxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_minSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7980688657823836604, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
-      propertyPath: m_maxSpeedTimestamp
-      value: 300
-      objectReference: {fileID: 0}
     - target: {fileID: 7980688657823836605, guid: 32a481f0a7c7fc34793171d306b609cb, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1266,6 +1265,10 @@ PrefabInstance:
       propertyPath: deadMenuUI
       value: 
       objectReference: {fileID: 756290249}
+    - target: {fileID: 1613303846, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: tutorialUI
+      value: 
+      objectReference: {fileID: 1663905571}
     - target: {fileID: 1756311528, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_Color.b
       value: 1

@@ -345,8 +345,8 @@ MonoBehaviour:
   - Object: {fileID: 3974481625408135969, guid: 5e5b4c47f7eb117429ae74811493ee53, type: 3}
     SpawnProbWeight: 1.5
     LevelSlotWeight: 4
-  m_minSlots: 15
-  m_maxSlots: 20
+  m_minSlots: 20
+  m_maxSlots: 25
   m_startingLevelPrefab: {fileID: 3006254539476748088, guid: a5aa9bb5e45a0504ca6d624a70f6f38f, type: 3}
   m_finalLevelPrefab: {fileID: 3006254539476748088, guid: 38434eb163853f34d880c763eb0a96a9, type: 3}
 --- !u!4 &481497034
@@ -425,6 +425,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1613303846, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
+      propertyPath: tutorialUI
+      value: 
+      objectReference: {fileID: 1806140419}
     - target: {fileID: 1511442860186503925, guid: 63c95262a47bf364c94edda4d978c5ff, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -10801,6 +10805,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+--- !u!114 &1806140419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7947625095066591138, guid: 2684a69e233fe294a9852fee87d7dc33, type: 3}
+  m_PrefabInstance: {fileID: 1806140418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8207b030bdf7f4a40a700e78a6cfa7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2028503087
 GameObject:
   m_ObjectHideFlags: 0

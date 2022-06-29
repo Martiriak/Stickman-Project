@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System;
+using Stickman.Managers;
+using Stickman.Managers.Sound;
 
 namespace Stickman
 {
     public class TutorialUI : MonoBehaviour
     {
-          public TextMeshProUGUI tutorialTxt;
-          public GameObject Panel;
-          [TextArea] public string inputField;
-          Scene scene;
+        public TextMeshProUGUI tutorialTxt;
+        public GameObject Panel;
+        [TextArea] public string inputField;
+        Scene scene;
 
-          public event Action OnTutorialClose;
+        public event Action OnTutorialClose;
         // Start is called before the first frame update
         void Start()
         {
@@ -65,13 +65,15 @@ namespace Stickman
             }
         }
 
-        void ShowTutorial(){
+        public void ShowTutorial()
+        {
             tutorialTxt.text = inputField;
             Panel.SetActive(true);
             Time.timeScale = 0f;
         }
 
-        public void CloseTutorial(){
+        public void CloseTutorial()
+        {
             switch (scene.name)
             {
                 case "GravityFrog":
@@ -92,7 +94,11 @@ namespace Stickman
             }
             Panel.SetActive(false);
             Time.timeScale = 1f;
-            if(OnTutorialClose!=null){
+
+            GameManager.Instance.SoundManager.PlayUIClick(SoundLabels.BAD);
+
+            if (OnTutorialClose != null)
+            {
                 OnTutorialClose();
             }
         }

@@ -9,7 +9,9 @@ namespace Stickman
     {
         [SerializeField] private GameObject pauseMenuUI;
         [SerializeField] private GameObject deadMenuUI;
+        [SerializeField] private TutorialUI tutorialUI;
         private SoundManager soundManager;
+
         public void Resume()
         {
             soundManager.PlayUIClick(SoundLabels.GOOD);
@@ -44,7 +46,8 @@ namespace Stickman
             Application.Quit();
         }
 
-        public void Restart(){
+        public void Restart()
+        {
             soundManager.PlayUIClick(SoundLabels.GOOD);
             Time.timeScale = 1f;
             int rand = Random.Range(2, 7);
@@ -55,17 +58,28 @@ namespace Stickman
             
         }
 
-        void Die(){
+        private void Die()
+        {
             soundManager.PlayGameOverSound();
             deadMenuUI.SetActive(true);
             Time.timeScale = 0f;
         }
 
-        private void Start() {
-            GameManager.Instance.LivesManager.OnDeath += Die;
-            soundManager = GameManager.Instance.SoundManager; 
+        public void ShowTutorial()
+        {
+            soundManager.PlayUIClick(SoundLabels.GOOD);
+            tutorialUI.ShowTutorial();
         }
-        private void OnDestroy() { GameManager.Instance.LivesManager.OnDeath -= Die; }
 
+        private void Start()
+        {
+            GameManager.Instance.LivesManager.OnDeath += Die;
+            soundManager = GameManager.Instance.SoundManager;
+        }
+
+        private void OnDestroy()
+        {
+            GameManager.Instance.LivesManager.OnDeath -= Die;
+        }
     }
 }

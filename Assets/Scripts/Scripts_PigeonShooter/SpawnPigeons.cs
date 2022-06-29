@@ -11,6 +11,8 @@ namespace Stickman.pigeonShooter
         public GameObject pigeonPrefab;
         public GameObject pigeonPowerUpPrefab;
 
+        [SerializeField] private float pigeonPowerUpSpawnProbability = 0.05f;
+
         [SerializeField] private PlayAreaInitializer playArea;
         private Vector3 min; //bottom left corner of viewport box
         private Vector3 max; //bottom right corner of viewport box
@@ -81,8 +83,8 @@ namespace Stickman.pigeonShooter
                     xPos = UnityEngine.Random.Range(minX, max.x);
                 }
 
-                // Spawn PigeonPowerUp with probability (10%)
-                if (UnityEngine.Random.value < 0.1f)
+                // Spawn PigeonPowerUp with probability
+                if (UnityEngine.Random.value < pigeonPowerUpSpawnProbability)
                 {
                     Instantiate(pigeonPowerUpPrefab, new Vector3(xPos, yPos, 0), Quaternion.identity);
                 }
